@@ -6,19 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('angular2/core');
-// mit "./" sucht er im aktuellen Verzeichnis nach der Komponente
-var courses_component_1 = require('./courses.component');
-var AppComponent = (function () {
-    function AppComponent() {
+var CourseService = (function () {
+    function CourseService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: 'My First Angular 2 App <courses></courses>',
-            directives: [courses_component_1.CoursesComponent],
-        })
-    ], AppComponent);
-    return AppComponent;
+    CourseService.prototype.getCourses = function () {
+        var courses = ["Course 1", "Course 2", "Course 3"];
+        return courses;
+    };
+    CourseService = __decorate([
+        core_1.Injectable()
+    ], CourseService);
+    return CourseService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=mainApp.js.map
+exports.CourseService = CourseService;
+//# sourceMappingURL=course.service.js.map
