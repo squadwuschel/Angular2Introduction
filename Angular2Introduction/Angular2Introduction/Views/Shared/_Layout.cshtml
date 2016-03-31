@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    <script src="~/Scripts/es6-shim.min.js"></script>
+    <script src="~/Scripts/system-polyfills.js"></script>
+    <script src="~/Scripts/shims_for_IE.js"></script>
+    <script src="~/Scripts/angular2-polyfills.js"></script>
+    <script src="~/Scripts/system.js"></script>
+    <script src="~/Scripts/Rx.js"></script>
+    <script src="~/Scripts/angular2.dev.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+            packages: {
+                'ScriptsApp/views': {
+                    defaultExtension: 'js'
+                }
+            }
+        });
+    </script>
+    <script>
+        System.import('ScriptsApp/views/boot').then(null, console.error.bind(console));
+    </script>
 
 </head>
 <body>
@@ -30,7 +51,5 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
-    <script src="~/ScriptsApp/views/todo.js"></script>
-    <script src="~/ScriptsApp/views/mainApp.js"></script>
 </body>
 </html>

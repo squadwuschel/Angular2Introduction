@@ -1,14 +1,7 @@
-﻿import {TodoCtrl} from "todo";
+﻿import {Component} from 'angular2/core';
 
-
-class MainApp {
-
-    constructor() {
-        console.log("Hallo Welt");
-    }
-
-
-}
-
-var main = new MainApp();
-
+@Component({
+    selector: 'my-app',
+    template: 'My First Angular 2 App'
+})
+export class AppComponent { } 
