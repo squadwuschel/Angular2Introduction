@@ -1,6 +1,6 @@
-﻿import {Injectable} from 'angular2/core';
+﻿//import {Injectable} from 'angular2/core';
 
-@Injectable()
+//@Injectable()
 export class CourseService {
     public getCourses(): string[] {
         let courses: string[] = ["Course 1", "Course 2", "Course 3"];

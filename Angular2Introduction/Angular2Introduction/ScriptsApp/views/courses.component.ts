@@ -1,7 +1,7 @@
-﻿import {Component, Injectable, Inject} from 'angular2/core';
+﻿import {Component} from 'angular2/core';
 import {CourseService} from './course.service';
 
-@Injectable()
+//@Injectable()
 @Component({
     selector: 'courses',
     template: `<h2>Courses</h2>
@@ -13,7 +13,7 @@ export class CoursesComponent {
     public title: string = "Das ist der Title der Courses Page";
     public courses: string[] = [];
 
-    constructor(private courseService: CourseService) {
-        this.courses = courseService.getCourses();
-    }
+    //constructor(private courseService: CourseService) {
+    //    this.courses = courseService.getCourses();
+    //}
 }

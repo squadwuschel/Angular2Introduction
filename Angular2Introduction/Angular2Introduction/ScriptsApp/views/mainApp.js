@@ -7,15 +7,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('angular2/core');
 // mit "./" sucht er im aktuellen Verzeichnis nach der Komponente
-var courses_component_1 = require('./courses.component');
+//import {CoursesComponent} from './courses.component';
+var course_service_1 = require('./course.service');
+//@Component({
+//    selector: 'my-app',
+//    template: 'My First Angular 2 App <courses></courses>',
+//    providers: [CourseService], //Dipendency Injection
+//    directives: [CoursesComponent]
+//})
+//export class AppComponent {
+//    constructor(courseService: CourseService) {
+//    }
+//} 
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(courseService) {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: 'My First Angular 2 App <courses></courses>',
-            directives: [courses_component_1.CoursesComponent],
+            template: 'My First Angular 2 App',
+            providers: [course_service_1.CourseService],
         })
     ], AppComponent);
     return AppComponent;
