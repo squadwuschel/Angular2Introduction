@@ -1,0 +1,19 @@
+﻿import {Component} from 'angular2/core';
+import {CourseService} from './../services/course.service';
+import {Person} from './../customDataClasses/Person'
+
+//@Injectable()
+@Component({
+    selector: 'person-list',
+    templateUrl: `Home/PersonList`,
+    providers: [CourseService], //Dipendency Injection
+})
+export class PersonList {
+    public persons: Person[];
+
+    constructor(private courseService: CourseService) { }
+
+    public getPersons() {
+        this.courseService.getPersons("test").subscribe( data => this.persons = data );
+    }
+}

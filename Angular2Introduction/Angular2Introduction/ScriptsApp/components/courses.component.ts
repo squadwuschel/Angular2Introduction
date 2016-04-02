@@ -1,13 +1,14 @@
 ﻿import {Component} from 'angular2/core';
 import {CourseService} from './../services/course.service';
 import {AutoGrowDirective} from './../directives/autoGrow.directive';
+import {PersonList} from './personList.component';
 
 //@Injectable()
 @Component({
     selector: 'courses',
     templateUrl: `Home/CoursesComponent`,
     providers: [CourseService], //Dipendency Injection
-    directives: [AutoGrowDirective],
+    directives: [AutoGrowDirective, PersonList ],
     inputs: ['name']
 })
 export class CoursesComponent {

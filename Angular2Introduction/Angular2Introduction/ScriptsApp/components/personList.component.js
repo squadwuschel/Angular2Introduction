@@ -10,28 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var course_service_1 = require('./../services/course.service');
-var autoGrow_directive_1 = require('./../directives/autoGrow.directive');
-var personList_component_1 = require('./personList.component');
 //@Injectable()
-var CoursesComponent = (function () {
-    function CoursesComponent(courseService) {
+var PersonList = (function () {
+    function PersonList(courseService) {
         this.courseService = courseService;
-        this.title = "Das ist der Title der Courses Page";
-        this.courses = [];
-        this.eingabeText = "TEST";
-        this.courses = courseService.getCourses();
     }
-    CoursesComponent = __decorate([
+    PersonList.prototype.getPersons = function () {
+        var _this = this;
+        this.courseService.getPersons("test").subscribe(function (data) { return _this.persons = data; });
+    };
+    PersonList = __decorate([
         core_1.Component({
-            selector: 'courses',
-            templateUrl: "Home/CoursesComponent",
+            selector: 'person-list',
+            templateUrl: "Home/PersonList",
             providers: [course_service_1.CourseService],
-            directives: [autoGrow_directive_1.AutoGrowDirective, personList_component_1.PersonList],
-            inputs: ['name']
         }), 
         __metadata('design:paramtypes', [course_service_1.CourseService])
-    ], CoursesComponent);
-    return CoursesComponent;
+    ], PersonList);
+    return PersonList;
 }());
-exports.CoursesComponent = CoursesComponent;
-//# sourceMappingURL=courses.component.js.map
+exports.PersonList = PersonList;
+//# sourceMappingURL=personList.component.js.map
