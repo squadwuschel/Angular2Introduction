@@ -235,6 +235,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\compiledSources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -244,9 +245,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="ScriptsApp\views\boot.ts" />
-    <TypeScriptCompile Include="ScriptsApp\views\course.service.ts" />
-    <TypeScriptCompile Include="ScriptsApp\views\courses.component.ts" />
+    <TypeScriptCompile Include="ScriptsApp\boot.ts" />
+    <TypeScriptCompile Include="ScriptsApp\services\course.service.ts" />
+    <TypeScriptCompile Include="ScriptsApp\components\courses.component.ts" />
     <TypeScriptCompile Include="ScriptsApp\views\mainApp.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -265,12 +266,15 @@
     <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
     <TypeScriptOutFile />
-    <TypeScriptOutDir />
+    <TypeScriptOutDir>
+    </TypeScriptOutDir>
     <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
     <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
-    <TypeScriptMapRoot />
-    <TypeScriptSourceRoot />
+    <TypeScriptMapRoot>
+    </TypeScriptMapRoot>
+    <TypeScriptSourceRoot>
+    </TypeScriptSourceRoot>
     <TypeScriptExperimentalDecorators>True</TypeScriptExperimentalDecorators>
     <TypeScriptEmitDecoratorMetadata>True</TypeScriptEmitDecoratorMetadata>
   </PropertyGroup>

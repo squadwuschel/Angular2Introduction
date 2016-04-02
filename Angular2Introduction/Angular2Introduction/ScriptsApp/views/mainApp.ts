@@ -1,7 +1,7 @@
 ﻿import {Component} from 'angular2/core';
 // mit "./" sucht er im aktuellen Verzeichnis nach der Komponente
-import {CoursesComponent} from './courses.component';
-import {CourseService} from './course.service';
+import {CoursesComponent} from './../components/courses.component';
+import {CourseService} from './../services/course.service';
 
 @Component({
     selector: 'my-app',
@@ -14,4 +14,8 @@ export class AppComponent {
     constructor(courseService: CourseService) {
 
     }
+
+
+
 } 
+

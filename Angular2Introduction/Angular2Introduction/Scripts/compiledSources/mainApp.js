@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 // mit "./" sucht er im aktuellen Verzeichnis nach der Komponente
-var courses_component_1 = require('./../components/courses.component');
-var course_service_1 = require('./../services/course.service');
+var courses_component_1 = require('./courses.component');
+var course_service_1 = require('./course.service');
 var AppComponent = (function () {
     function AppComponent(courseService) {
     }
@@ -27,4 +27,4 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
-//# sourceMappingURL=mainApp.js.map
+//# sourceMappingURL=C:/TFS/GitHub/Angular2Introduction/Angular2Introduction/Angular2Introduction/Scripts/compiledSources/mainApp.js.map

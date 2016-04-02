@@ -19,14 +19,14 @@
     <script>
         System.config({
             packages: {
-                'ScriptsApp/views': {
+                'ScriptsApp': {
                     defaultExtension: 'js'
                 }
             }
         });
     </script>
     <script>
-        System.import('ScriptsApp/views/boot').catch(console.error.bind(console));
+        System.import('ScriptsApp/boot').catch(console.error.bind(console));
     </script>
 
 </head>

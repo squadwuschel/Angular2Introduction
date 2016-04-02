@@ -9,22 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-// mit "./" sucht er im aktuellen Verzeichnis nach der Komponente
-var courses_component_1 = require('./../components/courses.component');
-var course_service_1 = require('./../services/course.service');
-var AppComponent = (function () {
-    function AppComponent(courseService) {
+var course_service_1 = require('./course.service');
+//@Injectable()
+var CoursesComponent = (function () {
+    function CoursesComponent(courseService) {
+        this.courseService = courseService;
+        this.title = "Das ist der Title der Courses Page";
+        this.courses = [];
+        this.courses = courseService.getCourses();
     }
-    AppComponent = __decorate([
+    CoursesComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: 'My First Angular 2 App <courses></courses>',
-            providers: [course_service_1.CourseService],
-            directives: [courses_component_1.CoursesComponent]
+            selector: 'courses',
+            template: "<h2>Courses</h2>\n               {{title}}\n               <ul> <li *ngFor=\"#course of courses\">{{course}}</li></ul>",
+            providers: [course_service_1.CourseService] //Dipendency Injection
         }), 
         __metadata('design:paramtypes', [course_service_1.CourseService])
-    ], AppComponent);
-    return AppComponent;
+    ], CoursesComponent);
+    return CoursesComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=mainApp.js.map
+exports.CoursesComponent = CoursesComponent;
+//# sourceMappingURL=C:/TFS/GitHub/Angular2Introduction/Angular2Introduction/Angular2Introduction/Scripts/compiledSources/courses.component.js.map
