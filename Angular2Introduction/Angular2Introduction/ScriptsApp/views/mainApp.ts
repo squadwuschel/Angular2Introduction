@@ -5,12 +5,11 @@ import {CourseService} from './../services/course.service';
 
 @Component({
     selector: 'my-app',
-    template: 'My First Angular 2 App <courses></courses>',
+    templateUrl: 'Home/MainComponent',
     providers: [CourseService], //Dipendency Injection
     directives: [CoursesComponent]
 })
 export class AppComponent {
-
     constructor(courseService: CourseService) {
 
     }

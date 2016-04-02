@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <base href="@Url.Content("~")" />
     @Styles.Render("~/Content/css")
     <script src="~/Scripts/es6-shim.min.js"></script>
     <script src="~/Scripts/system-polyfills.js"></script>
@@ -12,8 +13,6 @@
     <script src="~/Scripts/system.js"></script>
     <script src="~/Scripts/Rx.js"></script>
     <script src="~/Scripts/angular2.dev.js"></script>
-
-
 
     <!-- 2. Configure SystemJS -->
     <script>

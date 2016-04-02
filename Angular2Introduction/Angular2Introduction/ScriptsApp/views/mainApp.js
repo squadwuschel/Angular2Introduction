@@ -18,7 +18,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: 'My First Angular 2 App <courses></courses>',
+            templateUrl: 'Home/MainComponent',
             providers: [course_service_1.CourseService],
             directives: [courses_component_1.CoursesComponent]
         }), 

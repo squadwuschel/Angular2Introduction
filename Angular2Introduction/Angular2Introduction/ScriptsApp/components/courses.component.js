@@ -17,14 +17,16 @@ var CoursesComponent = (function () {
         this.courseService = courseService;
         this.title = "Das ist der Title der Courses Page";
         this.courses = [];
+        this.eingabeText = "TEST";
         this.courses = courseService.getCourses();
     }
     CoursesComponent = __decorate([
         core_1.Component({
             selector: 'courses',
-            template: "<h2>Courses</h2>\n               {{title}}\n               <input type=\"text\" autoGrow />\n               <ul> <li *ngFor=\"#course of courses\">{{course}}</li></ul>",
+            templateUrl: "Home/CoursesComponent",
             providers: [course_service_1.CourseService],
-            directives: [autoGrow_directive_1.AutoGrowDirective]
+            directives: [autoGrow_directive_1.AutoGrowDirective],
+            inputs: ['name']
         }), 
         __metadata('design:paramtypes', [course_service_1.CourseService])
     ], CoursesComponent);

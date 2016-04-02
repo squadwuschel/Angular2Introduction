@@ -231,6 +231,8 @@
     <Content Include="Scripts\system-polyfills.js.map" />
     <Content Include="Scripts\system-register-only.js.map" />
     <Content Include="Scripts\system.js.map" />
+    <Content Include="Views\Home\MainComponent.cshtml" />
+    <Content Include="Views\Home\CoursesComponent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
