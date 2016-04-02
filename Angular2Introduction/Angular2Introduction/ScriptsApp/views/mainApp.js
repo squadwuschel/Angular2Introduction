@@ -5,29 +5,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require('angular2/core');
 // mit "./" sucht er im aktuellen Verzeichnis nach der Komponente
-//import {CoursesComponent} from './courses.component';
+var courses_component_1 = require('./courses.component');
 var course_service_1 = require('./course.service');
-//@Component({
-//    selector: 'my-app',
-//    template: 'My First Angular 2 App <courses></courses>',
-//    providers: [CourseService], //Dipendency Injection
-//    directives: [CoursesComponent]
-//})
-//export class AppComponent {
-//    constructor(courseService: CourseService) {
-//    }
-//} 
 var AppComponent = (function () {
     function AppComponent(courseService) {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: 'My First Angular 2 App',
+            template: 'My First Angular 2 App <courses></courses>',
             providers: [course_service_1.CourseService],
-        })
+            directives: [courses_component_1.CoursesComponent]
+        }), 
+        __metadata('design:paramtypes', [course_service_1.CourseService])
     ], AppComponent);
     return AppComponent;
 }());

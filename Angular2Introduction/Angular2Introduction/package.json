@@ -9,7 +9,6 @@
     "gulp": "^3.9.1" 
   },
   "devDependencies": {
-    "typescript": "^1.8.9",
     "typings": "^0.7.9"
   }
 }

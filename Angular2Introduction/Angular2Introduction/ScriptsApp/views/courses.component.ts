@@ -13,7 +13,7 @@ export class CoursesComponent {
     public title: string = "Das ist der Title der Courses Page";
     public courses: string[] = [];
 
-    //constructor(private courseService: CourseService) {
-    //    this.courses = courseService.getCourses();
-    //}
+    constructor(private courseService: CourseService) {
+        this.courses = courseService.getCourses();
+    }
 }

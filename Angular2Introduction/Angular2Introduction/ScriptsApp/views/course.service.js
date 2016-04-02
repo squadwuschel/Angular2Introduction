@@ -1,6 +1,4 @@
-//import {Injectable} from 'angular2/core';
 "use strict";
-//@Injectable()
 var CourseService = (function () {
     function CourseService() {
     }
