@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var course_service_1 = require('./../services/course.service');
+var autoGrow_directive_1 = require('./../directives/autoGrow.directive');
 //@Injectable()
 var CoursesComponent = (function () {
     function CoursesComponent(courseService) {
@@ -21,8 +22,9 @@ var CoursesComponent = (function () {
     CoursesComponent = __decorate([
         core_1.Component({
             selector: 'courses',
-            template: "<h2>Courses</h2>\n               {{title}}\n               <ul> <li *ngFor=\"#course of courses\">{{course}}</li></ul>",
-            providers: [course_service_1.CourseService] //Dipendency Injection
+            template: "<h2>Courses</h2>\n               {{title}}\n               <input type=\"text\" autoGrow />\n               <ul> <li *ngFor=\"#course of courses\">{{course}}</li></ul>",
+            providers: [course_service_1.CourseService],
+            directives: [autoGrow_directive_1.AutoGrowDirective]
         }), 
         __metadata('design:paramtypes', [course_service_1.CourseService])
     ], CoursesComponent);

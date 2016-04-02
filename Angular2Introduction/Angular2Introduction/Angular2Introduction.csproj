@@ -246,6 +246,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsApp\boot.ts" />
+    <TypeScriptCompile Include="ScriptsApp\directives\autoGrow.directive.ts" />
     <TypeScriptCompile Include="ScriptsApp\services\course.service.ts" />
     <TypeScriptCompile Include="ScriptsApp\components\courses.component.ts" />
     <TypeScriptCompile Include="ScriptsApp\views\mainApp.ts" />
