@@ -14,6 +14,7 @@ export class PersonList {
     constructor(private courseService: CourseService) { }
 
     public getPersons() {
+        //Unseren Service aufrufen und die Daten abrufen
         this.courseService.getPersons("test").subscribe( data => this.persons = data );
     }
 }

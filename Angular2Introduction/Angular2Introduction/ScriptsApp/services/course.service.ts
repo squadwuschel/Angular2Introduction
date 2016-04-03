@@ -1,5 +1,6 @@
 ﻿import {Injectable} from 'angular2/core';
 import {Http, Response} from 'angular2/http';
+import {Observable} from 'rxjs/observable';
 import {Person} from './../customDataClasses/Person'
 import 'rxjs/add/operator/map'; //Notwendig damit wird weiter unten auf den map Operator zugreifen können
 
@@ -12,8 +13,7 @@ export class CourseService {
         return courses;
     }
 
-    getPersons(name:string)  {
-       // return this._http.get(`Home/GetPersons?name=${name}`).subscribe((res: Response) => { return <Person>res.json() });
+    getPersons(name: string) : Observable<Person[]>  {
         return this._http.get(`Home/GetPersons?name=${name}`).map((res : Response) => res.json());
     }
 }

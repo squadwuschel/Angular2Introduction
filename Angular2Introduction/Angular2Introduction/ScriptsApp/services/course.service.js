@@ -20,7 +20,6 @@ var CourseService = (function () {
         return courses;
     };
     CourseService.prototype.getPersons = function (name) {
-        // return this._http.get(`Home/GetPersons?name=${name}`).subscribe((res: Response) => { return <Person>res.json() });
         return this._http.get("Home/GetPersons?name=" + name).map(function (res) { return res.json(); });
     };
     CourseService = __decorate([
