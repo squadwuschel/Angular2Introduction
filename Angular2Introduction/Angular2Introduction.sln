@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular2Introduction", "Angular2Introduction\Angular2Introduction.csproj", "{6D7CEEAF-6FBB-4450-9785-3B194AD56AAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular2FullApp", "..\Angular2FullApp\Angular2FullApp.csproj", "{ED0D4083-A7BA-4FF6-824B-DD38A14A9FF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6D7CEEAF-6FBB-4450-9785-3B194AD56AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D7CEEAF-6FBB-4450-9785-3B194AD56AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D7CEEAF-6FBB-4450-9785-3B194AD56AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED0D4083-A7BA-4FF6-824B-DD38A14A9FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED0D4083-A7BA-4FF6-824B-DD38A14A9FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED0D4083-A7BA-4FF6-824B-DD38A14A9FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED0D4083-A7BA-4FF6-824B-DD38A14A9FF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
