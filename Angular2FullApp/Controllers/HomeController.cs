@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Angular2FullApp.Controllers
 {
@@ -12,6 +8,11 @@ namespace Angular2FullApp.Controllers
         {
             return View();
         }
-  
+
+        public ActionResult MainApp()
+        {
+            return View();
+        }
+
     }
 }

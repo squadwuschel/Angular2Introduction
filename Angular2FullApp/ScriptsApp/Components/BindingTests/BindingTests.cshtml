@@ -1,0 +1,35 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>{{headlineText}}</h2>
+    </div>
+    <div class="col-md-12">
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 form-horizontal">
+        <div class="form-group" [class.has-success]="isValide" [class.has-warning]="!isValide">
+            <label class="col-md-4 control-label">Gültigkeit</label>
+            <div class="col-md-6">
+                <input type="text" [(ngModel)]="isValide" disabled="true" class="form-control" placeholder="Email">
+            </div>
+            <div class="col-md-2">
+                <a (click)="toggleSuccess($event)" class="btn btn-default" [style.backgroundColor]="isValide ? 'green' : 'red'">Success</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 form-horizontal">
+        <div class="form-group">
+            <label class="col-md-4 control-label">One Way Binding</label>
+            <div class="col-md-5">
+                <input type="text" [value]="oneWayBinding" class="form-control">
+            </div>
+            <label class="col-md-3 control-label"> Wert: {{oneWayBinding}}</label>
+        </div>
+    </div>
+</div>

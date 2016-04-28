@@ -9,17 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var MainApp = (function () {
-    function MainApp() {
+var BindingTests = (function () {
+    function BindingTests() {
+        this.isValide = false;
+        this.headlineText = "Binding Tests";
+        this.oneWayBinding = "One Way";
+        //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
     }
-    MainApp = __decorate([
+    BindingTests.prototype.toggleSuccess = function ($event) {
+        $event.preventDefault();
+        console.log($event);
+        this.isValide = !this.isValide;
+    };
+    BindingTests = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: '<h2>My First Angular 2 App</h2>',
+            selector: 'binding-tests',
+            templateUrl: "Templates/BindingTests",
+            providers: [],
+            directives: [],
         }), 
         __metadata('design:paramtypes', [])
-    ], MainApp);
-    return MainApp;
+    ], BindingTests);
+    return BindingTests;
 }());
-exports.MainApp = MainApp;
-//# sourceMappingURL=mainApp.js.map
+exports.BindingTests = BindingTests;
+//# sourceMappingURL=bindingTests.component.js.map

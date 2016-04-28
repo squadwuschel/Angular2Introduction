@@ -136,6 +136,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\TemplatesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -160,6 +162,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="gulpfile.js" />
     <Content Include="package.json" />
+    <Content Include="ScriptsApp\Components\BindingTests\BindingTests.cshtml" />
+    <Content Include="ScriptsApp\Components\Favorite\Favorite.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\angular2-polyfills.js" />
     <Content Include="Scripts\angular2.dev.js" />
@@ -193,10 +197,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\MainApp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="ScriptsApp\Directives\" />
+    <Folder Include="ScriptsApp\TsClasses\" />
+    <Folder Include="Views\Person\" />
+    <Folder Include="Views\Templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -204,7 +213,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsApp\boot.ts" />
-    <TypeScriptCompile Include="ScriptsApp\Views\mainApp.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\BindingTests\bindingTests.component.ts" />
+    <TypeScriptCompile Include="ScriptsApp\mainApp.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

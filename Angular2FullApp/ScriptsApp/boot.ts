@@ -2,6 +2,6 @@
 //Wenn ES5 Target angegeben wurde!
 ///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
 import {bootstrap} from 'angular2/platform/browser'
-import {MainApp} from './Views/mainApp'
+import {MainApp} from './mainApp'
 
 bootstrap(MainApp);
