@@ -1,14 +1,16 @@
 ﻿import {Component} from 'angular2/core';
+import {Favorite} from './../Favorite/favorite.component';
 
 
 @Component({
     selector: 'binding-tests',
     templateUrl: `Templates/BindingTests`,
     providers: [], //Dipendency Injection
-    directives: [], //die verwendeten Direktiven
+    directives: [Favorite], //die verwendeten Direktiven
 })
 export class BindingTests {
-    public isValide: boolean= false;
+    public isValide: boolean = false;
+    public isFavoriteValue : boolean= false;
     public headlineText: string = "Binding Tests";
     public oneWayBinding: string = "One Way";
 
@@ -20,5 +22,9 @@ export class BindingTests {
         $event.preventDefault();
         console.log($event);
         this.isValide = !this.isValide;
+    }
+
+    public toggleFavorite() {
+        this.isFavoriteValue = !this.isFavoriteValue;
     }
 }

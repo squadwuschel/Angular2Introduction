@@ -9,33 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var favorite_component_1 = require('./../Favorite/favorite.component');
-var BindingTests = (function () {
-    function BindingTests() {
-        this.isValide = false;
-        this.isFavoriteValue = false;
-        this.headlineText = "Binding Tests";
-        this.oneWayBinding = "One Way";
+/* Usage:
+* <favorite [isFavorite]="true"></favorite>
+*/
+var Favorite = (function () {
+    function Favorite() {
+        //Mit dem @Input Dekorator gibt man an das es sich um ein Property handelt mit dem 
+        //Werte an die Komponente übergeben werden können.
+        this.isFavorite = false;
         //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
     }
-    BindingTests.prototype.toggleSuccess = function ($event) {
-        $event.preventDefault();
-        console.log($event);
-        this.isValide = !this.isValide;
+    Favorite.prototype.toggleFavorite = function () {
+        this.isFavorite = !this.isFavorite;
     };
-    BindingTests.prototype.toggleFavorite = function () {
-        this.isFavoriteValue = !this.isFavoriteValue;
-    };
-    BindingTests = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], Favorite.prototype, "isFavorite", void 0);
+    Favorite = __decorate([
         core_1.Component({
-            selector: 'binding-tests',
-            templateUrl: "Templates/BindingTests",
+            selector: 'favorite',
+            templateUrl: "Templates/Favorite",
             providers: [],
-            directives: [favorite_component_1.Favorite],
+            directives: [],
         }), 
         __metadata('design:paramtypes', [])
-    ], BindingTests);
-    return BindingTests;
+    ], Favorite);
+    return Favorite;
 }());
-exports.BindingTests = BindingTests;
-//# sourceMappingURL=bindingTests.component.js.map
+exports.Favorite = Favorite;
+//# sourceMappingURL=favorite.component.js.map

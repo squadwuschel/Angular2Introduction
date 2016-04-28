@@ -148,7 +148,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -164,6 +167,11 @@
     <Content Include="package.json" />
     <Content Include="ScriptsApp\Components\BindingTests\BindingTests.cshtml" />
     <Content Include="ScriptsApp\Components\Favorite\Favorite.cshtml" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\angular2-polyfills.js" />
     <Content Include="Scripts\angular2.dev.js" />
@@ -214,6 +222,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsApp\boot.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\BindingTests\bindingTests.component.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\Favorite\favorite.component.ts" />
     <TypeScriptCompile Include="ScriptsApp\mainApp.ts" />
   </ItemGroup>
   <ItemGroup>

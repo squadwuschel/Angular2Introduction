@@ -2,6 +2,7 @@
 
 import {BindingTests} from './Components/BindingTests/bindingTests.component';
 
+
 @Component({
     selector: 'my-app',
     templateUrl: 'Home/MainApp',
