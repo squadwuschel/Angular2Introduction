@@ -39,12 +39,53 @@
             <label class="col-md-4 control-label">Favorite</label>
             <div class="col-md-5">
                 <a class="btn btn-default">
-                    <favorite [isFavorite]="isFavoriteValue"></favorite>
+                    <favorite [isFavorite]="isFavoriteValue" (changed)="onFavoriteChange($event)"></favorite>
                 </a>
+                @* Der Stern wird nicht vom Style beeinflusst *@
+                <a class="btn btn-default"><i class="fa fa-fw fa-star"></i></a>
             </div>
             <div class="col-md-3">
-                <a (click)="toggleFavorite()" class="btn btn-default">Toggle Favorite</a>
+                <a (click)="toggleFavorite()" class="btn" [ngClass]="{'btn-default' :isFavoriteValue, 'btn-primary': !isFavoriteValue}">Toggle Favorite</a>
             </div>
+        </div>
+    </div>
+    <div class="col-md-6 form-horizontal">
+        <div class="form-group">
+            <label class="col-md-4 control-label">Like Button</label>
+            <label class="col-md-2 control-label"><like-button [likes]="anzahlLikes"></like-button></label>
+            @* Hier handelt es sich aktuell noch um ein OneWay DataBinding die lokale Zahl ändert sich nicht! *@
+            <label class="col-md-4 control-label"> Lokal: {{anzahlLikes}}</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 form-horizontal">
+        <div class="form-group">
+            <label class="col-md-4 control-label">*ngIf</label>
+            <div class="col-md-3">
+                <a (click)="toggleWithNgIf()" class="btn btn-default">Toggle with *ngIf</a>
+            </div>
+            <label class="col-md-5 control-label">show or hide *ngIf : <span *ngIf="isNgIf">{{isNgIf}}</span></label>
+        </div>
+    </div>
+    <div class="col-md-6 form-horizontal">
+        <div class="form-group">
+            @* Hidden ist wie ng-Hide in Angular 1, denn die DOM Elemente werden nur ausgeblendet aber weiterhin gerendert. *@
+            <label class="col-md-4 control-label">Hidden</label>
+            <div class="col-md-3">
+                <a (click)="toggleWithHidden()" class="btn btn-default">Toggle with Hidden</a>
+            </div>
+            <label class="col-md-5 control-label">show or hide hidden : <span [hidden]="isHidden">{{isHidden}}</span> </label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 form-horizontal">
+        <div class="form-group">
+            <label class="col-md-4 control-label">*ngFor With Index</label>
+            <label class="col-md-8 control-label">
+                <span *ngFor="#course of courses, #i = index">{{course}} {{'Idx:' + i + ', '}}</span>
+            </label>
         </div>
     </div>
 </div>

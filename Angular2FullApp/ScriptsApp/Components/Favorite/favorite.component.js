@@ -10,26 +10,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 /* Usage:
-* <favorite [isFavorite]="true"></favorite>
+* <favorite [isFavorite]="true" (changed)="onFavoriteChange()"></favorite>
 */
 var Favorite = (function () {
     function Favorite() {
         //Mit dem @Input Dekorator gibt man an das es sich um ein Property handelt mit dem 
         //Werte an die Komponente übergeben werden können.
         this.isFavorite = false;
+        //nach aussen leiten, das etwas passiert ist.
+        this.changed = new core_1.EventEmitter();
         //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
     }
     Favorite.prototype.toggleFavorite = function () {
         this.isFavorite = !this.isFavorite;
+        //Setzen das etwas passiert ist.
+        this.changed.emit({ newValue: this.isFavorite });
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Boolean)
     ], Favorite.prototype, "isFavorite", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], Favorite.prototype, "changed", void 0);
     Favorite = __decorate([
         core_1.Component({
             selector: 'favorite',
             templateUrl: "Templates/Favorite",
+            //Die Styles werden nur dem Template zugeordnet und beeinflussen nicht die Styles außerhalt des Templates.
+            styles: ["\n            .fa-star { color: orange; }\n            "],
             providers: [],
             directives: [],
         }), 

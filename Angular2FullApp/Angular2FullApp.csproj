@@ -212,8 +212,6 @@
     <Folder Include="Models\" />
     <Folder Include="ScriptsApp\Directives\" />
     <Folder Include="ScriptsApp\TsClasses\" />
-    <Folder Include="Views\Person\" />
-    <Folder Include="Views\Templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -223,6 +221,7 @@
     <TypeScriptCompile Include="ScriptsApp\boot.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\BindingTests\bindingTests.component.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Favorite\favorite.component.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\LikeButton\likeButton.component.ts" />
     <TypeScriptCompile Include="ScriptsApp\mainApp.ts" />
   </ItemGroup>
   <ItemGroup>
