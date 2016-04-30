@@ -9,20 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var bindingTests_component_1 = require('./Components/BindingTests/bindingTests.component');
-var formularTests_component_1 = require('./Components/FormularTests/formularTests.component');
-var MainApp = (function () {
-    function MainApp() {
+var FormularTests = (function () {
+    function FormularTests() {
+        this.name = "TEST";
+        //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
     }
-    MainApp = __decorate([
+    FormularTests = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'Home/MainApp',
-            directives: [bindingTests_component_1.BindingTests, formularTests_component_1.FormularTests]
+            selector: 'formular-tests',
+            templateUrl: "Templates/FormularTests",
+            providers: [],
+            directives: [],
         }), 
         __metadata('design:paramtypes', [])
-    ], MainApp);
-    return MainApp;
+    ], FormularTests);
+    return FormularTests;
 }());
-exports.MainApp = MainApp;
-//# sourceMappingURL=mainApp.js.map
+exports.FormularTests = FormularTests;
+//# sourceMappingURL=formularTests.component.js.map

@@ -12,13 +12,13 @@ var core_1 = require('angular2/core');
 /* Verwendung
 *  <like-button [likes]="anzahlLikes"></like-button>
 */
-var LikeButton = (function () {
-    function LikeButton() {
+var LikeButtonComponent = (function () {
+    function LikeButtonComponent() {
         this.likes = 0;
         this.wasLiked = false;
         //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
     }
-    LikeButton.prototype.toggleLike = function () {
+    LikeButtonComponent.prototype.toggleLike = function () {
         if (this.wasLiked) {
             if (this.likes > 0) {
                 this.likes--;
@@ -32,8 +32,8 @@ var LikeButton = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Number)
-    ], LikeButton.prototype, "likes", void 0);
-    LikeButton = __decorate([
+    ], LikeButtonComponent.prototype, "likes", void 0);
+    LikeButtonComponent = __decorate([
         core_1.Component({
             selector: 'like-button',
             template: "<i class=\"fa fa-heart\" [ngClass]=\"{'pink' : wasLiked, 'gray' : !wasLiked }\" (click)=\"toggleLike()\"></i> <span>{{likes}}</span>",
@@ -41,8 +41,8 @@ var LikeButton = (function () {
             styles: ["\n         i { cursor: pointer; }\n         .fa-heart.pink { color: deeppink; }\n         .fa-heart.gray { color: #ccc }\n    "]
         }), 
         __metadata('design:paramtypes', [])
-    ], LikeButton);
-    return LikeButton;
+    ], LikeButtonComponent);
+    return LikeButtonComponent;
 }());
-exports.LikeButton = LikeButton;
+exports.LikeButtonComponent = LikeButtonComponent;
 //# sourceMappingURL=likeButton.component.js.map

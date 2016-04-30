@@ -13,7 +13,7 @@
          .fa-heart.gray { color: #ccc }
     `]
 })
-export class LikeButton {
+export class LikeButtonComponent {
     @Input() public likes: number = 0;
     public wasLiked: boolean = false;
 

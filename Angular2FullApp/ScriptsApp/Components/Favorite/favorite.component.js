@@ -12,8 +12,8 @@ var core_1 = require('angular2/core');
 /* Usage:
 * <favorite [isFavorite]="true" (changed)="onFavoriteChange()"></favorite>
 */
-var Favorite = (function () {
-    function Favorite() {
+var FavoriteComponent = (function () {
+    function FavoriteComponent() {
         //Mit dem @Input Dekorator gibt man an das es sich um ein Property handelt mit dem 
         //Werte an die Komponente übergeben werden können.
         this.isFavorite = false;
@@ -21,7 +21,7 @@ var Favorite = (function () {
         this.changed = new core_1.EventEmitter();
         //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
     }
-    Favorite.prototype.toggleFavorite = function () {
+    FavoriteComponent.prototype.toggleFavorite = function () {
         this.isFavorite = !this.isFavorite;
         //Setzen das etwas passiert ist.
         this.changed.emit({ newValue: this.isFavorite });
@@ -29,23 +29,23 @@ var Favorite = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Boolean)
-    ], Favorite.prototype, "isFavorite", void 0);
+    ], FavoriteComponent.prototype, "isFavorite", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], Favorite.prototype, "changed", void 0);
-    Favorite = __decorate([
+    ], FavoriteComponent.prototype, "changed", void 0);
+    FavoriteComponent = __decorate([
         core_1.Component({
             selector: 'favorite',
-            templateUrl: "Templates/Favorite",
+            templateUrl: "Templates/FavoriteComponent",
             //Die Styles werden nur dem Template zugeordnet und beeinflussen nicht die Styles außerhalt des Templates.
             styles: ["\n            .fa-star { color: orange; }\n            "],
             providers: [],
             directives: [],
         }), 
         __metadata('design:paramtypes', [])
-    ], Favorite);
-    return Favorite;
+    ], FavoriteComponent);
+    return FavoriteComponent;
 }());
-exports.Favorite = Favorite;
+exports.FavoriteComponent = FavoriteComponent;
 //# sourceMappingURL=favorite.component.js.map

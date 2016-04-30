@@ -1,0 +1,24 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+
+<div class="panel panel-default">
+    <div (click)="isOpen = !isOpen" class="panel-heading">
+        <div class="row">
+            <div class="col-md-11">
+                <h4>{{heading}}</h4>
+            </div>
+            <div class="col-md-1">
+                <a class="btn btn-default">
+                    <i [ngClass]="{'fa-angle-down': isOpen, 'fa-angle-up': !isOpen}" class="fa fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isOpen" class="panel-collapse">
+        <div class="panel-body">
+            <ng-content select=".accordion-body"></ng-content>
+        </div>
+    </div>
+</div>

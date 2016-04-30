@@ -9,20 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var bindingTests_component_1 = require('./Components/BindingTests/bindingTests.component');
-var formularTests_component_1 = require('./Components/FormularTests/formularTests.component');
-var MainApp = (function () {
-    function MainApp() {
+var SummaryPipe = (function () {
+    function SummaryPipe() {
     }
-    MainApp = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'Home/MainApp',
-            directives: [bindingTests_component_1.BindingTests, formularTests_component_1.FormularTests]
-        }), 
+    SummaryPipe.prototype.transform = function (value, args) {
+    };
+    SummaryPipe = __decorate([
+        core_1.Pipe({ name: 'summary' }), 
         __metadata('design:paramtypes', [])
-    ], MainApp);
-    return MainApp;
+    ], SummaryPipe);
+    return SummaryPipe;
 }());
-exports.MainApp = MainApp;
-//# sourceMappingURL=mainApp.js.map
+exports.SummaryPipe = SummaryPipe;
+//# sourceMappingURL=summary.pipe.js.map

@@ -5,7 +5,7 @@
 */
 @Component({
     selector: 'favorite',
-    templateUrl: `Templates/Favorite`,
+    templateUrl: `Templates/FavoriteComponent`,
     //Die Styles werden nur dem Template zugeordnet und beeinflussen nicht die Styles außerhalt des Templates.
     styles: [`
             .fa-star { color: orange; }
@@ -13,7 +13,7 @@
     providers: [], //Dipendency Injection
     directives: [], //die verwendeten Direktiven
 })
-export class Favorite {
+export class FavoriteComponent {
     //Mit dem @Input Dekorator gibt man an das es sich um ein Property handelt mit dem 
     //Werte an die Komponente übergeben werden können.
     @Input() public isFavorite: boolean = false;

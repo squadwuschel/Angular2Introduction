@@ -16,7 +16,17 @@ namespace Angular2FullApp.Controllers
 
         public PartialViewResult Favorite()
         {
-            return PartialView("~/ScriptsApp/Components/Favorite/Favorite.cshtml");
+            return PartialView("~/ScriptsApp/Components/Favorite/FavoriteComponent.cshtml");
+        }
+
+        public PartialViewResult Accordion()
+        {
+            return PartialView("~/ScriptsApp/Components/Accordion/AccordionComponent.cshtml");
+        }
+
+        public PartialViewResult FormularTests()
+        {
+            return PartialView("~/ScriptsApp/Components/FormularTests/FormularTests.cshtml");
         }
     }
 }

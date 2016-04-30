@@ -1,12 +1,15 @@
 ﻿import {Component} from 'angular2/core';
-import {Favorite} from './../Favorite/favorite.component';
-import {LikeButton} from './../LikeButton/likeButton.component';
+import {FavoriteComponent} from './../Favorite/favoriteComponent';
+import {LikeButtonComponent} from './../LikeButton/likeButtonComponent';
+import {AccordionComponent} from './../Accordion/accordionComponent';
+import {TruncatePipe} from './truncatePipe';
 
 @Component({
     selector: 'binding-tests',
     templateUrl: `Templates/BindingTests`,
     providers: [], //Dipendency Injection
-    directives: [Favorite, LikeButton], //die verwendeten Direktiven
+    directives: [FavoriteComponent, LikeButtonComponent, AccordionComponent], //die verwendeten Direktiven
+    pipes: [TruncatePipe],  //Pipes (Angular 1.x Filter)
 })
 export class BindingTests {
     public isValide: boolean = false;
@@ -17,6 +20,9 @@ export class BindingTests {
     public isNgIf: boolean = true;
     public isHidden : boolean = false;
     public courses : string[] = ["Course 1", "Course 2", "Courde 3"];
+    public elvisOperatorTest  = { name : "Test" };
+
+    public loremText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
 
     constructor() {
         //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
@@ -33,7 +39,7 @@ export class BindingTests {
     }
 
     public onFavoriteChange($event) {
-        console.log("Favorite Changed value:");
+        console.log("FavoriteComponent Changed value:");
         console.log($event);
     }
 

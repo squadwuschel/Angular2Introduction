@@ -172,6 +172,8 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="ScriptsApp\Components\Accordion\Accordion.cshtml" />
+    <Content Include="ScriptsApp\Components\FormularTests\FormularTests.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\angular2-polyfills.js" />
     <Content Include="Scripts\angular2.dev.js" />
@@ -219,9 +221,12 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsApp\boot.ts" />
-    <TypeScriptCompile Include="ScriptsApp\Components\BindingTests\bindingTests.component.ts" />
-    <TypeScriptCompile Include="ScriptsApp\Components\Favorite\favorite.component.ts" />
-    <TypeScriptCompile Include="ScriptsApp\Components\LikeButton\likeButton.component.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\Accordion\accordionComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\BindingTests\bindingTestsComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\BindingTests\truncatePipe.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\Favorite\favoriteComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\FormularTests\formularTestsComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\LikeButton\likeButtonComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\mainApp.ts" />
   </ItemGroup>
   <ItemGroup>

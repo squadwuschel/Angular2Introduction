@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var favorite_component_1 = require('./../Favorite/favorite.component');
 var likeButton_component_1 = require('./../LikeButton/likeButton.component');
+var accordion_component_1 = require('./../Accordion/accordion.component');
+var truncate_pipe_1 = require('./truncate.pipe');
 var BindingTests = (function () {
     function BindingTests() {
         this.isValide = false;
@@ -21,6 +23,8 @@ var BindingTests = (function () {
         this.isNgIf = true;
         this.isHidden = false;
         this.courses = ["Course 1", "Course 2", "Courde 3"];
+        this.elvisOperatorTest = { name: "Test" };
+        this.loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
     }
     BindingTests.prototype.toggleSuccess = function ($event) {
@@ -32,7 +36,7 @@ var BindingTests = (function () {
         this.isFavoriteValue = !this.isFavoriteValue;
     };
     BindingTests.prototype.onFavoriteChange = function ($event) {
-        console.log("Favorite Changed value:");
+        console.log("FavoriteComponent Changed value:");
         console.log($event);
     };
     BindingTests.prototype.toggleWithNgIf = function () {
@@ -46,7 +50,8 @@ var BindingTests = (function () {
             selector: 'binding-tests',
             templateUrl: "Templates/BindingTests",
             providers: [],
-            directives: [favorite_component_1.Favorite, likeButton_component_1.LikeButton],
+            directives: [favorite_component_1.FavoriteComponent, likeButton_component_1.LikeButtonComponent, accordion_component_1.AccordionComponent],
+            pipes: [truncate_pipe_1.TruncatePipe],
         }), 
         __metadata('design:paramtypes', [])
     ], BindingTests);

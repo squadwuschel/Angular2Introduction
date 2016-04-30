@@ -36,16 +36,16 @@
 <div class="row">
     <div class="col-md-6 form-horizontal">
         <div class="form-group">
-            <label class="col-md-4 control-label">Favorite</label>
+            <label class="col-md-4 control-label">FavoriteComponent</label>
             <div class="col-md-5">
                 <a class="btn btn-default">
-                    <favorite [isFavorite]="isFavoriteValue" (changed)="onFavoriteChange($event)"></favorite>
+                    <favorite [isFavoriteComponent]="isFavoriteComponentValue" (changed)="onFavoriteComponentChange($event)"></favorite>
                 </a>
                 @* Der Stern wird nicht vom Style beeinflusst *@
                 <a class="btn btn-default"><i class="fa fa-fw fa-star"></i></a>
             </div>
             <div class="col-md-3">
-                <a (click)="toggleFavorite()" class="btn" [ngClass]="{'btn-default' :isFavoriteValue, 'btn-primary': !isFavoriteValue}">Toggle Favorite</a>
+                <a (click)="toggleFavoriteComponent()" class="btn" [ngClass]="{'btn-default' :isFavoriteComponentValue, 'btn-primary': !isFavoriteComponentValue}">Toggle FavoriteComponent</a>
             </div>
         </div>
     </div>
@@ -87,5 +87,34 @@
                 <span *ngFor="#course of courses, #i = index">{{course}} {{'Idx:' + i + ', '}}</span>
             </label>
         </div>
+    </div>
+    <div class="col-md-6 form-horizontal">
+        <div class="form-group">
+            <label class="col-md-4 control-label">Elvis Operator "?"</label>
+            <label class="col-md-5 control-label">
+                @* Mit dem Elivs Operator "?" kann man direkt in Ausdrücken prüfen ob ein Wert undefined ist und dieser
+                    wird dann nicht von Angular ausgewertet und es wird kein Fehler angezeigt! *@
+                Name: {{elvisOperatorTest.name}} and elivs Test {{elvisOperatorTest?.person?.name}}
+            </label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <dl class="dl-horizontal">
+        <dt>Voller Text</dt>
+        <dd>{{loremText}}</dd>
+        <dt>Truncated Text [Pipe]</dt>
+        <dd>{{loremText | truncate:50}}</dd>
+    </dl>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h3>Accordeon Example</h3>
+    </div>
+    <div class="col-md-12">
+        <accordion heading="Das ist der neue Titel">
+            <div class="accordion-body">Das ist der neue Kontent</div>
+            <div class="accordion-body">Das ist der neue Kontent 2</div>
+        </accordion>
     </div>
 </div>
