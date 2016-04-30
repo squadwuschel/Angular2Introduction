@@ -6,14 +6,40 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2>Formular Tests</h2>
+        <h2>Formular Tests - implicitly (Angular erstellt die Validation für uns)</h2>
     </div>
     <div class="col-md-12">
         <hr/>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12">
-
+<form>
+    <div class="row">
+        <div class="col-md-12 form-horizontal">
+            <div class="form-group">
+                <label for="firstName" class="col-md-2 control-label">First Name</label>
+                <div class="col-md-10">
+                    <input type="text" id="firstName" class="form-control input-sm">
+                    @*<label class="control-label text-danger small">
+                        Es muss ein Vorname eingegeben werden
+                    </label>*@
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 form-horizontal">
+            <div class="form-group">
+                <label for="comment" class="col-md-2 control-label">Comment</label>
+                <div class="col-md-10">
+                    <textarea type="text" rows="7" id="comment" class="form-control"></textarea>
+                    @*<label class="control-label text-danger small">
+                        Es muss ein Kommentar eingegeben werden
+                    </label>*@
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-10">
+            <button class="btn btn-primary btn-block" type="submit">Submit</button>
+        </div>
+    </div>
+</form>

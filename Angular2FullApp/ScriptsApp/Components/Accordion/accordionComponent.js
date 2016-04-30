@@ -9,20 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var bindingTestsComponent_1 = require('./Components/BindingTests/bindingTestsComponent');
-var formularTestsComponent_1 = require('./Components/FormularTests/formularTestsComponent');
-var MainApp = (function () {
-    function MainApp() {
+/* Verwendung
+*  <accordion heading="Titel"><div class="accordion-body">Body Content</div> </accordion>
+*/
+var AccordionComponent = (function () {
+    function AccordionComponent() {
+        this.isOpen = true;
+        this.heading = "";
+        //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
     }
-    MainApp = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], AccordionComponent.prototype, "heading", void 0);
+    AccordionComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'Home/MainApp',
-            directives: [bindingTestsComponent_1.BindingTests, formularTestsComponent_1.FormularTests]
+            selector: 'accordion',
+            templateUrl: "Templates/Accordion",
         }), 
         __metadata('design:paramtypes', [])
-    ], MainApp);
-    return MainApp;
+    ], AccordionComponent);
+    return AccordionComponent;
 }());
-exports.MainApp = MainApp;
-//# sourceMappingURL=mainApp.js.map
+exports.AccordionComponent = AccordionComponent;
+//# sourceMappingURL=accordionComponent.js.map

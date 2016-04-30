@@ -5,7 +5,7 @@
 */
 @Component({
     selector: 'accordion',
-    templateUrl: `Templates/AccordionComponent`,
+    templateUrl: `Templates/Accordion`,
 })
 export class AccordionComponent {
     public isOpen: boolean = true;

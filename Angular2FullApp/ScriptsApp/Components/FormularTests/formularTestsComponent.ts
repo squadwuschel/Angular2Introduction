@@ -8,7 +8,6 @@
     directives: [], //die verwendeten Direktiven
 })
 export class FormularTests {
-    public name: string = "TEST";
 
     constructor() {
         //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden

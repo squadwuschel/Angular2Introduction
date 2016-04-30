@@ -5,7 +5,7 @@
 */
 @Component({
     selector: 'favorite',
-    templateUrl: `Templates/FavoriteComponent`,
+    templateUrl: `Templates/Favorite`,
     //Die Styles werden nur dem Template zugeordnet und beeinflussen nicht die Styles außerhalt des Templates.
     styles: [`
             .fa-star { color: orange; }

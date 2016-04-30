@@ -39,7 +39,7 @@
             <label class="col-md-4 control-label">FavoriteComponent</label>
             <div class="col-md-5">
                 <a class="btn btn-default">
-                    <favorite [isFavoriteComponent]="isFavoriteComponentValue" (changed)="onFavoriteComponentChange($event)"></favorite>
+                    <favorite [isFavorite]="isFavoriteComponentValue" (changed)="onFavoriteComponentChange($event)"></favorite>
                 </a>
                 @* Der Stern wird nicht vom Style beeinflusst *@
                 <a class="btn btn-default"><i class="fa fa-fw fa-star"></i></a>
