@@ -3,6 +3,7 @@
 import {BindingTests} from './Components/BindingTests/bindingTestsComponent';
 import {FormularTestsComponent} from './Components/FormularTests/formularTestsComponent';
 import {FormularSignupComponent} from './Components/FormularSignup/formularSignupComponent';
+import {ObservableComponent} from './Components/Observables/observablesComponent';
 
 
 @Component({

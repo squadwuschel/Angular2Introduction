@@ -1,0 +1,1 @@
+{"version":3,"file":"observablesComponent.js","sourceRoot":"","sources":["observablesComponent.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAAwB,eAAe,CAAC,CAAA;AAYxC;IAEI;QACI,4GAA4G;IAChH,CAAC;IAZL;QAAC,gBAAS,CAAC;YACP,QAAQ,EAAE,WAAW;YACrB,QAAQ,EAAE,4IAES;YACnB,SAAS,EAAE,EAAE;YACb,UAAU,EAAE,EAAE;SACjB,CAAC;;2BAAA;IAMF,0BAAC;AAAD,CAAC,AALD,IAKC;AALY,2BAAmB,sBAK/B,CAAA"}

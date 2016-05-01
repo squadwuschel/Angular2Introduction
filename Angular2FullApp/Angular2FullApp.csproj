@@ -230,6 +230,7 @@
     <TypeScriptCompile Include="ScriptsApp\Components\FormularTests\formularTestsComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\FormularSignup\usernameValidators.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\LikeButton\likeButtonComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\Observables\observablesComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\mainApp.ts" />
   </ItemGroup>
   <ItemGroup>
