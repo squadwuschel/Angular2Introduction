@@ -1,14 +1,14 @@
 ﻿import {Component} from 'angular2/core';
 
 import {BindingTests} from './Components/BindingTests/bindingTestsComponent';
-import {FormularTests} from './Components/FormularTests/formularTestsComponent';
-
+import {FormularTestsComponent} from './Components/FormularTests/formularTestsComponent';
+import {FormularSignupComponent} from './Components/FormularSignup/formularSignupComponent';
 
 
 @Component({
     selector: 'my-app',
     templateUrl: 'Home/MainApp',
-    directives: [BindingTests, FormularTests]
+    directives: [BindingTests, FormularTestsComponent, FormularSignupComponent]
 })
 export class MainApp {
 

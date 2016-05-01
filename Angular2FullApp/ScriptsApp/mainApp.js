@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var bindingTestsComponent_1 = require('./Components/BindingTests/bindingTestsComponent');
 var formularTestsComponent_1 = require('./Components/FormularTests/formularTestsComponent');
+var formularSignupComponent_1 = require('./Components/FormularSignup/formularSignupComponent');
 var MainApp = (function () {
     function MainApp() {
     }
@@ -18,7 +19,7 @@ var MainApp = (function () {
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'Home/MainApp',
-            directives: [bindingTestsComponent_1.BindingTests, formularTestsComponent_1.FormularTests]
+            directives: [bindingTestsComponent_1.BindingTests, formularTestsComponent_1.FormularTestsComponent, formularSignupComponent_1.FormularSignupComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], MainApp);

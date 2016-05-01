@@ -28,5 +28,10 @@ namespace Angular2FullApp.Controllers
         {
             return PartialView("~/ScriptsApp/Components/FormularTests/FormularTests.cshtml");
         }
+
+        public PartialViewResult FormularSignup()
+        {
+            return PartialView("~/ScriptsApp/Components/FormularSignup/FormularSignup.cshtml");
+        }
     }
 }

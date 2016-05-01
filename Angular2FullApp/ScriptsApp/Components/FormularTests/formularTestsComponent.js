@@ -9,11 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var FormularTests = (function () {
-    function FormularTests() {
+var FormularTestsComponent = (function () {
+    function FormularTestsComponent() {
         //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
     }
-    FormularTests = __decorate([
+    FormularTestsComponent.prototype.onSubmit = function (form) {
+        console.log("Form Submitted");
+        console.log(form);
+    };
+    FormularTestsComponent = __decorate([
         core_1.Component({
             selector: 'formular-tests',
             templateUrl: "Templates/FormularTests",
@@ -21,8 +25,8 @@ var FormularTests = (function () {
             directives: [],
         }), 
         __metadata('design:paramtypes', [])
-    ], FormularTests);
-    return FormularTests;
+    ], FormularTestsComponent);
+    return FormularTestsComponent;
 }());
-exports.FormularTests = FormularTests;
+exports.FormularTestsComponent = FormularTestsComponent;
 //# sourceMappingURL=formularTestsComponent.js.map

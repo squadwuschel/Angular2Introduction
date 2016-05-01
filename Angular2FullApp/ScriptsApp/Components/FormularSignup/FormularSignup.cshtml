@@ -1,0 +1,63 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Formular Login</h2>
+        <p>Model driven Forms mit ngFormModel</p>
+    </div>
+    <div class="col-md-12">
+        <hr />
+    </div>
+</div>
+<form [ngFormModel]="myform" (ngSubmit)="signup()">
+    <div class="row">
+        <div class="col-md-12 form-horizontal">
+            <div class="form-group">
+                <label class="col-md-2 control-label">Username*</label>
+                <div class="col-md-6">
+                    <input ngControl="username" #username="ngForm" type="text" class="form-control input-sm">
+                    <span *ngIf="username.touched && username.errors">
+                        <label *ngIf="username.errors.required" class="control-label text-danger small">
+                            Bitte einen Usernamen angeben
+                        </label>
+                        <label *ngIf="username.errors.cannotContainSpace" class="control-label text-danger small">
+                            Benutzernamen dürfen keine Leerzeichen enthalten
+                        </label>
+                    </span>
+                    <label *ngIf="username.errors?.shouldBeUnique" class="control-label text-danger small">
+                        Der Benutzername darf nicht "mosh" sein, der Nutzername ist bereits in Verwendung
+                    </label>
+                </div>
+                @* Prüfen ob ein Asynchroner Validator gerade läuft! *@
+                <label *ngIf="username.control.pending" class="col-md-4 control-label">Checking uniqueness...</label>
+            </div>
+        </div>
+        <div class="col-md-12 form-horizontal">
+            <div class="form-group">
+                <label class="col-md-2 control-label">Passwort*</label>
+                <div class="col-md-6">
+                    <input ngControl="password" #password="ngForm" type="password" class="form-control input-sm">
+                    <span *ngIf="!password.valid">
+                        <label class="control-label text-danger small">
+                            Bitte ein Passwort angeben
+                        </label>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngIf="username.errors?.invalidLogin" class="col-md-12">
+            <div class="alert alert-danger">
+                Username oder Passwort stimmen nicht.
+            </div>
+        </div>
+        <div class="col-md-2 col-md-offset-10">
+            <button class="btn btn-primary btn-block" type="submit">Login</button>
+        </div>
+    </div>
+</form>
