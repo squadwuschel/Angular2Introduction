@@ -33,5 +33,10 @@ namespace Angular2FullApp.Controllers
         {
             return PartialView("~/ScriptsApp/Components/FormularSignup/FormularSignup.cshtml");
         }
+
+        public PartialViewResult Observables()
+        {
+            return PartialView("~/ScriptsApp/Components/Observables/Observables.cshtml");
+        }
     }
 }

@@ -175,6 +175,7 @@
     <Content Include="ScriptsApp\Components\Accordion\Accordion.cshtml" />
     <Content Include="ScriptsApp\Components\FormularTests\FormularTests.cshtml" />
     <Content Include="ScriptsApp\Components\FormularSignup\FormularSignup.cshtml" />
+    <Content Include="ScriptsApp\Components\Observables\Observables.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\angular2-polyfills.js" />
     <Content Include="Scripts\angular2.dev.js" />

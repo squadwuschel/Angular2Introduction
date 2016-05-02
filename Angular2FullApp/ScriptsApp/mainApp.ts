@@ -9,7 +9,7 @@ import {ObservableComponent} from './Components/Observables/observablesComponent
 @Component({
     selector: 'my-app',
     templateUrl: 'Home/MainApp',
-    directives: [BindingTests, FormularTestsComponent, FormularSignupComponent]
+    directives: [BindingTests, FormularTestsComponent, FormularSignupComponent, ObservableComponent]
 })
 export class MainApp {
 
