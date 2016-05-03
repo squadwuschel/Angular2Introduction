@@ -1,17 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Angular2FullApp.Models;
 
 namespace Angular2FullApp.Controllers
 {
     public class PersonController : Controller
     {
-        // GET: Person
-        public ActionResult Index()
+        public ActionResult GetPersons()
         {
-            return View();
+            return Json(PersonCreator.CreatePersons(10), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult GetPerson(int id)
+        {
+            return Json(PersonCreator.GetPerson(id), JsonRequestBehavior.AllowGet);
+        }
+
+
+
     }
 }

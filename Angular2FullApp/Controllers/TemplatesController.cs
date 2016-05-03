@@ -38,5 +38,10 @@ namespace Angular2FullApp.Controllers
         {
             return PartialView("~/ScriptsApp/Components/Observables/Observables.cshtml");
         }
+
+        public PartialViewResult ServiceTests()
+        {
+            return PartialView("~/ScriptsApp/Components/ServiceTests/ServiceTests.cshtml");
+        }
     }
 }

@@ -112,6 +112,14 @@
       <Private>True</Private>
       <HintPath>..\Angular2Introduction\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="TypeLite, Version=1.8.0.0, Culture=neutral, PublicKeyToken=8cd4b9c9ac23d744, processorArchitecture=MSIL">
+      <HintPath>..\Angular2Introduction\packages\TypeLite.1.8.1\lib\net4\TypeLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TypeLite.Net4, Version=1.8.1.0, Culture=neutral, PublicKeyToken=8cd4b9c9ac23d744, processorArchitecture=MSIL">
+      <HintPath>..\Angular2Introduction\packages\TypeLite.1.8.1\lib\net4\TypeLite.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\Angular2Introduction\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
@@ -141,6 +149,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PersonCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +186,7 @@
     <Content Include="ScriptsApp\Components\FormularTests\FormularTests.cshtml" />
     <Content Include="ScriptsApp\Components\FormularSignup\FormularSignup.cshtml" />
     <Content Include="ScriptsApp\Components\Observables\Observables.cshtml" />
+    <Content Include="ScriptsApp\Components\ServiceTests\ServiceTests.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\angular2-polyfills.js" />
     <Content Include="Scripts\angular2.dev.js" />
@@ -197,6 +208,10 @@
     <Content Include="Scripts\system-register-only.src.js" />
     <Content Include="Scripts\system.js" />
     <Content Include="Scripts\system.src.js" />
+    <Content Include="Scripts\TypeLite.Net4.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TypeLite.Net4.d.ts</LastGenOutput>
+    </Content>
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -210,12 +225,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\MainApp.cshtml" />
+    <Content Include="Scripts\Manager.ttinclude" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="ScriptsApp\Directives\" />
-    <Folder Include="ScriptsApp\TsClasses\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -232,10 +246,22 @@
     <TypeScriptCompile Include="ScriptsApp\Components\FormularSignup\usernameValidators.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\LikeButton\likeButtonComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Observables\observablesComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\ServiceTests\serviceTestsComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\mainApp.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Services\personService.ts" />
+    <TypeScriptCompile Include="ScriptsApp\TsClasses\JsonPlaceHolderClasses.ts" />
+    <TypeScriptCompile Include="Scripts\Enums.ts">
+      <DependentUpon>TypeLite.Net4.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\TypeLite.Net4.d.ts">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TypeLite.Net4.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

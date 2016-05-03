@@ -13,6 +13,7 @@ var bindingTestsComponent_1 = require('./Components/BindingTests/bindingTestsCom
 var formularTestsComponent_1 = require('./Components/FormularTests/formularTestsComponent');
 var formularSignupComponent_1 = require('./Components/FormularSignup/formularSignupComponent');
 var observablesComponent_1 = require('./Components/Observables/observablesComponent');
+var serviceTestsComponent_1 = require('./Components/ServiceTests/serviceTestsComponent');
 var MainApp = (function () {
     function MainApp() {
     }
@@ -20,7 +21,7 @@ var MainApp = (function () {
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'Home/MainApp',
-            directives: [bindingTestsComponent_1.BindingTests, formularTestsComponent_1.FormularTestsComponent, formularSignupComponent_1.FormularSignupComponent, observablesComponent_1.ObservableComponent]
+            directives: [bindingTestsComponent_1.BindingTests, formularTestsComponent_1.FormularTestsComponent, formularSignupComponent_1.FormularSignupComponent, observablesComponent_1.ObservableComponent, serviceTestsComponent_1.ServiceTestsComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], MainApp);
