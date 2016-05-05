@@ -187,6 +187,7 @@
     <Content Include="ScriptsApp\Components\FormularSignup\FormularSignup.cshtml" />
     <Content Include="ScriptsApp\Components\Observables\Observables.cshtml" />
     <Content Include="ScriptsApp\Components\ServiceTests\ServiceTests.cshtml" />
+    <Content Include="ScriptsApp\Components\ServiceTests\Post.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\angular2-polyfills.js" />
     <Content Include="Scripts\angular2.dev.js" />
@@ -246,6 +247,7 @@
     <TypeScriptCompile Include="ScriptsApp\Components\FormularSignup\usernameValidators.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\LikeButton\likeButtonComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Observables\observablesComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\ServiceTests\postComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\ServiceTests\serviceTestsComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\mainApp.ts" />
     <TypeScriptCompile Include="ScriptsApp\Services\personService.ts" />

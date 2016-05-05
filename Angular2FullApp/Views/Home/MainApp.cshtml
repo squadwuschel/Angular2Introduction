@@ -1,16 +1,28 @@
 ﻿@{
     Layout = null;
 }
-
-
-<div class="row">
-    <div class="col-md-12">
-        <h2>Meine erste Angular 2 App</h2>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a [routerLink]="['BindingTests']" >Bindings</a></li>
+                <li><a [routerLink]="['FormularTests']" >Formulars</a></li>
+                <li><a [routerLink]="['FormularSignup']" >Formular Signup</a></li>
+                <li><a [routerLink]="['ObservableTests']" >Observable</a></li>
+                <li><a [routerLink]="['ServiceTests']" >Services</a></li>
+            </ul>
+        </div>
     </div>
 </div>
+<div class="container body-content">
+    <router-outlet></router-outlet>
+</div>
 
-<binding-tests></binding-tests>
-<formular-tests></formular-tests>
-<form-signup></form-signup>
-<observable></observable>
-<service-tests></service-tests>

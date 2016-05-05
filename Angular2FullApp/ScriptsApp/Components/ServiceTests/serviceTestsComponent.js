@@ -9,15 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
+var router_1 = require('angular2/router');
 var personService_1 = require('./../../Services/personService');
 var JsonPlaceHolderClasses_1 = require('./../../TsClasses/JsonPlaceHolderClasses');
 var ServiceTestsComponent = (function () {
     function ServiceTestsComponent(personSrv) {
         this.personSrv = personSrv;
+        this.posts = [];
     }
     ServiceTestsComponent.prototype.ngOnInit = function () {
+        var _this = this;
         //Observable 
-        this.personSrv.getPosts().subscribe(function (result) { return console.log(result); });
+        this.personSrv.getPosts().subscribe(function (result) {
+            console.log(result);
+            _this.posts = result;
+        });
         //Promise
         this.personSrv.createPost(new JsonPlaceHolderClasses_1.Post()).then(function (result) { console.log(result); });
     };
@@ -28,7 +34,7 @@ var ServiceTestsComponent = (function () {
             selector: 'service-tests',
             templateUrl: "Templates/ServiceTests",
             providers: [personService_1.PersonService],
-            directives: [],
+            directives: [router_1.ROUTER_DIRECTIVES],
         }), 
         __metadata('design:paramtypes', [personService_1.PersonService])
     ], ServiceTestsComponent);
