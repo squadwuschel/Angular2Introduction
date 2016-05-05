@@ -10,12 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
+var navigationComponent_1 = require('./Components/Navigation/navigationComponent');
 var bindingTestsComponent_1 = require('./Components/BindingTests/bindingTestsComponent');
 var formularTestsComponent_1 = require('./Components/FormularTests/formularTestsComponent');
 var formularSignupComponent_1 = require('./Components/FormularSignup/formularSignupComponent');
 var observablesComponent_1 = require('./Components/Observables/observablesComponent');
 var serviceTestsComponent_1 = require('./Components/ServiceTests/serviceTestsComponent');
 var postComponent_1 = require('./Components/ServiceTests/postComponent');
+var usersComponent_1 = require('./Components/Users/usersComponent');
+var addUserComponent_1 = require('./Components/AddUser/addUserComponent');
+var postsComponent_1 = require('./Components/Posts/postsComponent');
 var MainApp = (function () {
     function MainApp() {
     }
@@ -27,12 +31,15 @@ var MainApp = (function () {
             { path: "/ObservableTests", name: "ObservableTests", component: observablesComponent_1.ObservableComponent },
             { path: "/ServiceTests", name: "ServiceTests", component: serviceTestsComponent_1.ServiceTestsComponent },
             { path: "/Post/:id", name: "Post", component: postComponent_1.PostComponent },
-            { path: "/*other", name: "Other", redirectTo: ["BindingTests"] }
+            { path: "/Users", name: "Users", component: usersComponent_1.UsersComponent },
+            { path: "/Users/new", name: "AddUser", component: addUserComponent_1.AddUserComponent },
+            { path: "/Posts", name: "Posts", component: postsComponent_1.PostsComponent },
+            { path: "/*other", name: "Other", redirectTo: ["Users"] },
         ]),
         core_1.Component({
             selector: 'my-app',
-            templateUrl: 'Home/MainApp',
-            directives: [bindingTestsComponent_1.BindingTests, formularTestsComponent_1.FormularTestsComponent, formularSignupComponent_1.FormularSignupComponent, observablesComponent_1.ObservableComponent, serviceTestsComponent_1.ServiceTestsComponent, router_1.ROUTER_DIRECTIVES]
+            template: '<navigation></navigation>',
+            directives: [navigationComponent_1.NavigationComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], MainApp);

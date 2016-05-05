@@ -48,5 +48,25 @@ namespace Angular2FullApp.Controllers
         {
             return PartialView("~/ScriptsApp/Components/ServiceTests/Post.cshtml");
         }
+
+        public PartialViewResult Posts()
+        {
+            return PartialView("~/ScriptsApp/Components/Posts/Posts.cshtml");
+        }
+
+        public PartialViewResult Users()
+        {
+            return PartialView("~/ScriptsApp/Components/Users/Users.cshtml");
+        }
+
+        public PartialViewResult Navigation()
+        {
+            return PartialView("~/ScriptsApp/Components/Navigation/Navigation.cshtml");
+        }
+
+        public PartialViewResult AddUser()
+        {
+            return PartialView("~/ScriptsApp/Components/AddUser/AddUser.cshtml");
+        }
     }
 }

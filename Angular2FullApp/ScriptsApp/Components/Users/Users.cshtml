@@ -1,0 +1,46 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Users</h2>
+    </div>
+    <div class="col-md-12">
+        <hr/>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            <a [routerLink]="['AddUser']" class="btn btn-default" title="User hinzufügen"><i class="fa fa-fw fa-plus"></i> Add User</a>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-condensed table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Options</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="#row of users">
+                <td>{{row.name}}</td>
+                <td>{{row.email}}</td>
+                <td>
+                    <a class="btn btn-default btn-xs" title="bearbeiten"><i class="fa fa-fw fa-edit"></i></a>
+                    <a class="btn btn-default btn-xs" title="löschen"><i class="fa fa-fw fa-trash-o"></i></a>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+

@@ -15,17 +15,20 @@ require('rxjs/add/operator/toPromise');
 var PersonService = (function () {
     function PersonService(http) {
         this.http = http;
-        this.url = "http://jsonplaceholder.typicode.com/posts";
+        this.url = "http://jsonplaceholder.typicode.com/";
     }
     PersonService.prototype.getPerson = function (id) {
         return this.http.get("Person/GetPerson?id=" + id).map(function (res) { return res.json(); });
     };
     PersonService.prototype.getPosts = function () {
-        return this.http.get(this.url).map(function (res) { return res.json(); });
+        return this.http.get(this.url + "posts").map(function (res) { return res.json(); });
     };
     PersonService.prototype.createPost = function (post) {
         //So einfach kann man aus einem Obserable ein Pormise machen
         return this.http.post(this.url, JSON.stringify(post)).map(function (res) { return res.json(); }).toPromise();
+    };
+    PersonService.prototype.getUser = function () {
+        return this.http.get(this.url + "users").map(function (res) { return res.json(); });
     };
     PersonService = __decorate([
         core_1.Injectable(), 

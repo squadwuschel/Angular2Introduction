@@ -188,6 +188,10 @@
     <Content Include="ScriptsApp\Components\Observables\Observables.cshtml" />
     <Content Include="ScriptsApp\Components\ServiceTests\ServiceTests.cshtml" />
     <Content Include="ScriptsApp\Components\ServiceTests\Post.cshtml" />
+    <Content Include="ScriptsApp\Components\Posts\Posts.cshtml" />
+    <Content Include="ScriptsApp\Components\Users\Users.cshtml" />
+    <Content Include="ScriptsApp\Components\Navigation\Navigation.cshtml" />
+    <Content Include="ScriptsApp\Components\AddUser\AddUser.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\angular2-polyfills.js" />
     <Content Include="Scripts\angular2.dev.js" />
@@ -225,7 +229,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\MainApp.cshtml" />
     <Content Include="Scripts\Manager.ttinclude" />
   </ItemGroup>
   <ItemGroup>
@@ -239,6 +242,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsApp\boot.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Accordion\accordionComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\AddUser\addUserComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\BindingTests\bindingTestsComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\BindingTests\truncatePipe.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Favorite\favoriteComponent.ts" />
@@ -246,9 +250,12 @@
     <TypeScriptCompile Include="ScriptsApp\Components\FormularTests\formularTestsComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\FormularSignup\usernameValidators.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\LikeButton\likeButtonComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\Navigation\navigationComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Observables\observablesComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\Posts\postsComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\ServiceTests\postComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\ServiceTests\serviceTestsComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\Users\usersComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\mainApp.ts" />
     <TypeScriptCompile Include="ScriptsApp\Services\personService.ts" />
     <TypeScriptCompile Include="ScriptsApp\TsClasses\JsonPlaceHolderClasses.ts" />

@@ -2,8 +2,17 @@
 //Wenn ES5 Target angegeben wurde!
 ///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
 import {bootstrap} from 'angular2/platform/browser'
-import {MainApp} from './mainApp'
+import {PLATFORM_DIRECTIVES, provide} from 'angular2/core';
+import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {ROUTER_PROVIDERS} from 'angular2/router';
 
-bootstrap(MainApp, [HTTP_PROVIDERS, ROUTER_PROVIDERS]);
+import {MainApp} from './mainApp'
+
+
+bootstrap(MainApp, [
+    HTTP_PROVIDERS,
+    ROUTER_PROVIDERS,
+    //Eigene Direktiven oder auch z.b. auch Routing Direktiven global verfügbar machen
+    //http://blog.thoughtram.io/angular2/2015/11/23/multi-providers-in-angular-2.html
+    provide(PLATFORM_DIRECTIVES, { useValue: ROUTER_DIRECTIVES , multi: true }),
+    ]);
