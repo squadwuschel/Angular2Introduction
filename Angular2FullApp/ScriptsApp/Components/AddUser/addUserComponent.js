@@ -22,12 +22,10 @@ var AddUserComponent = (function () {
         this.user = new JsonPlaceHolderClasses_1.User();
         this.user.address.street = "Vellerner Str.";
         this.myform = formBuilder.group({
-            user: formBuilder.group({
-                //Mehrere Validatoren mit Compose zusammenfassen
-                name: new common_1.Control(this.user.name, common_1.Validators.required),
-                email: new common_1.Control(this.user.email, common_1.Validators.compose([common_1.Validators.required, addUserValidators_1.AddUserValidators.valideEmail])),
-                phone: new common_1.Control(this.user.email),
-            }),
+            //Mehrere Validatoren mit Compose zusammenfassen
+            name: new common_1.Control(this.user.name, common_1.Validators.required),
+            email: new common_1.Control(this.user.email, common_1.Validators.compose([common_1.Validators.required, addUserValidators_1.AddUserValidators.valideEmail])),
+            phone: new common_1.Control(this.user.email),
             address: formBuilder.group({
                 street: new common_1.Control(this.user.address.street),
                 suite: new common_1.Control(this.user.address.suite),
@@ -39,9 +37,10 @@ var AddUserComponent = (function () {
     AddUserComponent.prototype.save = function () {
         var _this = this;
         this.myform.setErrors(null);
-        console.log(this.user);
+        //Der myForm.value entspricht genau dem JSON Objekt welches vom Servicer erwartet wird!
+        console.log(this.myform.value);
         //ist nur Fake Service Call, der user wird dort nicht hinzugefügt!
-        this.personSrv.addUser(this.user)
+        this.personSrv.addUser(this.myform.value)
             .subscribe(function (res) {
             _this.router.navigate(['Users']);
         });

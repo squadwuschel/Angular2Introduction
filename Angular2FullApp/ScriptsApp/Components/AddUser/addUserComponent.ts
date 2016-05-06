@@ -13,21 +13,19 @@ import {User} from './../../TsClasses/JsonPlaceHolderClasses'
     directives: [], //die verwendeten Direktiven
 })
 export class AddUserComponent implements CanDeactivate {
-    public myform : ControlGroup;
-    public user : User;
+    public myform: ControlGroup;
+    public user: User;
 
-    constructor(private formBuilder: FormBuilder, private router : Router, private personSrv : PersonService) {
+    constructor(private formBuilder: FormBuilder, private router: Router, private personSrv: PersonService) {
 
         this.user = new User();
         this.user.address.street = "Vellerner Str.";
 
         this.myform = formBuilder.group({
-            user: formBuilder.group({
-                //Mehrere Validatoren mit Compose zusammenfassen
-                name: new Control(this.user.name, Validators.required),
-                email: new Control(this.user.email, Validators.compose([Validators.required, AddUserValidators.valideEmail])),
-                phone: new Control(this.user.email),
-            }),
+            //Mehrere Validatoren mit Compose zusammenfassen
+            name: new Control(this.user.name, Validators.required),
+            email: new Control(this.user.email, Validators.compose([Validators.required, AddUserValidators.valideEmail])),
+            phone: new Control(this.user.email),
             address: formBuilder.group({
                 street: new Control(this.user.address.street),
                 suite: new Control(this.user.address.suite),
@@ -37,12 +35,13 @@ export class AddUserComponent implements CanDeactivate {
         });
     }
 
-    public save() : void {
+    public save(): void {
         this.myform.setErrors(null);
 
-        console.log(this.user);
+        //Der myForm.value entspricht genau dem JSON Objekt welches vom Servicer erwartet wird!
+        console.log(this.myform.value);
         //ist nur Fake Service Call, der user wird dort nicht hinzugefügt!
-        this.personSrv.addUser(this.user)
+        this.personSrv.addUser(this.myform.value)
             .subscribe(res => {
                 this.router.navigate(['Users']);
             });
