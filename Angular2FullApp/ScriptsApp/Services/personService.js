@@ -30,6 +30,9 @@ var PersonService = (function () {
     PersonService.prototype.getUser = function () {
         return this.http.get(this.url + "users").map(function (res) { return res.json(); });
     };
+    PersonService.prototype.addUser = function (user) {
+        return this.http.post(this.url + "users", JSON.stringify(user)).map(function (res) { return res.json(); });
+    };
     PersonService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

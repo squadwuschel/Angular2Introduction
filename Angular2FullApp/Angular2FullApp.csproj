@@ -243,6 +243,7 @@
     <TypeScriptCompile Include="ScriptsApp\boot.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Accordion\accordionComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\AddUser\addUserComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\AddUser\addUserValidators.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\BindingTests\bindingTestsComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\BindingTests\truncatePipe.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Favorite\favoriteComponent.ts" />

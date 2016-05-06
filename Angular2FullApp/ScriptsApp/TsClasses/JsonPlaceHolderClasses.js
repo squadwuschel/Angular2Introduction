@@ -25,6 +25,9 @@ var Company = (function () {
 exports.Company = Company;
 var User = (function () {
     function User() {
+        this.address = new Address();
+        this.company = new Company();
+        this.name = "";
     }
     return User;
 }());

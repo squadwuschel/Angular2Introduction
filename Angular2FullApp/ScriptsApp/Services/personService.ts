@@ -28,4 +28,8 @@ export class PersonService {
     public getUser(): Observable<User[]> {
         return this.http.get(this.url + "users").map((res: Response) => res.json());
     }
+
+    public addUser(user : User): Observable<boolean> {
+        return this.http.post(this.url + "users", JSON.stringify(user)).map((res: Response) => res.json());
+    }
 }

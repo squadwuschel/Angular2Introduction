@@ -6,15 +6,121 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2>Add a User</h2>
+        <h2>Add a User (Model driven form)</h2>
     </div>
     <div class="col-md-12">
         <hr />
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12">
-    
+<form [ngFormModel]="myform" (ngSubmit)="save()">
+    <div class="row">
+        <div class="col-md-12 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <strong>User</strong>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+                <div ngControlGroup="user" class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Name*</label>
+                                <div class="col-md-6">
+                                    <input ngControl="name" #name="ngForm" type="text" class="form-control input-sm">
+                                    <span *ngIf="name.touched && name.errors">
+                                        <label *ngIf="name.errors?.required" class="control-label text-danger small">
+                                            Bitte einen Namen eingeben
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Email*</label>
+                                <div class="col-md-6">
+                                    <input ngControl="email" #email="ngForm" type="text" class="form-control input-sm">
+                                    <span *ngIf="email.touched && email.errors">
+                                        <label *ngIf="email.errors?.required" class="control-label text-danger small">
+                                            Bitte eine Email eingeben
+                                        </label>
+                                        <label *ngIf="email.errors?.valideEmail" class="control-label text-danger small">
+                                            Bitte eine valide Email eingeben
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Phone</label>
+                                <div class="col-md-6">
+                                    <input ngControl="phone" #phone="ngForm" type="text" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <strong>Address</strong>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+                <div ngControlGroup="address" class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Street</label>
+                                <div class="col-md-6">
+                                    <input ngControl="street" #street="ngForm" type="text" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Suite</label>
+                                <div class="col-md-6">
+                                    <input ngControl="suite" #suite="ngForm" type="text" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">City</label>
+                                <div class="col-md-6">
+                                    <input ngControl="city" #city="ngForm" type="text" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">ZipCode</label>
+                                <div class="col-md-6">
+                                    <input ngControl="zipCode" #zipCode="ngForm" type="text" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" [disabled]="isFormValide()" class="btn btn-primary">Speichern</button>
+        </div>
+    </div>
+</form>

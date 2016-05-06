@@ -27,6 +27,13 @@ export class Company {
 }
 
 export class User {
+
+    constructor() {
+        this.address = new Address();
+        this.company = new Company();
+        this.name = "";
+    }
+
     id: number;
     name: string;
     username: string;
