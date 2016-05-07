@@ -12,7 +12,7 @@
         <hr />
     </div>
 </div>
-<form [ngFormModel]="myform" (ngSubmit)="save()">
+<form #frm="ngForm" (ngSubmit)="save(frm)">
     <div class="row">
         <div class="col-md-12 ">
             <div class="panel panel-default">
@@ -30,8 +30,8 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Name*</label>
                                 <div class="col-md-6">
-                                    <input ngControl="name" #name="ngForm" type="text" class="form-control input-sm">
-                                    <span *ngIf="name.touched && name.errors">
+                                    <input [(ngModel)]="user.name" #name="ngForm" required type="text"  class="form-control input-sm">
+                                    <span *ngIf="name.touched && name.errors"> 
                                         <label *ngIf="name.errors?.required" class="control-label text-danger small">
                                             Bitte einen Namen eingeben
                                         </label>
@@ -41,9 +41,9 @@
                         </div>
                         <div class="col-md-12 form-horizontal">
                             <div class="form-group">
-                                <label class="col-md-2 control-label">Email*</label>
+                                <label class="col-md-2 control-label">Email*</label> 
                                 <div class="col-md-6">
-                                    <input ngControl="email" #email="ngForm" type="text" class="form-control input-sm">
+                                    <input [(ngModel)]="user.email" #email="ngForm" validateEmail required type="text"  class="form-control input-sm">
                                     <span *ngIf="email.touched && email.errors">
                                         <label *ngIf="email.errors?.required" class="control-label text-danger small">
                                             Bitte eine Email eingeben
@@ -59,7 +59,7 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Phone</label>
                                 <div class="col-md-6">
-                                    <input ngControl="phone" #phone="ngForm" type="text" class="form-control input-sm">
+                                    <input [(ngModel)]="user.phone" #phone="ngForm" type="text" class="form-control input-sm">
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Street</label>
                                 <div class="col-md-6">
-                                    <input ngControl="street" #street="ngForm" type="text" class="form-control input-sm">
+                                    <input [(ngModel)]="user.address.street"  #street="ngForm" type="text" class="form-control input-sm">
                                 </div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Suite</label>
                                 <div class="col-md-6">
-                                    <input ngControl="suite" #suite="ngForm" type="text" class="form-control input-sm">
+                                    <input [(ngModel)]="user.address.suite" #suite="ngForm" type="text" class="form-control input-sm">
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">City</label>
                                 <div class="col-md-6">
-                                    <input ngControl="city" #city="ngForm" type="text" class="form-control input-sm">
+                                    <input [(ngModel)]="user.address.city" #city="ngForm" type="text" class="form-control input-sm">
                                 </div>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">ZipCode</label>
                                 <div class="col-md-6">
-                                    <input ngControl="zipCode" #zipCode="ngForm" type="text" class="form-control input-sm">
+                                    <input [(ngModel)]="user.address.zipCode" #zipCode="ngForm" type="text" class="form-control input-sm">
                                 </div>
                             </div>
                         </div>
@@ -120,7 +120,12 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <button type="submit" [disabled]="isFormValide()" class="btn btn-primary">Speichern</button>
+            <button type="submit" [disabled]="isFormValide(frm)" class="btn btn-primary">Speichern</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {{user | json}}
         </div>
     </div>
 </form>

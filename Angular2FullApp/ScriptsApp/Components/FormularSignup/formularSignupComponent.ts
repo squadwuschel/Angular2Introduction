@@ -9,14 +9,17 @@ import {UsernameValidators} from './usernameValidators';
 })
 export class FormularSignupComponent {
     public myform = new ControlGroup({
-       //Mehrere Validatoren mit Compose zusammenfassen
-       username: new Control('', Validators.compose([Validators.required, UsernameValidators.cannotContainSpace]), UsernameValidators.shouldBeUnique),
-       password: new Control('', Validators.required)
-   });
+        //Custom Validation:
+        //http://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html
+
+        //Mehrere Validatoren mit Compose zusammenfassen
+        username: new Control('', Validators.compose([Validators.required, UsernameValidators.cannotContainSpace]), UsernameValidators.shouldBeUnique),
+        password: new Control('', Validators.required)
+    });
 
     constructor() {
         //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
-   }
+    }
 
     public signup(): void {
 

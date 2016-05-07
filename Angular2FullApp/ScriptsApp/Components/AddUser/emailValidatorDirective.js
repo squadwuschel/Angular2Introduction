@@ -10,17 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var common_1 = require('angular2/common');
-//export class AddUserValidators {
-//    public static valideEmail(control: Control) {
-//        var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-//        if (control.value && !control.value.match(pattern)) {
-//            //Object zurückgeben, wenn die Validierung fehlgeschlagen ist, mit Infos warum die Validierung fehlgeschlagen ist.
-//            return { valideEmail: true };
-//        }
-//        //Bei alles OK, wird null zurückgegeben.
-//        return null;
-//    }
-//}
+//Wie erstellt man Validatoren auch als Direktive!
+//http://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html
 var EmailValidatorDirective = (function () {
     function EmailValidatorDirective() {
     }
@@ -48,4 +39,16 @@ var EmailValidatorDirective = (function () {
     return EmailValidatorDirective;
 }());
 exports.EmailValidatorDirective = EmailValidatorDirective;
-//# sourceMappingURL=addUserValidators.js.map
+//Implementierung für FormBuilder
+//export class AddUserValidators {
+//    public static valideEmail(control: Control) {
+//        var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+//        if (control.value && !control.value.match(pattern)) {
+//            //Object zurückgeben, wenn die Validierung fehlgeschlagen ist, mit Infos warum die Validierung fehlgeschlagen ist.
+//            return { valideEmail: true };
+//        }
+//        //Bei alles OK, wird null zurückgegeben.
+//        return null;
+//    }
+//} 
+//# sourceMappingURL=emailValidatorDirective.js.map

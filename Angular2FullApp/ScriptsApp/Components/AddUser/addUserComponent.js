@@ -11,48 +11,55 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var common_1 = require('angular2/common');
-var addUserValidators_1 = require('./addUserValidators');
+var emailValidatorDirective_1 = require('./emailValidatorDirective');
 var personService_1 = require('./../../Services/personService');
 var JsonPlaceHolderClasses_1 = require('./../../TsClasses/JsonPlaceHolderClasses');
 var AddUserComponent = (function () {
+    //Gute Quelle für Forms in NG2
+    //http://blog.ng-book.com/the-ultimate-guide-to-forms-in-angular-2/
+    //Quelle für Template driven forms
+    //http://blog.thoughtram.io/angular/2016/03/21/template-driven-forms-in-angular-2.html
+    //Custom Validation:
+    //http://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html
     function AddUserComponent(formBuilder, router, personSrv) {
         this.formBuilder = formBuilder;
         this.router = router;
         this.personSrv = personSrv;
         this.user = new JsonPlaceHolderClasses_1.User();
         this.user.address.street = "Vellerner Str.";
-        this.myform = formBuilder.group({
-            //Mehrere Validatoren mit Compose zusammenfassen
-            name: new common_1.Control(this.user.name, common_1.Validators.required),
-            email: new common_1.Control(this.user.email, common_1.Validators.compose([common_1.Validators.required, addUserValidators_1.AddUserValidators.valideEmail])),
-            phone: new common_1.Control(this.user.email),
-            address: formBuilder.group({
-                street: new common_1.Control(this.user.address.street),
-                suite: new common_1.Control(this.user.address.suite),
-                city: new common_1.Control(this.user.address.city),
-                zipCode: new common_1.Control(this.user.address.zipcode)
-            })
-        });
+        //this.myform = formBuilder.group({
+        //    //Mehrere Validatoren mit Compose zusammenfassen
+        //    name: new Control('', Validators.required),
+        //    email: new Control('', Validators.compose([Validators.required])),
+        //    phone: new Control(''),
+        //    address: formBuilder.group({
+        //        street: new Control(''),
+        //        suite: new Control(''),
+        //        city: new Control(''),
+        //        zipCode: new Control('')
+        //    })
+        //});
     }
-    AddUserComponent.prototype.save = function () {
+    AddUserComponent.prototype.save = function (frm) {
+        //this.myform.setErrors(null);
         var _this = this;
-        this.myform.setErrors(null);
         //Der myForm.value entspricht genau dem JSON Objekt welches vom Servicer erwartet wird!
-        console.log(this.myform.value);
+        console.log(frm.value);
         //ist nur Fake Service Call, der user wird dort nicht hinzugefügt!
-        this.personSrv.addUser(this.myform.value)
+        this.personSrv.addUser(this.user)
             .subscribe(function (res) {
             _this.router.navigate(['Users']);
         });
     };
-    AddUserComponent.prototype.isFormValide = function () {
-        return !this.myform.valid;
+    AddUserComponent.prototype.isFormValide = function (frm) {
+        return !frm.valid;
     };
     //Dirty Tracking Form and Prevent to leave the current form
     AddUserComponent.prototype.routerCanDeactivate = function (nextInstruction, prevInstruction) {
-        if (this.myform.dirty) {
-            return confirm("Wollen sie wirklich wechseln?");
-        }
+        //TODO access myForm!
+        //if (this.myform.dirty) {
+        //    return confirm("Wollen sie wirklich wechseln?");
+        //}
         return true;
     };
     AddUserComponent = __decorate([
@@ -60,7 +67,7 @@ var AddUserComponent = (function () {
             selector: 'addUser',
             templateUrl: "Templates/AddUser",
             providers: [personService_1.PersonService],
-            directives: [],
+            directives: [emailValidatorDirective_1.EmailValidatorDirective],
         }), 
         __metadata('design:paramtypes', [common_1.FormBuilder, router_1.Router, personService_1.PersonService])
     ], AddUserComponent);

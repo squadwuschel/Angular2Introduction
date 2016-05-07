@@ -14,6 +14,8 @@ var usernameValidators_1 = require('./usernameValidators');
 var FormularSignupComponent = (function () {
     function FormularSignupComponent() {
         this.myform = new common_1.ControlGroup({
+            //Custom Validation:
+            //http://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html
             //Mehrere Validatoren mit Compose zusammenfassen
             username: new common_1.Control('', common_1.Validators.compose([common_1.Validators.required, usernameValidators_1.UsernameValidators.cannotContainSpace]), usernameValidators_1.UsernameValidators.shouldBeUnique),
             password: new common_1.Control('', common_1.Validators.required)
