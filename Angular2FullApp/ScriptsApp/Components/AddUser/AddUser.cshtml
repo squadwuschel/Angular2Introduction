@@ -30,7 +30,7 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Name*</label>
                                 <div class="col-md-6">
-                                    <input [(ngModel)]="user.name" #name="ngForm" required type="text"  class="form-control input-sm">
+                                    <input [(ngModel)]="user.name" #name="ngForm" required type="text" ngControl="name" class="form-control input-sm">
                                     <span *ngIf="name.touched && name.errors"> 
                                         <label *ngIf="name.errors?.required" class="control-label text-danger small">
                                             Bitte einen Namen eingeben
@@ -121,6 +121,7 @@
     <div class="row">
         <div class="col-md-12">
             <button type="submit" [disabled]="isFormValide(frm)" class="btn btn-primary">Speichern</button>
+            <a (click)="showFrm(frm)" class="btn btn-default">Show Frm</a>
         </div>
     </div>
     <div class="row">

@@ -40,6 +40,12 @@ var AddUserComponent = (function () {
         //    })
         //});
     }
+    AddUserComponent.prototype.showFrm = function (frm) {
+        console.log("Local userFrm");
+        console.log(this.userFrm);
+        console.log("Passed frm");
+        console.log(frm);
+    };
     AddUserComponent.prototype.save = function (frm) {
         //this.myform.setErrors(null);
         var _this = this;
@@ -62,6 +68,10 @@ var AddUserComponent = (function () {
         //}
         return true;
     };
+    __decorate([
+        core_1.ViewChild('frm'), 
+        __metadata('design:type', common_1.NgForm)
+    ], AddUserComponent.prototype, "userFrm", void 0);
     AddUserComponent = __decorate([
         core_1.Component({
             selector: 'addUser',

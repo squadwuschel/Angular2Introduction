@@ -1,4 +1,4 @@
-﻿import {Component} from 'angular2/core';
+﻿import {Component, ViewChild} from 'angular2/core';
 import {Router, CanDeactivate, RouteParams} from 'angular2/router';
 import {ControlGroup, Control, Validators, FormBuilder, NgForm} from 'angular2/common';
 
@@ -16,7 +16,8 @@ export class AddUserComponent implements CanDeactivate {
     //public myform: ControlGroup = new ControlGroup({});
     public user: User;
 
-
+    @ViewChild('frm') public userFrm: NgForm;
+    
     //Gute Quelle für Forms in NG2
     //http://blog.ng-book.com/the-ultimate-guide-to-forms-in-angular-2/
     //Quelle für Template driven forms
@@ -25,8 +26,6 @@ export class AddUserComponent implements CanDeactivate {
     //http://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html
 
     constructor(private formBuilder: FormBuilder, private router: Router, private personSrv: PersonService) {
-
-        
 
         this.user = new User();
         this.user.address.street = "Vellerner Str.";
@@ -45,10 +44,17 @@ export class AddUserComponent implements CanDeactivate {
         //});
     }
 
+    public showFrm(frm : NgForm): void{
+        console.log("Local userFrm");
+        console.log(this.userFrm);
+        console.log("Passed frm");
+        console.log(frm);
+    }
+
     public save(frm: NgForm): void {
 
         //this.myform.setErrors(null);
-
+       
         //Der myForm.value entspricht genau dem JSON Objekt welches vom Servicer erwartet wird!
         console.log(frm.value);
         //ist nur Fake Service Call, der user wird dort nicht hinzugefügt!
@@ -58,13 +64,16 @@ export class AddUserComponent implements CanDeactivate {
             });
     }
 
-    public isFormValide(frm: NgForm): boolean {
+    public isFormValide(frm: ControlGroup): boolean {
+
         return !frm.valid;
     }
 
     //Dirty Tracking Form and Prevent to leave the current form
     routerCanDeactivate(nextInstruction: Object, prevInstruction: Object): boolean | Promise<boolean> {
-        //TODO access myForm!
+
+
+          //TODO access myForm!
         //if (this.myform.dirty) {
         //    return confirm("Wollen sie wirklich wechseln?");
         //}
