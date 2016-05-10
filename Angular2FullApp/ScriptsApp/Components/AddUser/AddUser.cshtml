@@ -6,13 +6,14 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2>Add a User (Model driven form)</h2>
+        <h2 [hidden]="!isEditMode">User bearbeiten (Model driven form)</h2>
+        <h2 [hidden]="isEditMode">Add a User (Model driven form)</h2>
     </div>
     <div class="col-md-12">
         <hr />
     </div>
 </div>
-<form #frm="ngForm" (ngSubmit)="save(frm)">
+<form #frm="ngForm" (ngSubmit)="save()">
     <div class="row">
         <div class="col-md-12 ">
             <div class="panel panel-default">
@@ -109,7 +110,7 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">ZipCode</label>
                                 <div class="col-md-6">
-                                    <input [(ngModel)]="user.address.zipCode" #zipCode="ngForm" type="text" class="form-control input-sm">
+                                    <input [(ngModel)]="user.address.zipcode" #zipCode="ngForm" type="text" class="form-control input-sm">
                                 </div>
                             </div>
                         </div>
@@ -120,8 +121,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <button type="submit" [disabled]="isFormValide(frm)" class="btn btn-primary">Speichern</button>
-            <a (click)="showFrm(frm)" class="btn btn-default">Show Frm</a>
+            <button type="submit" [disabled]="isFormValide()" class="btn btn-primary">Speichern</button>
         </div>
     </div>
     <div class="row">

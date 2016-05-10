@@ -10,6 +10,7 @@ import {ServiceTestsComponent} from './Components/ServiceTests/serviceTestsCompo
 import {PostComponent} from './Components/ServiceTests/postComponent';
 import {UsersComponent} from './Components/Users/usersComponent';
 import {AddUserComponent} from './Components/AddUser/addUserComponent';
+import {NotFoundComponent as NotFoundComponent} from './Components/AddUser/notFoundComponent';
 import {PostsComponent} from './Components/Posts/postsComponent';
 
 
@@ -21,7 +22,8 @@ import {PostsComponent} from './Components/Posts/postsComponent';
     { path: "/ServiceTests", name: "ServiceTests", component: ServiceTestsComponent },
     { path: "/Post/:id", name: "Post", component: PostComponent },
     { path: "/Users", name: "Users", component: UsersComponent },
-    { path: "/Users/new", name: "AddUser", component: AddUserComponent },
+    { path: "/Not-Found", name: "NotFound", component: NotFoundComponent },
+    { path: "/Users/:id", name: "AddUser", component: AddUserComponent },
     { path: "/Posts", name: "Posts", component: PostsComponent },
     { path: "/*other", name: "Other", redirectTo: ["Users"] },
 ])

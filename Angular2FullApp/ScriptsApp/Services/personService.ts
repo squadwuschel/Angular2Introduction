@@ -32,4 +32,8 @@ export class PersonService {
     public addUser(user : User): Observable<boolean> {
         return this.http.post(this.url + "users", JSON.stringify(user)).map((res: Response) => res.json());
     }
+
+    public getUserById(id: number): Observable<User> {
+        return this.http.get(this.url + "users/" + id).map((res: Response) => res.json());
+    }
 }

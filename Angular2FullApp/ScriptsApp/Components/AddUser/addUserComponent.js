@@ -21,51 +21,45 @@ var AddUserComponent = (function () {
     //http://blog.thoughtram.io/angular/2016/03/21/template-driven-forms-in-angular-2.html
     //Custom Validation:
     //http://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html
-    function AddUserComponent(formBuilder, router, personSrv) {
-        this.formBuilder = formBuilder;
+    function AddUserComponent(router, routeParams, personSrv) {
         this.router = router;
+        this.routeParams = routeParams;
         this.personSrv = personSrv;
+        this.isEditMode = false;
         this.user = new JsonPlaceHolderClasses_1.User();
-        this.user.address.street = "Vellerner Str.";
-        //this.myform = formBuilder.group({
-        //    //Mehrere Validatoren mit Compose zusammenfassen
-        //    name: new Control('', Validators.required),
-        //    email: new Control('', Validators.compose([Validators.required])),
-        //    phone: new Control(''),
-        //    address: formBuilder.group({
-        //        street: new Control(''),
-        //        suite: new Control(''),
-        //        city: new Control(''),
-        //        zipCode: new Control('')
-        //    })
-        //});
     }
-    AddUserComponent.prototype.showFrm = function (frm) {
-        console.log("Local userFrm");
-        console.log(this.userFrm);
-        console.log("Passed frm");
-        console.log(frm);
-    };
-    AddUserComponent.prototype.save = function (frm) {
-        //this.myform.setErrors(null);
+    AddUserComponent.prototype.ngOnInit = function () {
         var _this = this;
-        //Der myForm.value entspricht genau dem JSON Objekt welches vom Servicer erwartet wird!
-        console.log(frm.value);
+        var userId = this.routeParams.get('id');
+        if (userId && parseInt(userId) > 0) {
+            this.isEditMode = true;
+            this.personSrv.getUserById(parseInt(userId)).subscribe(function (res) {
+                //TODO noch prüfen ob der User existiert, wenn nicht auf Not Found Seite umleiten
+                _this.user = res;
+            });
+        }
+    };
+    AddUserComponent.prototype.save = function () {
+        //TODO wie setzt man das Form wieder zurück, das es nicht mehr dirty ist.
+        //this.userFrm.setErrors(null);
+        var _this = this;
         //ist nur Fake Service Call, der user wird dort nicht hinzugefügt!
         this.personSrv.addUser(this.user)
             .subscribe(function (res) {
             _this.router.navigate(['Users']);
         });
     };
-    AddUserComponent.prototype.isFormValide = function (frm) {
-        return !frm.valid;
+    AddUserComponent.prototype.isFormValide = function () {
+        if (this.userFrm) {
+            return !this.userFrm.valid;
+        }
+        return false;
     };
     //Dirty Tracking Form and Prevent to leave the current form
     AddUserComponent.prototype.routerCanDeactivate = function (nextInstruction, prevInstruction) {
-        //TODO access myForm!
-        //if (this.myform.dirty) {
-        //    return confirm("Wollen sie wirklich wechseln?");
-        //}
+        if (this.userFrm.dirty) {
+            return confirm("Wollen sie wirklich wechseln?");
+        }
         return true;
     };
     __decorate([
@@ -79,7 +73,7 @@ var AddUserComponent = (function () {
             providers: [personService_1.PersonService],
             directives: [emailValidatorDirective_1.EmailValidatorDirective],
         }), 
-        __metadata('design:paramtypes', [common_1.FormBuilder, router_1.Router, personService_1.PersonService])
+        __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, personService_1.PersonService])
     ], AddUserComponent);
     return AddUserComponent;
 }());

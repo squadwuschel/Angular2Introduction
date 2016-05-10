@@ -19,6 +19,7 @@ var serviceTestsComponent_1 = require('./Components/ServiceTests/serviceTestsCom
 var postComponent_1 = require('./Components/ServiceTests/postComponent');
 var usersComponent_1 = require('./Components/Users/usersComponent');
 var addUserComponent_1 = require('./Components/AddUser/addUserComponent');
+var notFoundComponent_1 = require('./Components/AddUser/notFoundComponent');
 var postsComponent_1 = require('./Components/Posts/postsComponent');
 var MainApp = (function () {
     function MainApp() {
@@ -32,7 +33,8 @@ var MainApp = (function () {
             { path: "/ServiceTests", name: "ServiceTests", component: serviceTestsComponent_1.ServiceTestsComponent },
             { path: "/Post/:id", name: "Post", component: postComponent_1.PostComponent },
             { path: "/Users", name: "Users", component: usersComponent_1.UsersComponent },
-            { path: "/Users/new", name: "AddUser", component: addUserComponent_1.AddUserComponent },
+            { path: "/Not-Found", name: "NotFound", component: notFoundComponent_1.NotFoundComponent },
+            { path: "/Users/:id", name: "AddUser", component: addUserComponent_1.AddUserComponent },
             { path: "/Posts", name: "Posts", component: postsComponent_1.PostsComponent },
             { path: "/*other", name: "Other", redirectTo: ["Users"] },
         ]),

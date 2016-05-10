@@ -1,6 +1,6 @@
-﻿import {Component, ViewChild} from 'angular2/core';
+﻿import {Component, ViewChild, OnInit} from 'angular2/core';
 import {Router, CanDeactivate, RouteParams} from 'angular2/router';
-import {ControlGroup, Control, Validators, FormBuilder, NgForm} from 'angular2/common';
+import {ControlGroup, NgForm} from 'angular2/common';
 
 import {EmailValidatorDirective} from './emailValidatorDirective';
 import {PersonService} from './../../Services/personService';
@@ -12,9 +12,10 @@ import {User} from './../../TsClasses/JsonPlaceHolderClasses'
     providers: [PersonService], //Dipendency Injection (z.B. Services)
     directives: [EmailValidatorDirective], //die verwendeten Direktiven
 })
-export class AddUserComponent implements CanDeactivate {
+export class AddUserComponent implements CanDeactivate, OnInit {
     //public myform: ControlGroup = new ControlGroup({});
     public user: User;
+    public isEditMode : boolean = false;
 
     @ViewChild('frm') public userFrm: NgForm;
     
@@ -25,38 +26,25 @@ export class AddUserComponent implements CanDeactivate {
     //Custom Validation:
     //http://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html
 
-    constructor(private formBuilder: FormBuilder, private router: Router, private personSrv: PersonService) {
-
+    constructor(private router: Router, private routeParams : RouteParams, private personSrv: PersonService) {
         this.user = new User();
-        this.user.address.street = "Vellerner Str.";
-
-        //this.myform = formBuilder.group({
-        //    //Mehrere Validatoren mit Compose zusammenfassen
-        //    name: new Control('', Validators.required),
-        //    email: new Control('', Validators.compose([Validators.required])),
-        //    phone: new Control(''),
-        //    address: formBuilder.group({
-        //        street: new Control(''),
-        //        suite: new Control(''),
-        //        city: new Control(''),
-        //        zipCode: new Control('')
-        //    })
-        //});
     }
 
-    public showFrm(frm : NgForm): void{
-        console.log("Local userFrm");
-        console.log(this.userFrm);
-        console.log("Passed frm");
-        console.log(frm);
+    public ngOnInit() {
+        let userId = this.routeParams.get('id');
+        if (userId && parseInt(userId) > 0) {
+            this.isEditMode = true;
+            this.personSrv.getUserById(parseInt(userId)).subscribe(res => {
+                 //TODO noch prüfen ob der User existiert, wenn nicht auf Not Found Seite umleiten
+                 this.user = res;
+            });
+        }
     }
 
-    public save(frm: NgForm): void {
-
-        //this.myform.setErrors(null);
+    public save(): void {
+        //TODO wie setzt man das Form wieder zurück, das es nicht mehr dirty ist.
+        //this.userFrm.setErrors(null);
        
-        //Der myForm.value entspricht genau dem JSON Objekt welches vom Servicer erwartet wird!
-        console.log(frm.value);
         //ist nur Fake Service Call, der user wird dort nicht hinzugefügt!
         this.personSrv.addUser(this.user)
             .subscribe(res => {
@@ -64,19 +52,18 @@ export class AddUserComponent implements CanDeactivate {
             });
     }
 
-    public isFormValide(frm: ControlGroup): boolean {
-
-        return !frm.valid;
+    public isFormValide(): boolean {
+        if (this.userFrm) {
+            return !this.userFrm.valid;
+        }
+        return false;
     }
 
     //Dirty Tracking Form and Prevent to leave the current form
     routerCanDeactivate(nextInstruction: Object, prevInstruction: Object): boolean | Promise<boolean> {
-
-
-          //TODO access myForm!
-        //if (this.myform.dirty) {
-        //    return confirm("Wollen sie wirklich wechseln?");
-        //}
+        if (this.userFrm.dirty) {
+            return confirm("Wollen sie wirklich wechseln?");
+        }
 
         return true;
     }
