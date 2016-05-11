@@ -30,12 +30,12 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let row of users">
+            <tr *ngFor="let row of users; let idx=index">
                 <td>{{row.name}}</td>
                 <td>{{row.email}}</td>
                 <td>
                     <a [routerLink]="['AddUser', {id: row.id}]" class="btn btn-default btn-xs" title="bearbeiten"><i class="fa fa-fw fa-edit"></i></a>
-                    <a class="btn btn-default btn-xs" title="löschen"><i class="fa fa-fw fa-trash-o"></i></a>
+                    <a (click)="deleteUser(row, idx)" class="btn btn-default btn-xs" title="löschen"><i class="fa fa-fw fa-trash-o"></i></a>
                 </td>
             </tr>
             </tbody>

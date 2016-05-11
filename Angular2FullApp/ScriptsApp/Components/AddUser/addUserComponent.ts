@@ -14,7 +14,7 @@ import {User} from './../../TsClasses/JsonPlaceHolderClasses'
 })
 export class AddUserComponent implements CanDeactivate, OnInit {
     //public myform: ControlGroup = new ControlGroup({});
-    public user: User;
+    public user: User = new User();
     public isEditMode : boolean = false;
 
     @ViewChild('frm') public userFrm: NgForm;
@@ -26,9 +26,7 @@ export class AddUserComponent implements CanDeactivate, OnInit {
     //Custom Validation:
     //http://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html
 
-    constructor(private router: Router, private routeParams : RouteParams, private personSrv: PersonService) {
-        this.user = new User();
-    }
+    constructor(private router: Router, private routeParams : RouteParams, private personSrv: PersonService) { }
 
     public ngOnInit() {
         let userId = this.routeParams.get('id');
@@ -37,6 +35,10 @@ export class AddUserComponent implements CanDeactivate, OnInit {
             this.personSrv.getUserById(parseInt(userId)).subscribe(res => {
                  //TODO noch prüfen ob der User existiert, wenn nicht auf Not Found Seite umleiten
                  this.user = res;
+            }, err => {
+                if (err.status === 404) {
+                    this.router.navigate(['NotFound']);
+                }
             });
         }
     }
@@ -44,12 +46,21 @@ export class AddUserComponent implements CanDeactivate, OnInit {
     public save(): void {
         //TODO wie setzt man das Form wieder zurück, das es nicht mehr dirty ist.
         //this.userFrm.setErrors(null);
-       
-        //ist nur Fake Service Call, der user wird dort nicht hinzugefügt!
-        this.personSrv.addUser(this.user)
-            .subscribe(res => {
-                this.router.navigate(['Users']);
-            });
+
+        if (this.isEditMode) {
+            //User aktualisieren
+            this.personSrv.updateUser(this.user)
+                .subscribe(x => {
+                    //am besten das Form MarkAsPristine setzen, geht aber aktuell noch nicht!
+                    this.router.navigate(['Users']);
+                });
+        } else {
+            //ist nur Fake Service Call, der user wird dort nicht hinzugefügt!
+            this.personSrv.addUser(this.user)
+                .subscribe(res => {
+                    this.router.navigate(['Users']);
+                });    
+        }
     }
 
     public isFormValide(): boolean {

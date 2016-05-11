@@ -33,7 +33,15 @@ export class PersonService {
         return this.http.post(this.url + "users", JSON.stringify(user)).map((res: Response) => res.json());
     }
 
+    public updateUser(user: User): Observable<boolean> {
+        return this.http.put(this.url + "users/" + user.id, JSON.stringify(user)).map((res: Response) => res.json());
+    }
+
     public getUserById(id: number): Observable<User> {
         return this.http.get(this.url + "users/" + id).map((res: Response) => res.json());
+    }
+
+    public deleteUser(id: number): Observable<boolean> {
+        return this.http.delete(this.url + "users/" + id).map((res: Response) => res.json());
     }
 }

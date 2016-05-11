@@ -9,18 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var NotFoundComponent = (function () {
-    function NotFoundComponent() {
-        //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
+var http_1 = require('angular2/http');
+require('rxjs/add/operator/map');
+var PostsService = (function () {
+    function PostsService(http) {
+        this.http = http;
+        this.url = "http://jsonplaceholder.typicode.com/posts";
     }
-    NotFoundComponent = __decorate([
-        core_1.Component({
-            selector: 'not-found',
-            template: "<h1>Element was not Found</h1>",
-        }), 
-        __metadata('design:paramtypes', [])
-    ], NotFoundComponent);
-    return NotFoundComponent;
+    PostsService.prototype.getAllPosts = function () {
+        return this.http.get(this.url).map(function (res) { return res.json(); });
+    };
+    PostsService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], PostsService);
+    return PostsService;
 }());
-exports.NotFoundComponent = NotFoundComponent;
-//# sourceMappingURL=notFoundComponent.js.map
+exports.PostsService = PostsService;
+//# sourceMappingURL=postsService.js.map

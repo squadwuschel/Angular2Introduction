@@ -9,18 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var NotFoundComponent = (function () {
-    function NotFoundComponent() {
+var LoadingSpinnerComponent = (function () {
+    function LoadingSpinnerComponent() {
+        this.visible = false;
         //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
     }
-    NotFoundComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], LoadingSpinnerComponent.prototype, "visible", void 0);
+    LoadingSpinnerComponent = __decorate([
         core_1.Component({
-            selector: 'not-found',
-            template: "<h1>Element was not Found</h1>",
+            selector: 'loading-spinner',
+            template: "<i *ngIf=\"visible\" class=\"fa fa-fw fa-spinner fa-spin fa-3x\"></i>",
         }), 
         __metadata('design:paramtypes', [])
-    ], NotFoundComponent);
-    return NotFoundComponent;
+    ], LoadingSpinnerComponent);
+    return LoadingSpinnerComponent;
 }());
-exports.NotFoundComponent = NotFoundComponent;
-//# sourceMappingURL=notFoundComponent.js.map
+exports.LoadingSpinnerComponent = LoadingSpinnerComponent;
+//# sourceMappingURL=loadingSpinnerComponent.js.map

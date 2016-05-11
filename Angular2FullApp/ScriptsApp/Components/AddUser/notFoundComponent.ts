@@ -3,7 +3,7 @@
 
 @Component({
     selector: 'not-found',
-    template: `<h1>User wurde nicht gefunden</h1>`,
+    template: `<h1>Element was not Found</h1>`,
 })
 export class NotFoundComponent {
 

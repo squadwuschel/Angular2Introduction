@@ -18,4 +18,14 @@ export class UsersComponent implements OnInit {
     ngOnInit() {
         this.personSrv.getUser().subscribe(result => { this.users = result; });
     }
+
+    deleteUser(user: User, index: number): void {
+        if (confirm("Wollen Sie den User wirklich löschen?")) {
+            this.personSrv.deleteUser(user.id)
+                .subscribe(res => {
+                    this.users.splice(index, 1);
+                });
+        }
+    }
+
 }

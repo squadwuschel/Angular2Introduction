@@ -20,6 +20,15 @@ var UsersComponent = (function () {
         var _this = this;
         this.personSrv.getUser().subscribe(function (result) { _this.users = result; });
     };
+    UsersComponent.prototype.deleteUser = function (user, index) {
+        var _this = this;
+        if (confirm("Wollen Sie den User wirklich löschen?")) {
+            this.personSrv.deleteUser(user.id)
+                .subscribe(function (res) {
+                _this.users.splice(index, 1);
+            });
+        }
+    };
     UsersComponent = __decorate([
         core_1.Component({
             selector: 'users',

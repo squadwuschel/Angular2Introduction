@@ -33,8 +33,14 @@ var PersonService = (function () {
     PersonService.prototype.addUser = function (user) {
         return this.http.post(this.url + "users", JSON.stringify(user)).map(function (res) { return res.json(); });
     };
+    PersonService.prototype.updateUser = function (user) {
+        return this.http.put(this.url + "users/" + user.id, JSON.stringify(user)).map(function (res) { return res.json(); });
+    };
     PersonService.prototype.getUserById = function (id) {
         return this.http.get(this.url + "users/" + id).map(function (res) { return res.json(); });
+    };
+    PersonService.prototype.deleteUser = function (id) {
+        return this.http.delete(this.url + "users/" + id).map(function (res) { return res.json(); });
     };
     PersonService = __decorate([
         core_1.Injectable(), 

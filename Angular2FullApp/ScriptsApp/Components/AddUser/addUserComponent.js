@@ -25,8 +25,9 @@ var AddUserComponent = (function () {
         this.router = router;
         this.routeParams = routeParams;
         this.personSrv = personSrv;
-        this.isEditMode = false;
+        //public myform: ControlGroup = new ControlGroup({});
         this.user = new JsonPlaceHolderClasses_1.User();
+        this.isEditMode = false;
     }
     AddUserComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -36,6 +37,10 @@ var AddUserComponent = (function () {
             this.personSrv.getUserById(parseInt(userId)).subscribe(function (res) {
                 //TODO noch prüfen ob der User existiert, wenn nicht auf Not Found Seite umleiten
                 _this.user = res;
+            }, function (err) {
+                if (err.status === 404) {
+                    _this.router.navigate(['NotFound']);
+                }
             });
         }
     };
@@ -43,11 +48,21 @@ var AddUserComponent = (function () {
         //TODO wie setzt man das Form wieder zurück, das es nicht mehr dirty ist.
         //this.userFrm.setErrors(null);
         var _this = this;
-        //ist nur Fake Service Call, der user wird dort nicht hinzugefügt!
-        this.personSrv.addUser(this.user)
-            .subscribe(function (res) {
-            _this.router.navigate(['Users']);
-        });
+        if (this.isEditMode) {
+            //User aktualisieren
+            this.personSrv.updateUser(this.user)
+                .subscribe(function (x) {
+                //am besten das Form MarkAsPristine setzen, geht aber aktuell noch nicht!
+                _this.router.navigate(['Users']);
+            });
+        }
+        else {
+            //ist nur Fake Service Call, der user wird dort nicht hinzugefügt!
+            this.personSrv.addUser(this.user)
+                .subscribe(function (res) {
+                _this.router.navigate(['Users']);
+            });
+        }
     };
     AddUserComponent.prototype.isFormValide = function () {
         if (this.userFrm) {

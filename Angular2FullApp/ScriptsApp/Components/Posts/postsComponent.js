@@ -9,18 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
+var postsService_1 = require('./../../Services/postsService');
+var loadingSpinnerComponent_1 = require('./loadingSpinnerComponent');
 var PostsComponent = (function () {
-    function PostsComponent() {
+    function PostsComponent(postsSrv) {
+        this.postsSrv = postsSrv;
+        this.posts = [];
+        this.isLoading = false;
         //Im Konstruktor einfach per DI einen Service injecten, dieser muss auch in Providers bekannt gemacht werden
     }
+    PostsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.isLoading = true;
+        this.postsSrv.getAllPosts().subscribe(function (res) {
+            _this.posts = res;
+        }, null, function () { _this.isLoading = false; });
+    };
     PostsComponent = __decorate([
         core_1.Component({
             selector: 'posts',
             templateUrl: "Templates/Posts",
-            providers: [],
-            directives: [],
+            providers: [postsService_1.PostsService],
+            directives: [loadingSpinnerComponent_1.LoadingSpinnerComponent],
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [postsService_1.PostsService])
     ], PostsComponent);
     return PostsComponent;
 }());

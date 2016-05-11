@@ -254,6 +254,7 @@
     <TypeScriptCompile Include="ScriptsApp\Components\LikeButton\likeButtonComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Navigation\navigationComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Observables\observablesComponent.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Components\Posts\loadingSpinnerComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Posts\postsComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\ServiceTests\postComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\ServiceTests\serviceTestsComponent.ts" />
@@ -261,6 +262,7 @@
     <TypeScriptCompile Include="ScriptsApp\mainApp.ts" />
     <TypeScriptCompile Include="ScriptsApp\Services\extHttp.ts" />
     <TypeScriptCompile Include="ScriptsApp\Services\personService.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Services\postsService.ts" />
     <TypeScriptCompile Include="ScriptsApp\TsClasses\JsonPlaceHolderClasses.ts" />
     <TypeScriptCompile Include="Scripts\Enums.ts">
       <DependentUpon>TypeLite.Net4.tt</DependentUpon>
