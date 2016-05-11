@@ -260,6 +260,7 @@
     <TypeScriptCompile Include="ScriptsApp\Components\ServiceTests\serviceTestsComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\Components\Users\usersComponent.ts" />
     <TypeScriptCompile Include="ScriptsApp\mainApp.ts" />
+    <TypeScriptCompile Include="ScriptsApp\Services\commentService.ts" />
     <TypeScriptCompile Include="ScriptsApp\Services\extHttp.ts" />
     <TypeScriptCompile Include="ScriptsApp\Services\personService.ts" />
     <TypeScriptCompile Include="ScriptsApp\Services\postsService.ts" />

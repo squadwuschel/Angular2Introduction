@@ -11,22 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('angular2/core');
 var http_1 = require('angular2/http');
 require('rxjs/add/operator/map');
-var PostsService = (function () {
-    function PostsService(http) {
+var CommentService = (function () {
+    function CommentService(http) {
         this.http = http;
-        this.url = "http://jsonplaceholder.typicode.com/posts";
+        this.url = "http://jsonplaceholder.typicode.com/comments";
     }
-    PostsService.prototype.getAllPosts = function () {
-        return this.http.get(this.url).map(function (res) { return res.json(); });
+    CommentService.prototype.getCommentsForPostId = function (id) {
+        return this.http.get(this.url + "?postId=" + id).map(function (res) { return res.json(); });
     };
-    PostsService.prototype.getPostsByUserId = function (id) {
-        return this.http.get(this.url + "?userId=" + id).map(function (res) { return res.json(); });
-    };
-    PostsService = __decorate([
+    CommentService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], PostsService);
-    return PostsService;
+    ], CommentService);
+    return CommentService;
 }());
-exports.PostsService = PostsService;
-//# sourceMappingURL=postsService.js.map
+exports.CommentService = CommentService;
+//# sourceMappingURL=commentService.js.map

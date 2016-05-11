@@ -14,11 +14,65 @@
 </div>
 <div class="row">
     <div class="col-md-6">
-        <loading-spinner [visible]="isLoading"></loading-spinner>
-        <ul class="list-group">
-            <li *ngFor="let row of posts" class="list-group-item">{{row.title}}</li>
-        </ul>
+        <div class="row">
+            <div class="col-md-12">
+                <select [(ngModel)]="selectedUserId" (ngModelChange)="userChanged()" class="form-control">
+                    <option value="0">Select a user ....</option>
+                    <option *ngFor="let user of users" [value]="user.id">{{user.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12"><hr/></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <loading-spinner [visible]="isPostsLoading"></loading-spinner>
+                <ul class="list-group" style="cursor: pointer">
+                    <li *ngFor="let row of posts" (click)="selectPost(row)" [ngClass]="{'list-group-item-info' : selectedPost?.id === row.id }" class="list-group-item">{{row.title}}</li>
+                </ul>        
+            </div>
+        </div>
     </div>
-    <div class="col-md-6"></div>
+    <div class="col-md-6">
+        <div *ngIf="selectedPost" class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-10">
+                        <strong>{{selectedPost.title}}</strong>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">{{selectedPost.body}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12"><hr/>
+                        <loading-spinner [visible]="isCommentLoading"></loading-spinner>
+                    </div>
+                </div>
+                <div *ngFor="let comment of comments; let idx = index" class="row">
+                    <div class="col-md-12">
+                        <div class="media">
+                            <div class="media-left">
+                                <a>
+                                    <img class="media-object" src="http://lorempixel.com/80/80/people?random={{idx}}">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">{{comment.title}}</h4>
+                                {{comment.body}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12"><br/><br/></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 

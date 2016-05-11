@@ -16,4 +16,8 @@ export class PostsService {
     public getAllPosts(): Observable<Post[]> {
         return this.http.get(this.url).map((res: Response) => res.json());
     }
+
+    public getPostsByUserId(id : number): Observable<Post[]> {
+        return this.http.get(this.url + "?userId=" + id).map((res: Response) => res.json());
+    }
 }
