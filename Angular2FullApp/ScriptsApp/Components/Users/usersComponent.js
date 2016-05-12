@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var personService_1 = require('./../../Services/personService');
+var _ = require("lodash");
 var UsersComponent = (function () {
     function UsersComponent(personSrv) {
         this.personSrv = personSrv;
