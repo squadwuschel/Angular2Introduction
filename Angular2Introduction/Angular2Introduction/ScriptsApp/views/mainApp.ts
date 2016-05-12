@@ -1,4 +1,4 @@
-﻿import {Component} from 'angular2/core';
+﻿import {Component} from '@angular/core';
 // mit "./" sucht er im aktuellen Verzeichnis nach der Komponente
 import {CoursesComponent} from './../components/courses.component';
 import {CourseService} from './../services/course.service';

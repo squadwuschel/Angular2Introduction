@@ -8,29 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('angular2/core');
-var AutoGrowDirective = (function () {
-    function AutoGrowDirective(el, renderer) {
+const core_1 = require('@angular/core');
+let AutoGrowDirective = class AutoGrowDirective {
+    constructor(el, renderer) {
         this.el = el;
         this.renderer = renderer;
     }
-    AutoGrowDirective.prototype.onFocus = function () {
+    onFocus() {
         this.renderer.setElementStyle(this.el.nativeElement, 'width', '400px');
-    };
-    AutoGrowDirective.prototype.onBlur = function () {
+    }
+    onBlur() {
         this.renderer.setElementStyle(this.el.nativeElement, 'width', '200px');
-    };
-    AutoGrowDirective = __decorate([
-        core_1.Directive({
-            selector: '[autoGrow]',
-            host: {
-                '(focus)': 'onFocus()',
-                '(blur)': 'onBlur()'
-            }
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
-    ], AutoGrowDirective);
-    return AutoGrowDirective;
-}());
+    }
+};
+AutoGrowDirective = __decorate([
+    core_1.Directive({
+        selector: '[autoGrow]',
+        host: {
+            '(focus)': 'onFocus()',
+            '(blur)': 'onBlur()'
+        }
+    }), 
+    __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
+], AutoGrowDirective);
 exports.AutoGrowDirective = AutoGrowDirective;
 //# sourceMappingURL=autoGrow.directive.js.map

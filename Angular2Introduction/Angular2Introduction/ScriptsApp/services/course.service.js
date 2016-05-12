@@ -8,26 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('angular2/core');
-var http_1 = require('angular2/http');
+const core_1 = require('@angular/core');
+const http_1 = require('@angular/http');
 require('rxjs/add/operator/map'); //Notwendig damit wird weiter unten auf den map Operator zugreifen können
-var CourseService = (function () {
-    function CourseService(_http) {
+let CourseService = class CourseService {
+    constructor(_http) {
         this._http = _http;
     }
-    CourseService.prototype.getCourses = function () {
-        var courses = ["Course 1", "Course 2", "Course 3"];
+    getCourses() {
+        let courses = ["Course 1", "Course 2", "Course 3"];
         return courses;
-    };
-    CourseService.prototype.getPersons = function (name) {
-        return this._http.get("Home/GetPersons?name=" + name).map(function (res) { return res.json(); });
-    };
-    CourseService = __decorate([
-        //Notwendig damit wird weiter unten auf den map Operator zugreifen können
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], CourseService);
-    return CourseService;
-}());
+    }
+    getPersons(name) {
+        return this._http.get(`Home/GetPersons?name=${name}`).map((res) => res.json());
+    }
+};
+CourseService = __decorate([
+    //Notwendig damit wird weiter unten auf den map Operator zugreifen können
+    core_1.Injectable(), 
+    __metadata('design:paramtypes', [http_1.Http])
+], CourseService);
 exports.CourseService = CourseService;
 //# sourceMappingURL=course.service.js.map

@@ -182,39 +182,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\angular2-polyfills.js" />
-    <Content Include="Scripts\angular2.dev.js" />
-    <Content Include="Scripts\angular2.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="package.json" />
     <Content Include="gulpfile.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\es6-shim.min.js" />
-    <Content Include="Scripts\http.dev.js" />
-    <Content Include="Scripts\http.min.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\router.dev.js" />
-    <Content Include="Scripts\router.min.js" />
-    <Content Include="Scripts\Rx.js" />
-    <Content Include="Scripts\shims_for_IE.js" />
-    <Content Include="Scripts\system-csp-production.js" />
-    <Content Include="Scripts\system-csp-production.src.js" />
-    <Content Include="Scripts\system-polyfills.js" />
-    <Content Include="Scripts\system-polyfills.src.js" />
-    <Content Include="Scripts\system-register-only.js" />
-    <Content Include="Scripts\system-register-only.src.js" />
-    <Content Include="Scripts\system.js" />
+    <Content Include="Scripts\systemjs.config.js" />
+    <Content Include="Scripts\Reflect.js" />
     <Content Include="Scripts\system.src.js" />
+    <Content Include="Scripts\zone.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -228,24 +201,18 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\system-csp-production.js.map" />
-    <Content Include="Scripts\system-polyfills.js.map" />
-    <Content Include="Scripts\system-register-only.js.map" />
-    <Content Include="Scripts\system.js.map" />
     <Content Include="Views\Home\MainComponent.cshtml" />
     <Content Include="Views\Home\CoursesComponent.cshtml" />
     <Content Include="Views\Home\PersonList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\compiledSources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsApp\boot.ts" />
@@ -265,7 +232,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptTarget>ES6</TypeScriptTarget>
     <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>

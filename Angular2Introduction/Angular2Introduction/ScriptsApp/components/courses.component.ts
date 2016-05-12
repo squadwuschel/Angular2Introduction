@@ -1,4 +1,4 @@
-﻿import {Component} from 'angular2/core';
+﻿import {Component} from '@angular/core';
 import {CourseService} from './../services/course.service';
 import {AutoGrowDirective} from './../directives/autoGrow.directive';
 import {PersonList} from './personList.component';

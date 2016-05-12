@@ -6,25 +6,11 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <base href="@Url.Content("~")" />
     @Styles.Render("~/Content/css")
-    <script src="~/Scripts/es6-shim.min.js"></script>
-    <script src="~/Scripts/system-polyfills.js"></script>
-    <script src="~/Scripts/shims_for_IE.js"></script>
-    <script src="~/Scripts/angular2-polyfills.js"></script>
-    <script src="~/Scripts/system.js"></script>
-    <script src="~/Scripts/Rx.js"></script>
-    <script src="~/Scripts/angular2.dev.js"></script>
-    <script src="~/Scripts/http.dev.js"></script>
+    <script src="~/Scripts/zone.js"></script>
+    <script src="~/Scripts/Reflect.js"></script>
+    <script src="~/Scripts/system.src.js"></script>
+    <script src="~/Scripts/systemjs.config.js"></script>
 
-    <!-- 2. Configure SystemJS -->
-    <script>
-        System.config({
-            packages: {
-                'ScriptsApp': {
-                    defaultExtension: 'js'
-                }
-            }
-        });
-    </script>
     <script>
         System.import('ScriptsApp/boot').catch(console.error.bind(console));
     </script>
