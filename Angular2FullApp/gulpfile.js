@@ -11,6 +11,7 @@ gulp.task('moveToScripts', function (done) {
       'node_modules/es6-shim/es6-shim.min.js*',
       'node_modules/angular2/es6/dev/src/testing/shims_for_IE.js',
       'node_modules/systemjs/dist/*.*',
-      'node_modules/rxjs/bundles/Rx.js'
+      'node_modules/rxjs/bundles/Rx.js',
+      'node_modules/lodash/lodash.js'
     ]).pipe(gulp.dest('./Scripts/'));
 });

@@ -25,7 +25,9 @@ var UsersComponent = (function () {
         if (confirm("Wollen Sie den User wirklich löschen?")) {
             this.personSrv.deleteUser(user.id)
                 .subscribe(function (res) {
-                _this.users.splice(index, 1);
+                //lodash verwenden statt des Indexes
+                _.remove(_this.users, function (val) { return val.id === user.id; });
+                //this.users.splice(index, 1);
             });
         }
     };

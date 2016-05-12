@@ -201,6 +201,7 @@
     <Content Include="Scripts\http.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\lodash.js" />
     <Content Include="Scripts\router.dev.js" />
     <Content Include="Scripts\router.min.js" />
     <Content Include="Scripts\Rx.js" />
@@ -273,6 +274,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TypeLite.Net4.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\typings\lodash\lodash.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

@@ -23,7 +23,9 @@ export class UsersComponent implements OnInit {
         if (confirm("Wollen Sie den User wirklich löschen?")) {
             this.personSrv.deleteUser(user.id)
                 .subscribe(res => {
-                    this.users.splice(index, 1);
+                    //lodash verwenden statt des Indexes
+                    _.remove(this.users, (val : User) => { return val.id === user.id; });
+                    //this.users.splice(index, 1);
                 });
         }
     }
