@@ -8,25 +8,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const course_service_1 = require('./../services/course.service');
+var core_1 = require('@angular/core');
+var course_service_1 = require('./../services/course.service');
 //@Injectable()
-let PersonList = class PersonList {
-    constructor(courseService) {
+var PersonList = (function () {
+    function PersonList(courseService) {
         this.courseService = courseService;
     }
-    getPersons() {
+    PersonList.prototype.getPersons = function () {
+        var _this = this;
         //Unseren Service aufrufen und die Daten abrufen
-        this.courseService.getPersons("test").subscribe(data => this.persons = data);
-    }
-};
-PersonList = __decorate([
-    core_1.Component({
-        selector: 'person-list',
-        templateUrl: `Home/PersonList`,
-        providers: [course_service_1.CourseService],
-    }), 
-    __metadata('design:paramtypes', [course_service_1.CourseService])
-], PersonList);
+        this.courseService.getPersons("test").subscribe(function (data) { return _this.persons = data; });
+    };
+    PersonList = __decorate([
+        core_1.Component({
+            selector: 'person-list',
+            templateUrl: "Home/PersonList",
+            providers: [course_service_1.CourseService],
+        }), 
+        __metadata('design:paramtypes', [course_service_1.CourseService])
+    ], PersonList);
+    return PersonList;
+}());
 exports.PersonList = PersonList;
 //# sourceMappingURL=personList.component.js.map

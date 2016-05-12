@@ -8,29 +8,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const course_service_1 = require('./../services/course.service');
-const autoGrow_directive_1 = require('./../directives/autoGrow.directive');
-const personList_component_1 = require('./personList.component');
+var core_1 = require('@angular/core');
+var course_service_1 = require('./../services/course.service');
+var autoGrow_directive_1 = require('./../directives/autoGrow.directive');
+var personList_component_1 = require('./personList.component');
 //@Injectable()
-let CoursesComponent = class CoursesComponent {
-    constructor(courseService) {
+var CoursesComponent = (function () {
+    function CoursesComponent(courseService) {
         this.courseService = courseService;
         this.title = "Das ist der Title der Courses Page";
         this.courses = [];
         this.eingabeText = "TEST";
         this.courses = courseService.getCourses();
     }
-};
-CoursesComponent = __decorate([
-    core_1.Component({
-        selector: 'courses',
-        templateUrl: `Home/CoursesComponent`,
-        providers: [course_service_1.CourseService],
-        directives: [autoGrow_directive_1.AutoGrowDirective, personList_component_1.PersonList],
-        inputs: ['name']
-    }), 
-    __metadata('design:paramtypes', [course_service_1.CourseService])
-], CoursesComponent);
+    CoursesComponent = __decorate([
+        core_1.Component({
+            selector: 'courses',
+            templateUrl: "Home/CoursesComponent",
+            providers: [course_service_1.CourseService],
+            directives: [autoGrow_directive_1.AutoGrowDirective, personList_component_1.PersonList],
+            inputs: ['name']
+        }), 
+        __metadata('design:paramtypes', [course_service_1.CourseService])
+    ], CoursesComponent);
+    return CoursesComponent;
+}());
 exports.CoursesComponent = CoursesComponent;
 //# sourceMappingURL=courses.component.js.map
