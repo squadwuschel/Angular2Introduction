@@ -1,5 +1,5 @@
-//import {Injectable} from 'angular2/core';
-//import {Http, Headers, RequestOptions, RequestOptionsArgs, Response, RequestMethod, Request, Connection, ConnectionBackend} from 'angular2/http';
+//import {Injectable} from '@angular/core';
+//import {Http, Headers, RequestOptions, RequestOptionsArgs, Response, RequestMethod, Request, Connection, ConnectionBackend} from '@angular/http';
 //import {Subject, Observable} from 'rxjs/Rx';
 //export enum Action { QueryStart, QueryStop };
 //@Injectable()

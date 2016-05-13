@@ -1,10 +1,10 @@
-﻿import {Component} from 'angular2/core';
-import {ControlGroup, FormBuilder} from 'angular2/common';
+﻿import {Component} from '@angular/core';
+import {ControlGroup, FormBuilder} from '@angular/common';
 //Kompletten Observables einbinden
-import {Observable} from 'rxjs/Rx';
+//import {Observable} from 'rxjs/Rx';
 //angular 2 hat nur ein paar wichtige Obserbables in der Stammdefinition, der Rest muss extra nachgeladen werden siehe map
-//import {Observable} from 'rxjs/observable';
-//import 'rxjs/add/operator/debounceTime';
+import {Observable} from 'rxjs';
+//import 'rxjs/add/operator/fromArray';
 //import 'rxjs/add/operator/map';
 
 @Component({
@@ -41,12 +41,12 @@ export class ObservableComponent {
             startDates.push(date);
         }
 
-        Observable.fromArray(startDates)
-            .map(date => {
-                console.log("Getting deals for Date " + date);
-                return [1, 2, 3];
-            })
-            .subscribe(x => console.log(x));
+        //Observable.fromArray(startDates)
+        //    .map(date => {
+        //        console.log("Getting deals for Date " + date);
+        //        return [1, 2, 3];
+        //    })
+        //    .subscribe(x => console.log(x));
     }
 
     public observableTimer(): void {

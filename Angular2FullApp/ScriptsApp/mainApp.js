@@ -8,35 +8,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('angular2/core');
-var router_1 = require('angular2/router');
+var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var navigationComponent_1 = require('./Components/Navigation/navigationComponent');
 var bindingTestsComponent_1 = require('./Components/BindingTests/bindingTestsComponent');
 var formularTestsComponent_1 = require('./Components/FormularTests/formularTestsComponent');
 var formularSignupComponent_1 = require('./Components/FormularSignup/formularSignupComponent');
-var observablesComponent_1 = require('./Components/Observables/observablesComponent');
+//import {ObservableComponent} from './Components/Observables/observablesComponent';
 var serviceTestsComponent_1 = require('./Components/ServiceTests/serviceTestsComponent');
-var postComponent_1 = require('./Components/ServiceTests/postComponent');
-var usersComponent_1 = require('./Components/Users/usersComponent');
-var addUserComponent_1 = require('./Components/AddUser/addUserComponent');
-var notFoundComponent_1 = require('./Components/AddUser/notFoundComponent');
-var postsComponent_1 = require('./Components/Posts/postsComponent');
+//import {PostComponent} from './Components/ServiceTests/postComponent';
+//import {UsersComponent} from './Components/Users/usersComponent';
+//import {AddUserComponent} from './Components/AddUser/addUserComponent';
+//import {NotFoundComponent as NotFoundComponent} from './Components/AddUser/notFoundComponent';
+//import {PostsComponent} from './Components/Posts/postsComponent';
 var MainApp = (function () {
     function MainApp() {
     }
     MainApp = __decorate([
-        router_1.RouteConfig([
+        router_deprecated_1.RouteConfig([
             { path: "/bindingTests", name: "BindingTests", component: bindingTestsComponent_1.BindingTests, useAsDefault: true },
             { path: "/formularSignup", name: "FormularSignup", component: formularSignupComponent_1.FormularSignupComponent },
             { path: "/formularTests", name: "FormularTests", component: formularTestsComponent_1.FormularTestsComponent },
-            { path: "/ObservableTests", name: "ObservableTests", component: observablesComponent_1.ObservableComponent },
+            //{ path: "/ObservableTests", name: "ObservableTests", component: ObservableComponent },
             { path: "/ServiceTests", name: "ServiceTests", component: serviceTestsComponent_1.ServiceTestsComponent },
-            { path: "/Post/:id", name: "Post", component: postComponent_1.PostComponent },
-            { path: "/Users", name: "Users", component: usersComponent_1.UsersComponent },
-            { path: "/Not-Found", name: "NotFound", component: notFoundComponent_1.NotFoundComponent },
-            { path: "/Users/:id", name: "AddUser", component: addUserComponent_1.AddUserComponent },
-            { path: "/Posts", name: "Posts", component: postsComponent_1.PostsComponent },
-            { path: "/*other", name: "Other", redirectTo: ["Users"] },
         ]),
         core_1.Component({
             selector: 'my-app',

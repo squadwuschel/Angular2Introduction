@@ -1,4 +1,4 @@
-﻿import {Component} from 'angular2/core';
+﻿import {Component} from '@angular/core';
 import {FavoriteComponent} from './../Favorite/favoriteComponent';
 import {LikeButtonComponent} from './../LikeButton/likeButtonComponent';
 import {AccordionComponent} from './../Accordion/accordionComponent';

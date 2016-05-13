@@ -1,5 +1,5 @@
-﻿import {Component, OnInit, OnDestroy} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+﻿import {Component, OnInit, OnDestroy} from '@angular/core';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 import {PersonService} from './../../Services/personService';
 import {Post} from './../../TsClasses/JsonPlaceHolderClasses'
 

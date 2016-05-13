@@ -8,13 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('angular2/core');
-var common_1 = require('angular2/common');
+var core_1 = require('@angular/core');
+var common_1 = require('@angular/common');
 //Kompletten Observables einbinden
-var Rx_1 = require('rxjs/Rx');
+//import {Observable} from 'rxjs/Rx';
 //angular 2 hat nur ein paar wichtige Obserbables in der Stammdefinition, der Rest muss extra nachgeladen werden siehe map
-//import {Observable} from 'rxjs/observable';
-//import 'rxjs/add/operator/debounceTime';
+var rxjs_1 = require('rxjs');
+//import 'rxjs/add/operator/fromArray';
 //import 'rxjs/add/operator/map';
 var ObservableComponent = (function () {
     function ObservableComponent(fb) {
@@ -36,31 +36,31 @@ var ObservableComponent = (function () {
             var date = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDay() + day);
             startDates.push(date);
         }
-        Rx_1.Observable.fromArray(startDates)
-            .map(function (date) {
-            console.log("Getting deals for Date " + date);
-            return [1, 2, 3];
-        })
-            .subscribe(function (x) { return console.log(x); });
+        //Observable.fromArray(startDates)
+        //    .map(date => {
+        //        console.log("Getting deals for Date " + date);
+        //        return [1, 2, 3];
+        //    })
+        //    .subscribe(x => console.log(x));
     };
     ObservableComponent.prototype.observableTimer = function () {
-        var observable = Rx_1.Observable.interval(1000);
+        var observable = rxjs_1.Observable.interval(1000);
         observable
             .flatMap(function (x) {
             console.log("Calling the server to get the latest news");
-            return Rx_1.Observable.of([1, 2, 3]);
+            return rxjs_1.Observable.of([1, 2, 3]);
         })
             .subscribe(function (news) { return console.log(news); });
     };
     ObservableComponent.prototype.observablesParelleMode = function () {
-        var userStram = Rx_1.Observable.of({ userId: 1, username: "squad" }).delay(2000);
-        var tweetStream = Rx_1.Observable.of([1, 2, 3]).delay(1000);
-        Rx_1.Observable.forkJoin(userStram, tweetStream)
+        var userStram = rxjs_1.Observable.of({ userId: 1, username: "squad" }).delay(2000);
+        var tweetStream = rxjs_1.Observable.of([1, 2, 3]).delay(1000);
+        rxjs_1.Observable.forkJoin(userStram, tweetStream)
             .map(function (joined) { return new Object({ user: joined[0], tweets: joined[1] }); })
             .subscribe(function (result) { return console.log(result); });
     };
     ObservableComponent.prototype.observableTimeOuts = function () {
-        var remoteObservable = Rx_1.Observable.of([1, 2, 3]).delay(5000);
+        var remoteObservable = rxjs_1.Observable.of([1, 2, 3]).delay(5000);
         remoteObservable.timeout(1000)
             .subscribe(function (x) { return console.log(x); }, function (error) { return console.log(error); });
     };

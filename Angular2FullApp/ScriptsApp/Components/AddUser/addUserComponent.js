@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('angular2/core');
-var router_1 = require('angular2/router');
-var common_1 = require('angular2/common');
+var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
+var common_1 = require('@angular/common');
 var emailValidatorDirective_1 = require('./emailValidatorDirective');
 var personService_1 = require('./../../Services/personService');
 var JsonPlaceHolderClasses_1 = require('./../../TsClasses/JsonPlaceHolderClasses');
@@ -88,7 +88,7 @@ var AddUserComponent = (function () {
             providers: [personService_1.PersonService],
             directives: [emailValidatorDirective_1.EmailValidatorDirective],
         }), 
-        __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, personService_1.PersonService])
+        __metadata('design:paramtypes', [router_deprecated_1.Router, router_deprecated_1.RouteParams, personService_1.PersonService])
     ], AddUserComponent);
     return AddUserComponent;
 }());

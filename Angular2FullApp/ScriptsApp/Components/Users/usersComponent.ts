@@ -1,4 +1,4 @@
-﻿import {Component, OnInit} from 'angular2/core';
+﻿import {Component, OnInit} from '@angular/core';
 import {PersonService} from './../../Services/personService';
 import {User} from './../../TsClasses/JsonPlaceHolderClasses'
 import * as _ from "lodash";

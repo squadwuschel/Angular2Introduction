@@ -1,4 +1,4 @@
-﻿import {Component, Input} from 'angular2/core';
+﻿import {Component, Input} from '@angular/core';
 
 /* Verwendung
 *  <accordion heading="Titel"><div class="accordion-body">Body Content</div> </accordion>

@@ -6,42 +6,16 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <base href="@Url.Content("~")" />
     @Styles.Render("~/Content/css")
+    <script src="~/Scripts/zone.js"></script>
+    <script src="~/Scripts/Reflect.js"></script>
+    <script src="~/Scripts/system.src.js"></script>
+    <script src="~/Scripts/systemjs.config.js"></script>
 
-</head>
-<body>
-    @RenderBody()
-
-    <script src="~/Scripts/es6-shim.min.js"></script>
-    <script src="~/Scripts/system-polyfills.js"></script>
-    <script src="~/Scripts/shims_for_IE.js"></script>
-    <script src="~/Scripts/angular2-polyfills.js"></script>
-    <script src="~/Scripts/system.js"></script>
-    <script src="~/Scripts/Rx.js"></script>
-    <script src="~/Scripts/angular2.dev.js"></script>
-    <script src="~/Scripts/http.dev.js"></script>
-    <script src="~/Scripts/router.dev.js"></script>
-    <script src="~/Scripts/lodash.js"></script>
-
-    <!-- 2. Configure SystemJS -->
-    <script>
-        System.config({
-            //meta: {
-            //  '*.js' : { scriptLoad: true }
-            //},
-            paths: {
-                //Die externe Lib für SystemJs bekannt machen und den namen sowie Pfad angeben unter dem die Lib gefunden werden kann.
-                //https://medium.com/@@s_eschweiler/using-external-libraries-with-angular-2-87e06db8e5d1#.rbypmmhq8
-                lodash: "./Scripts/lodash.js"
-            },
-            packages: {
-                'ScriptsApp': {
-                    defaultExtension: 'js'
-                }
-            }
-        });
-    </script>
     <script>
         System.import('ScriptsApp/boot').catch(console.error.bind(console));
     </script>
+</head>
+<body>
+    @RenderBody()
 </body>
 </html>

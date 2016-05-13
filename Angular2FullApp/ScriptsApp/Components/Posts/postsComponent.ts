@@ -1,4 +1,4 @@
-﻿import {Component, OnInit} from 'angular2/core';
+﻿import {Component, OnInit} from '@angular/core';
 import {PostsService} from './../../Services/postsService';
 import {CommentService} from './../../Services/commentService';
 import {PersonService} from './../../Services/personService';

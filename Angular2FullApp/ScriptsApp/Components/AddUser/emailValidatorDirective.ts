@@ -1,6 +1,6 @@
-﻿import {Control} from 'angular2/common';
-import {Directive, provide, forwardRef} from 'angular2/core';
-import {NG_VALIDATORS} from 'angular2/common';
+﻿import {Control} from '@angular/common';
+import {Directive, provide, forwardRef} from '@angular/core';
+import {NG_VALIDATORS} from '@angular/common';
 
 //Wie erstellt man Validatoren auch als Direktive!
 //http://blog.thoughtram.io/angular/2016/03/14/custom-validators-in-angular-2.html

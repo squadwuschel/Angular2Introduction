@@ -1,6 +1,6 @@
-﻿import {Component, ViewChild, OnInit} from 'angular2/core';
-import {Router, CanDeactivate, RouteParams} from 'angular2/router';
-import {ControlGroup, NgForm} from 'angular2/common';
+﻿import {Component, ViewChild, OnInit} from '@angular/core';
+import {Router, CanDeactivate, RouteParams} from '@angular/router-deprecated';
+import {ControlGroup, NgForm} from '@angular/common';
 
 import {EmailValidatorDirective} from './emailValidatorDirective';
 import {PersonService} from './../../Services/personService';

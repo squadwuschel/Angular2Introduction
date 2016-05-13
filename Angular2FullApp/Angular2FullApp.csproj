@@ -192,32 +192,15 @@
     <Content Include="ScriptsApp\Components\Users\Users.cshtml" />
     <Content Include="ScriptsApp\Components\Navigation\Navigation.cshtml" />
     <Content Include="ScriptsApp\Components\AddUser\AddUser.cshtml" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\angular2-polyfills.js" />
-    <Content Include="Scripts\angular2.dev.js" />
-    <Content Include="Scripts\angular2.min.js" />
-    <Content Include="Scripts\es6-shim.min.js" />
-    <Content Include="Scripts\http.dev.js" />
-    <Content Include="Scripts\http.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\lodash.js" />
-    <Content Include="Scripts\router.dev.js" />
-    <Content Include="Scripts\router.min.js" />
-    <Content Include="Scripts\Rx.js" />
-    <Content Include="Scripts\shims_for_IE.js" />
-    <Content Include="Scripts\system-csp-production.js" />
-    <Content Include="Scripts\system-csp-production.src.js" />
-    <Content Include="Scripts\system-polyfills.js" />
-    <Content Include="Scripts\system-polyfills.src.js" />
-    <Content Include="Scripts\system-register-only.js" />
-    <Content Include="Scripts\system-register-only.src.js" />
-    <Content Include="Scripts\system.js" />
+    <Content Include="Scripts\Reflect.js" />
     <Content Include="Scripts\system.src.js" />
+    <Content Include="Scripts\systemjs.config.js" />
     <Content Include="Scripts\TypeLite.Net4.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TypeLite.Net4.d.ts</LastGenOutput>
     </Content>
+    <Content Include="Scripts\zone.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -238,7 +221,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsApp\boot.ts" />

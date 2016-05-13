@@ -84,7 +84,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label">*ngFor With Index</label>
             <label class="col-md-8 control-label">
-                <span *ngFor="#course of courses, #i = index">{{course}} {{'Idx:' + i + ', '}}</span>
+                <span *ngFor="let course of courses, let i = index">{{course}} {{'Idx:' + i + ', '}}</span>
             </label>
         </div>
     </div>

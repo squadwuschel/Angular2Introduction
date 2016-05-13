@@ -184,9 +184,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="package.json" />
     <Content Include="gulpfile.js" />
-    <Content Include="Scripts\systemjs.config.js" />
     <Content Include="Scripts\Reflect.js" />
     <Content Include="Scripts\system.src.js" />
+    <Content Include="Scripts\systemjs.config.js" />
     <Content Include="Scripts\zone.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
