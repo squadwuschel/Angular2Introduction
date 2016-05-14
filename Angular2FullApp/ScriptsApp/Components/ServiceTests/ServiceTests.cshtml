@@ -15,7 +15,7 @@
 <div class="row">
     <div class="col-md-12">
         <ul>
-            <li *ngFor="#row of posts"><a [routerLink]="['Post', { id: row.id }]" class="btn btn.btn-default btn-xs">{{row.title}}, ID: {{row.id}}</a></li>
+            <li *ngFor="let row of posts"><a [routerLink]="['/Post', { id: row.id }]" class="btn btn.btn-default btn-xs">{{row.title}}, ID: {{row.id}}</a></li>
         </ul>
     </div>
 </div>

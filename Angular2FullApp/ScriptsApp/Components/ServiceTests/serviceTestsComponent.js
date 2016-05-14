@@ -9,9 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
 var personService_1 = require('./../../Services/personService');
-var JsonPlaceHolderClasses_1 = require('./../../TsClasses/JsonPlaceHolderClasses');
 var ServiceTestsComponent = (function () {
     function ServiceTestsComponent(personSrv) {
         this.personSrv = personSrv;
@@ -24,8 +22,8 @@ var ServiceTestsComponent = (function () {
             console.log(result);
             _this.posts = result;
         });
-        //Promise
-        this.personSrv.createPost(new JsonPlaceHolderClasses_1.Post()).then(function (result) { console.log(result); });
+        //TODO GEHT NICHT Promise
+        //this.personSrv.createPost(new Post()).then(result => { console.log(result); });
     };
     ServiceTestsComponent.prototype.ngOnDestroy = function () {
     };
@@ -34,7 +32,7 @@ var ServiceTestsComponent = (function () {
             selector: 'service-tests',
             templateUrl: "Templates/ServiceTests",
             providers: [personService_1.PersonService],
-            directives: [router_1.ROUTER_DIRECTIVES],
+            directives: [],
         }), 
         __metadata('design:paramtypes', [personService_1.PersonService])
     ], ServiceTestsComponent);

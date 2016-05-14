@@ -16,11 +16,11 @@ var formularTestsComponent_1 = require('./Components/FormularTests/formularTests
 var formularSignupComponent_1 = require('./Components/FormularSignup/formularSignupComponent');
 //import {ObservableComponent} from './Components/Observables/observablesComponent';
 var serviceTestsComponent_1 = require('./Components/ServiceTests/serviceTestsComponent');
-//import {PostComponent} from './Components/ServiceTests/postComponent';
+var postComponent_1 = require('./Components/ServiceTests/postComponent');
 //import {UsersComponent} from './Components/Users/usersComponent';
 //import {AddUserComponent} from './Components/AddUser/addUserComponent';
 //import {NotFoundComponent as NotFoundComponent} from './Components/AddUser/notFoundComponent';
-//import {PostsComponent} from './Components/Posts/postsComponent';
+var postsComponent_1 = require('./Components/Posts/postsComponent');
 var MainApp = (function () {
     function MainApp() {
     }
@@ -29,8 +29,13 @@ var MainApp = (function () {
             { path: "/bindingTests", name: "BindingTests", component: bindingTestsComponent_1.BindingTests, useAsDefault: true },
             { path: "/formularSignup", name: "FormularSignup", component: formularSignupComponent_1.FormularSignupComponent },
             { path: "/formularTests", name: "FormularTests", component: formularTestsComponent_1.FormularTestsComponent },
-            // { path: "/ObservableTests", name: "ObservableTests", component: ObservableComponent },
+            //{ path: "/ObservableTests", name: "ObservableTests", component: ObservableComponent },
             { path: "/ServiceTests", name: "ServiceTests", component: serviceTestsComponent_1.ServiceTestsComponent },
+            { path: "/Post/:id", name: "Post", component: postComponent_1.PostComponent },
+            //{ path: "/Users", name: "Users", component: UsersComponent },
+            //{ path: "/Not-Found", name: "NotFound", component: NotFoundComponent },
+            //{ path: "/Users/:id", name: "AddUser", component: AddUserComponent },
+            { path: "/Posts", name: "Posts", component: postsComponent_1.PostsComponent },
         ]),
         core_1.Component({
             selector: 'my-app',
