@@ -18,7 +18,7 @@ import {ServiceTestsComponent} from './Components/ServiceTests/serviceTestsCompo
     { path: "/bindingTests", name: "BindingTests", component: BindingTests, useAsDefault: true },
     { path: "/formularSignup", name: "FormularSignup", component: FormularSignupComponent },
     { path: "/formularTests", name: "FormularTests", component: FormularTestsComponent },
-    //{ path: "/ObservableTests", name: "ObservableTests", component: ObservableComponent },
+   // { path: "/ObservableTests", name: "ObservableTests", component: ObservableComponent },
     { path: "/ServiceTests", name: "ServiceTests", component: ServiceTestsComponent },
     //{ path: "/Post/:id", name: "Post", component: PostComponent },
     //{ path: "/Users", name: "Users", component: UsersComponent },

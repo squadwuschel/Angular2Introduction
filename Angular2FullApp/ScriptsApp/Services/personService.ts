@@ -1,8 +1,8 @@
 ﻿import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
-import {Observable} from 'rxjs/observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
+import {Observable} from 'rxjs';
+//import 'rxjs/add/operator/map';
+//import 'rxjs/add/operator/toPromise';
 import {Post, User} from './../TsClasses/JsonPlaceHolderClasses'
 
 @Injectable()

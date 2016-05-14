@@ -29,7 +29,7 @@ var MainApp = (function () {
             { path: "/bindingTests", name: "BindingTests", component: bindingTestsComponent_1.BindingTests, useAsDefault: true },
             { path: "/formularSignup", name: "FormularSignup", component: formularSignupComponent_1.FormularSignupComponent },
             { path: "/formularTests", name: "FormularTests", component: formularTestsComponent_1.FormularTestsComponent },
-            //{ path: "/ObservableTests", name: "ObservableTests", component: ObservableComponent },
+            // { path: "/ObservableTests", name: "ObservableTests", component: ObservableComponent },
             { path: "/ServiceTests", name: "ServiceTests", component: serviceTestsComponent_1.ServiceTestsComponent },
         ]),
         core_1.Component({

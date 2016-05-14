@@ -5,13 +5,14 @@ import {ControlGroup, FormBuilder} from '@angular/common';
 //angular 2 hat nur ein paar wichtige Obserbables in der Stammdefinition, der Rest muss extra nachgeladen werden siehe map
 import {Observable} from 'rxjs';
 //import 'rxjs/add/operator/fromArray';
-//import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/map';
+//import 'rxjs/add/operator/debounceTime';
+//import 'rxjs/add/operator/interval';
+//import 'rxjs/add/operator/of';
 
 @Component({
     selector: 'observable',
-    templateUrl: `Templates/Observables`,
-    providers: [], //Dipendency Injection
-    directives: [], //die verwendeten Direktiven
+    templateUrl: `Templates/Observables`
 })
 export class ObservableComponent {
     public form: ControlGroup;
@@ -26,9 +27,9 @@ export class ObservableComponent {
             .subscribe(x => console.log(x));
 
         //this.observeArray();
-        //this.observableTimer();
-        //this.observablesParelleMode();
-        //this.observableTimeOuts();
+       // this.observableTimer();
+       // this.observablesParelleMode();
+        this.observableTimeOuts();
     }
 
 
@@ -49,27 +50,27 @@ export class ObservableComponent {
         //    .subscribe(x => console.log(x));
     }
 
-    public observableTimer(): void {
-        var observable = Observable.interval(1000);
-        observable
-            .flatMap(x => {
-                console.log("Calling the server to get the latest news");
-                return Observable.of([1, 2, 3]);
-            })
-            .subscribe(news => console.log(news));
+    //public observableTimer(): void {
+    //    var observable = Observable.interval(1000);
+    //    observable
+    //        .flatMap(x => {
+    //            console.log("Calling the server to get the latest news");
+    //            return Observable.of([1, 2, 3]);
+    //        })
+    //        .subscribe(news => console.log(news));
 
 
-    }
+    //}
 
-    public observablesParelleMode(): void {
-        var userStram = Observable.of({ userId: 1, username: "squad" }).delay(2000);
-        var tweetStream = Observable.of([1, 2, 3]).delay(1000);
+    //public observablesParelleMode(): void {
+    //    var userStram = Observable.of({ userId: 1, username: "squad" }).delay(2000);
+    //    var tweetStream = Observable.of([1, 2, 3]).delay(1000);
 
-        Observable.forkJoin(userStram, tweetStream)
-            .map(joined => new Object({ user: joined[0], tweets: joined[1] }))
-            .subscribe(result => console.log(result));
+    //    Observable.forkJoin(userStram, tweetStream)
+    //        .map(joined => new Object({ user: joined[0], tweets: joined[1] }))
+    //        .subscribe(result => console.log(result));
 
-    }
+    //}
 
     public observableTimeOuts(): void {
         var remoteObservable = Observable.of([1, 2, 3]).delay(5000);

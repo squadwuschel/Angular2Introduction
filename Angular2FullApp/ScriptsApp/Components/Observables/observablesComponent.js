@@ -15,7 +15,10 @@ var common_1 = require('@angular/common');
 //angular 2 hat nur ein paar wichtige Obserbables in der Stammdefinition, der Rest muss extra nachgeladen werden siehe map
 var rxjs_1 = require('rxjs');
 //import 'rxjs/add/operator/fromArray';
-//import 'rxjs/add/operator/map';
+require('rxjs/add/operator/map');
+//import 'rxjs/add/operator/debounceTime';
+//import 'rxjs/add/operator/interval';
+//import 'rxjs/add/operator/of';
 var ObservableComponent = (function () {
     function ObservableComponent(fb) {
         this.form = fb.group({ search: [] });
@@ -25,9 +28,9 @@ var ObservableComponent = (function () {
             .map(function (str) { return str.replace(' ', '­‐'); })
             .subscribe(function (x) { return console.log(x); });
         //this.observeArray();
-        //this.observableTimer();
-        //this.observablesParelleMode();
-        //this.observableTimeOuts();
+        // this.observableTimer();
+        // this.observablesParelleMode();
+        this.observableTimeOuts();
     }
     ObservableComponent.prototype.observeArray = function () {
         var startDates = [];
@@ -43,22 +46,22 @@ var ObservableComponent = (function () {
         //    })
         //    .subscribe(x => console.log(x));
     };
-    ObservableComponent.prototype.observableTimer = function () {
-        var observable = rxjs_1.Observable.interval(1000);
-        observable
-            .flatMap(function (x) {
-            console.log("Calling the server to get the latest news");
-            return rxjs_1.Observable.of([1, 2, 3]);
-        })
-            .subscribe(function (news) { return console.log(news); });
-    };
-    ObservableComponent.prototype.observablesParelleMode = function () {
-        var userStram = rxjs_1.Observable.of({ userId: 1, username: "squad" }).delay(2000);
-        var tweetStream = rxjs_1.Observable.of([1, 2, 3]).delay(1000);
-        rxjs_1.Observable.forkJoin(userStram, tweetStream)
-            .map(function (joined) { return new Object({ user: joined[0], tweets: joined[1] }); })
-            .subscribe(function (result) { return console.log(result); });
-    };
+    //public observableTimer(): void {
+    //    var observable = Observable.interval(1000);
+    //    observable
+    //        .flatMap(x => {
+    //            console.log("Calling the server to get the latest news");
+    //            return Observable.of([1, 2, 3]);
+    //        })
+    //        .subscribe(news => console.log(news));
+    //}
+    //public observablesParelleMode(): void {
+    //    var userStram = Observable.of({ userId: 1, username: "squad" }).delay(2000);
+    //    var tweetStream = Observable.of([1, 2, 3]).delay(1000);
+    //    Observable.forkJoin(userStram, tweetStream)
+    //        .map(joined => new Object({ user: joined[0], tweets: joined[1] }))
+    //        .subscribe(result => console.log(result));
+    //}
     ObservableComponent.prototype.observableTimeOuts = function () {
         var remoteObservable = rxjs_1.Observable.of([1, 2, 3]).delay(5000);
         remoteObservable.timeout(1000)
@@ -67,9 +70,7 @@ var ObservableComponent = (function () {
     ObservableComponent = __decorate([
         core_1.Component({
             selector: 'observable',
-            templateUrl: "Templates/Observables",
-            providers: [],
-            directives: [],
+            templateUrl: "Templates/Observables"
         }), 
         __metadata('design:paramtypes', [common_1.FormBuilder])
     ], ObservableComponent);
