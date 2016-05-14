@@ -17,9 +17,9 @@ var formularSignupComponent_1 = require('./Components/FormularSignup/formularSig
 //import {ObservableComponent} from './Components/Observables/observablesComponent';
 var serviceTestsComponent_1 = require('./Components/ServiceTests/serviceTestsComponent');
 var postComponent_1 = require('./Components/ServiceTests/postComponent');
-//import {UsersComponent} from './Components/Users/usersComponent';
-//import {AddUserComponent} from './Components/AddUser/addUserComponent';
-//import {NotFoundComponent as NotFoundComponent} from './Components/AddUser/notFoundComponent';
+var usersComponent_1 = require('./Components/Users/usersComponent');
+var addUserComponent_1 = require('./Components/AddUser/addUserComponent');
+var notFoundComponent_1 = require('./Components/AddUser/notFoundComponent');
 var postsComponent_1 = require('./Components/Posts/postsComponent');
 var MainApp = (function () {
     function MainApp() {
@@ -32,10 +32,11 @@ var MainApp = (function () {
             //{ path: "/ObservableTests", name: "ObservableTests", component: ObservableComponent },
             { path: "/ServiceTests", name: "ServiceTests", component: serviceTestsComponent_1.ServiceTestsComponent },
             { path: "/Post/:id", name: "Post", component: postComponent_1.PostComponent },
-            //{ path: "/Users", name: "Users", component: UsersComponent },
-            //{ path: "/Not-Found", name: "NotFound", component: NotFoundComponent },
-            //{ path: "/Users/:id", name: "AddUser", component: AddUserComponent },
+            { path: "/Users", name: "Users", component: usersComponent_1.UsersComponent },
+            { path: "/Not-Found", name: "NotFound", component: notFoundComponent_1.NotFoundComponent },
+            { path: "/Users/:id", name: "AddUser", component: addUserComponent_1.AddUserComponent },
             { path: "/Posts", name: "Posts", component: postsComponent_1.PostsComponent },
+            { path: "/*other", name: "Other", redirectTo: ["Users"] },
         ]),
         core_1.Component({
             selector: 'my-app',

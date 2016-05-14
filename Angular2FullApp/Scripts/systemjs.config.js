@@ -1,4 +1,9 @@
 ﻿System.config({
+    paths: {
+        //Die externe Lib für SystemJs bekannt machen und den namen sowie Pfad angeben unter dem die Lib gefunden werden kann.
+        //https://medium.com/@@s_eschweiler/using-external-libraries-with-angular-2-87e06db8e5d1#.rbypmmhq8
+        lodash: "./Scripts/lodash.js"
+    },
     map: {
         'ScriptsApp': 'ScriptsApp',
         'rxjs': 'node_modules/rxjs',
