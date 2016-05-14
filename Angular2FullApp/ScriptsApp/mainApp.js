@@ -14,7 +14,7 @@ var navigationComponent_1 = require('./Components/Navigation/navigationComponent
 var bindingTestsComponent_1 = require('./Components/BindingTests/bindingTestsComponent');
 var formularTestsComponent_1 = require('./Components/FormularTests/formularTestsComponent');
 var formularSignupComponent_1 = require('./Components/FormularSignup/formularSignupComponent');
-//import {ObservableComponent} from './Components/Observables/observablesComponent';
+var observablesComponent_1 = require('./Components/Observables/observablesComponent');
 var serviceTestsComponent_1 = require('./Components/ServiceTests/serviceTestsComponent');
 var postComponent_1 = require('./Components/ServiceTests/postComponent');
 var usersComponent_1 = require('./Components/Users/usersComponent');
@@ -29,7 +29,7 @@ var MainApp = (function () {
             { path: "/bindingTests", name: "BindingTests", component: bindingTestsComponent_1.BindingTests, useAsDefault: true },
             { path: "/formularSignup", name: "FormularSignup", component: formularSignupComponent_1.FormularSignupComponent },
             { path: "/formularTests", name: "FormularTests", component: formularTestsComponent_1.FormularTestsComponent },
-            //{ path: "/ObservableTests", name: "ObservableTests", component: ObservableComponent },
+            { path: "/ObservableTests", name: "ObservableTests", component: observablesComponent_1.ObservableComponent },
             { path: "/ServiceTests", name: "ServiceTests", component: serviceTestsComponent_1.ServiceTestsComponent },
             { path: "/Post/:id", name: "Post", component: postComponent_1.PostComponent },
             { path: "/Users", name: "Users", component: usersComponent_1.UsersComponent },

@@ -18,7 +18,7 @@
     },
     packages: {
         'ScriptsApp': { main: 'boot.js', defaultExtension: 'js' },
-        'rxjs': { main: 'index.js' },
+        'rxjs': { defaultExtension: 'js' },
         '@angular/core': { main: 'index.js' },
         '@angular/common': { main: 'index.js' },
         '@angular/http': { main: 'index.js' },

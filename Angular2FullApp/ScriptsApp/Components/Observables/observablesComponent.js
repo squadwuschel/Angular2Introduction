@@ -10,23 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
-//Kompletten Observables einbinden
-//import {Observable} from 'rxjs/Rx';
-//angular 2 hat nur ein paar wichtige Obserbables in der Stammdefinition, der Rest muss extra nachgeladen werden siehe map
-var rxjs_1 = require('rxjs');
 //import 'rxjs/add/operator/fromArray';
-require('rxjs/add/operator/map');
+//import 'rxjs/add/operator/map';
 //import 'rxjs/add/operator/debounceTime';
 //import 'rxjs/add/operator/interval';
 //import 'rxjs/add/operator/of';
 var ObservableComponent = (function () {
     function ObservableComponent(fb) {
         this.form = fb.group({ search: [] });
-        var searchInput = this.form.find('search');
-        searchInput.valueChanges
-            .debounceTime(400)
-            .map(function (str) { return str.replace(' ', '­‐'); })
-            .subscribe(function (x) { return console.log(x); });
+        //ACHTUNG alle Zusatzfunktionen von RXJS wurden mit dem RC entfernt, daher sind diese erst einmal auskommentiert.
+        //var searchInput = this.form.find('search');
+        //searchInput.valueChanges
+        //    .debounceTime(400)
+        //    .map(str => (<string>str).replace(' ', '­‐'))
+        //    .subscribe(x => console.log(x));
         //this.observeArray();
         // this.observableTimer();
         // this.observablesParelleMode();
@@ -63,9 +60,9 @@ var ObservableComponent = (function () {
     //        .subscribe(result => console.log(result));
     //}
     ObservableComponent.prototype.observableTimeOuts = function () {
-        var remoteObservable = rxjs_1.Observable.of([1, 2, 3]).delay(5000);
-        remoteObservable.timeout(1000)
-            .subscribe(function (x) { return console.log(x); }, function (error) { return console.log(error); });
+        //var remoteObservable = Observable.of([1, 2, 3]).delay(5000);
+        //remoteObservable.timeout(1000)
+        //    .subscribe(x => console.log(x), error => console.log(error));
     };
     ObservableComponent = __decorate([
         core_1.Component({
