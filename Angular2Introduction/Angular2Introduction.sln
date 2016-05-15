@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular2Introduction", "Ang
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular2FullApp", "..\Angular2FullApp\Angular2FullApp.csproj", "{ED0D4083-A7BA-4FF6-824B-DD38A14A9FF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularNgUpgrade", "..\AngularNgUpgrade\AngularNgUpgrade.csproj", "{38F46D08-7EF9-49A7-8D5C-4EA8F3C8D9A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{ED0D4083-A7BA-4FF6-824B-DD38A14A9FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED0D4083-A7BA-4FF6-824B-DD38A14A9FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED0D4083-A7BA-4FF6-824B-DD38A14A9FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38F46D08-7EF9-49A7-8D5C-4EA8F3C8D9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F46D08-7EF9-49A7-8D5C-4EA8F3C8D9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F46D08-7EF9-49A7-8D5C-4EA8F3C8D9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F46D08-7EF9-49A7-8D5C-4EA8F3C8D9A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
