@@ -22,6 +22,8 @@ var App;
     }());
     App.MainApp = MainApp;
 })(App || (App = {}));
+//http://blog.rangle.io/upgrade-your-application-to-angular-2-with-ng-upgrade/
+//http://embed.plnkr.co/QUVHavYN21ZGaeTdbFoc/
 //Unsere Anwendung intial aufrufen/starten
 App.MainApp.createApp(angular);
 //# sourceMappingURL=mainApp.js.map

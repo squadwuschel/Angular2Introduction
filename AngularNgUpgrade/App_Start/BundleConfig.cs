@@ -21,8 +21,6 @@ namespace AngularNgUpgrade
                         "~/ScriptsApp/Views/mainApp.js"
                         ));
 
-
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
