@@ -9,7 +9,7 @@ The GitHub Repo contains the following VS 2015 Web Projects
 
 To get each Project running do the following:
 - Install as minimum TypeScript Version 1.8
-- Restore the package.json files (node_modules)
+- Restore the package.json file, you found it in the root of each Project (node_modules)
 - Open NodeJs Console and go to the root directory to the project you want to start and type in the following command, to restore the typings
 
     typings install es6-shim --ambient --save
