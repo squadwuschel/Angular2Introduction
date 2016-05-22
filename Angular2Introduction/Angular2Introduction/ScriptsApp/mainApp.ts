@@ -1,7 +1,7 @@
 ﻿import {Component} from '@angular/core';
 // mit "./" sucht er im aktuellen Verzeichnis nach der Komponente
-import {CoursesComponent} from './../components/courses.component';
-import {CourseService} from './../services/course.service';
+import {CoursesComponent} from './components/courses.component';
+import {CourseService} from './services/course.service';
 
 @Component({
     selector: 'my-app',
