@@ -1,25 +1,51 @@
-﻿System.config({
-    map: {
-        'ScriptsApp': 'ScriptsApp',
-        'rxjs': 'node_modules/rxjs',
-
-        '@angular/core': 'node_modules/@angular/core',
-        '@angular/common': 'node_modules/@angular/common',
-        '@angular/http': 'node_modules/@angular/http',
-        '@angular/compiler': 'node_modules/@angular/compiler',
-        '@angular/router-deprecated': 'node_modules/@angular/router-deprecated',
-        '@angular/platform-browser': 'node_modules/@angular/platform-browser',
-        '@angular/platform-browser-dynamic': 'node_modules/@angular/platform-browser-dynamic'
-    },
-    packages: {
+﻿/**
+ * System configuration for Angular 2 samples
+ * Adjust as necessary for your application needs.
+ */
+(function (global) {
+    // map tells the System loader where to look for things
+    var map = {
+        'ScriptsApp': 'ScriptsApp', // 'dist',
+        '@angular': 'node_modules/@angular',
+        'rxjs': 'node_modules/rxjs'
+    };
+    // packages tells the System loader how to load when no filename and/or no extension
+    var packages = {
+        //Loading our App
         'ScriptsApp': { main: 'boot.js', defaultExtension: 'js' },
-        'rxjs': { main: 'index.js' },
-        '@angular/core': { main: 'index.js' },
-        '@angular/common': { main: 'index.js' },
-        '@angular/http': { main: 'index.js' },
-        '@angular/compiler': { main: 'index.js' },
-        '@angular/router-deprecated': { main: 'index.js' },
-        '@angular/platform-browser': { main: 'index.js' },
-        '@angular/platform-browser-dynamic': { main: 'index.js' }
+        'rxjs': { defaultExtension: 'js' },
+    };
+
+    var ngPackageNames = [
+      'common',
+      'compiler',
+      'core',
+      'forms',
+      'http',
+      'platform-browser',
+      'platform-browser-dynamic',
+      'router',
+      'router-deprecated',
+      'upgrade',
+    ];
+
+    // Individual files (~300 requests):
+    function packIndex(pkgName) {
+        packages['@angular/' + pkgName] = { main: 'index.js', defaultExtension: 'js' };
     }
-});
+    // Bundled (~40 requests):
+    function packUmd(pkgName) {
+        packages['@angular/' + pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+    }
+
+    // Most environments should use UMD; some (Karma) need the individual index files
+    var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
+    // Add package entries for angular packages
+    ngPackageNames.forEach(setPackageConfig);
+
+    System.config({
+        map: map,
+        packages: packages
+    });
+})(this);
+

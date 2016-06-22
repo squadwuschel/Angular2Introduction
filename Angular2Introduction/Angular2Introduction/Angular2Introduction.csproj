@@ -185,6 +185,7 @@
     <Content Include="package.json" />
     <Content Include="gulpfile.js" />
     <Content Include="Scripts\Reflect.js" />
+    <Content Include="Scripts\shim.min.js" />
     <Content Include="Scripts\system.src.js" />
     <Content Include="Scripts\systemjs.config.js" />
     <Content Include="Scripts\zone.js" />

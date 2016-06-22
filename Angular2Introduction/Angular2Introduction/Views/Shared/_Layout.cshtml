@@ -6,6 +6,10 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <base href="@Url.Content("~")" />
     @Styles.Render("~/Content/css")
+
+    <!-- Polyfill(s) for older browsers like IE -->
+    <script src="~/Scripts/shim.min.js"></script>
+    <!-- 1. Load libraries -->
     <script src="~/Scripts/zone.js"></script>
     <script src="~/Scripts/Reflect.js"></script>
     <script src="~/Scripts/system.src.js"></script>
