@@ -216,6 +216,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="ScriptsApp\appModule.ts" />
     <TypeScriptCompile Include="ScriptsApp\boot.ts" />
     <TypeScriptCompile Include="ScriptsApp\components\personList.component.ts" />
     <TypeScriptCompile Include="ScriptsApp\customDataClasses\Person.ts" />
