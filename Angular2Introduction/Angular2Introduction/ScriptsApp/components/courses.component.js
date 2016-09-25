@@ -10,8 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var course_service_1 = require('./../services/course.service');
-var autoGrow_directive_1 = require('./../directives/autoGrow.directive');
-var personList_component_1 = require('./personList.component');
 //@Injectable()
 var CoursesComponent = (function () {
     function CoursesComponent(courseService) {
@@ -26,7 +24,6 @@ var CoursesComponent = (function () {
             selector: 'courses',
             templateUrl: "Home/CoursesComponent",
             providers: [course_service_1.CourseService],
-            directives: [autoGrow_directive_1.AutoGrowDirective, personList_component_1.PersonList],
             inputs: ['name']
         }), 
         __metadata('design:paramtypes', [course_service_1.CourseService])

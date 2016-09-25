@@ -13,20 +13,28 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var mainApp_1 = require('./mainApp');
 var http_1 = require('@angular/http');
+//eigene direktiven/componenten
+var autoGrow_directive_1 = require('./directives/autoGrow.directive');
+var personList_component_1 = require('./components/personList.component');
+var courses_component_1 = require('./components/courses.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
+            //http://stackoverflow.com/questions/39062930/what-is-difference-between-declarations-providers-and-import-in-ngmodule
             imports: [
                 forms_1.FormsModule,
-                platform_browser_1.BrowserModule
+                platform_browser_1.BrowserModule,
+                http_1.HttpModule
             ],
             declarations: [
-                mainApp_1.AppComponent
+                mainApp_1.AppComponent,
+                autoGrow_directive_1.AutoGrowDirective,
+                personList_component_1.PersonList,
+                courses_component_1.CoursesComponent,
             ],
             bootstrap: [mainApp_1.AppComponent],
-            providers: [http_1.HTTP_PROVIDERS]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

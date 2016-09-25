@@ -2,18 +2,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import {AppComponent} from './mainApp'
-import {HTTP_PROVIDERS} from '@angular/http'
+import {HttpModule} from '@angular/http'
+
+//eigene direktiven/componenten
+import {AutoGrowDirective} from './directives/autoGrow.directive';
+import {PersonList} from './components/personList.component';
+import {CoursesComponent} from './components/courses.component';
 
 @NgModule({
+    //http://stackoverflow.com/questions/39062930/what-is-difference-between-declarations-providers-and-import-in-ngmodule
     imports: [
         FormsModule,
-        BrowserModule
+        BrowserModule,
+        HttpModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        AutoGrowDirective,
+        PersonList,
+        CoursesComponent,
     ],
     bootstrap: [AppComponent],
-    providers: [HTTP_PROVIDERS]
 })
 
 export class AppModule { }

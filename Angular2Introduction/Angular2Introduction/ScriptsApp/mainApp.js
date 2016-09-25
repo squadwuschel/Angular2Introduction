@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 // mit "./" sucht er im aktuellen Verzeichnis nach der Komponente
-var courses_component_1 = require('./components/courses.component');
 var course_service_1 = require('./services/course.service');
 var AppComponent = (function () {
     function AppComponent(courseService) {
@@ -20,7 +19,6 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'Home/MainComponent',
             providers: [course_service_1.CourseService],
-            directives: [courses_component_1.CoursesComponent]
         }), 
         __metadata('design:paramtypes', [course_service_1.CourseService])
     ], AppComponent);
