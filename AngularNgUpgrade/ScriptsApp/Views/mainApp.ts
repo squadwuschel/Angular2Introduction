@@ -9,12 +9,14 @@
                 //Eigene Module einbinden
                 //Module die mit TypeScript geschrieben wurden einbinden
                 Views.Person.PersonListCtrl.module.name,
-            ])
+            ]);
             /*.config([
                 "$stateProvider", "$urlRouterProvider","$locationProvider", ($stateProvider : ng.ui.IStateProvider, $urlRouterProvider : ng.ui.IUrlRouterProvider, $locationProvider: ng.ILocationProvider) => {
                     return new Config.RouteConfig($stateProvider, $urlRouterProvider, $locationProvider);
                 }
             ])*/
+
+           // angular.bootstrap(document.body, ["app.main"], {});
         }
     }
 }

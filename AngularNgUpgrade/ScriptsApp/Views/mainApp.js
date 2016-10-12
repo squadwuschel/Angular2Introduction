@@ -17,6 +17,7 @@ var App;
                     return new Config.RouteConfig($stateProvider, $urlRouterProvider, $locationProvider);
                 }
             ])*/
+            // angular.bootstrap(document.body, ["app.main"], {});
         };
         return MainApp;
     }());
