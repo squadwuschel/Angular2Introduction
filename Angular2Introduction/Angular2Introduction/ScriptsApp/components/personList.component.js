@@ -10,6 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var course_service_1 = require('./../services/course.service');
+require('rxjs/add/operator/filter'); //Notwendig damit wird weiter unten auf den map Operator zugreifen können
+require('rxjs/add/operator/delay'); //Notwendig damit wird weiter unten auf den map Operator zugreifen können
 //@Injectable()
 var PersonList = (function () {
     function PersonList(courseService) {
@@ -18,9 +20,11 @@ var PersonList = (function () {
     PersonList.prototype.getPersons = function () {
         var _this = this;
         //Unseren Service aufrufen und die Daten abrufen
-        this.courseService.getPersons("test").subscribe(function (data) { return _this.persons = data; });
+        this.courseService.getPersons("test").delay(400)
+            .subscribe(function (data) { return _this.persons = data; });
     };
     PersonList = __decorate([
+        //Notwendig damit wird weiter unten auf den map Operator zugreifen können
         core_1.Component({
             selector: 'person-list',
             templateUrl: "Home/PersonList",

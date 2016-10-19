@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-require('rxjs/add/operator/map'); //Notwendig damit wird weiter unten auf den map Operator zugreifen können
+require('rxjs/add/operator/map');
 var CourseService = (function () {
     function CourseService(_http) {
         this._http = _http;
@@ -20,10 +20,9 @@ var CourseService = (function () {
         return courses;
     };
     CourseService.prototype.getPersons = function (name) {
-        return this._http.get("Home/GetPersons?name=" + name).map(function (res) { return res.json(); });
+        return this._http.get("Home/GetPersons?name=" + name).map(function (res) { return res.json().data; });
     };
     CourseService = __decorate([
-        //Notwendig damit wird weiter unten auf den map Operator zugreifen können
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
     ], CourseService);

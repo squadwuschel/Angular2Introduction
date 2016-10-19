@@ -1,7 +1,7 @@
 ﻿import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/observable';
-import 'rxjs/add/operator/map'; //Notwendig damit wird weiter unten auf den map Operator zugreifen können
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CourseService {
@@ -13,6 +13,6 @@ export class CourseService {
     }
 
     getPersons(name: string) : Observable<App.Test.IPerson[]>  {
-        return this._http.get(`Home/GetPersons?name=${name}`).map((res : Response) => res.json());
+        return this._http.get(`Home/GetPersons?name=${name}`).map((res : Response) => <App.Test.IPerson[]>res.json().data as App.Test.IPerson[]);
     }
 }
