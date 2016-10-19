@@ -1,6 +1,5 @@
 ﻿import {Component} from '@angular/core';
 import {CourseService} from './../services/course.service';
-import {Person} from './../customDataClasses/Person'
 
 //@Injectable()
 @Component({
@@ -9,7 +8,7 @@ import {Person} from './../customDataClasses/Person'
     providers: [CourseService], //Dipendency Injection
 })
 export class PersonList {
-    public persons: Person[];
+    public persons: App.Test.IPerson[];
 
     constructor(private courseService: CourseService) { }
 
