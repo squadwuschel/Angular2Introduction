@@ -1,7 +1,5 @@
-﻿/// <reference path="../../typings/index.d.ts" />
-import { NgModule } from '@angular/core';
+﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { UpgradeAdapter } from '@angular/upgrade';
 
 
 // Create an Angular 2 root NgModule
@@ -10,5 +8,3 @@ import { UpgradeAdapter } from '@angular/upgrade';
     imports: [BrowserModule]
 }) export class AppModule { }
 
-const upgradeAdapter = new UpgradeAdapter(AppModule);
-upgradeAdapter.bootstrap(document.body, ['app.main']);

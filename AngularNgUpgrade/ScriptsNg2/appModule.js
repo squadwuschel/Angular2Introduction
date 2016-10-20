@@ -8,10 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/// <reference path="../../typings/index.d.ts" />
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var upgrade_1 = require('@angular/upgrade');
 // Create an Angular 2 root NgModule
 var AppModule = (function () {
     function AppModule() {
@@ -26,6 +24,4 @@ var AppModule = (function () {
     return AppModule;
 }());
 exports.AppModule = AppModule;
-var upgradeAdapter = new upgrade_1.UpgradeAdapter(AppModule);
-upgradeAdapter.bootstrap(document.body, ['app.main']);
 //# sourceMappingURL=appModule.js.map

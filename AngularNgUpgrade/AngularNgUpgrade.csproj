@@ -189,6 +189,7 @@
     <Folder Include="Models\" />
     <Folder Include="ScriptsApp\Directives\" />
     <Folder Include="ScriptsApp\Services\" />
+    <Folder Include="ScriptsNg2\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -196,7 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsNg2\appModule.ts" />
-    <TypeScriptCompile Include="ScriptsNg2\HelloWorldComponent.ts" />
+    <TypeScriptCompile Include="ScriptsNg2\boot.ts" />
+    <TypeScriptCompile Include="ScriptsNg2\Components\HelloWorldComponent.ts" />
     <TypeScriptCompile Include="ScriptsNg2\upgradeAdapter.ts" />
     <TypeScriptCompile Include="ScriptsApp\Views\mainApp.ts" />
     <TypeScriptCompile Include="ScriptsApp\Views\Person\personListCtrl.ts" />
