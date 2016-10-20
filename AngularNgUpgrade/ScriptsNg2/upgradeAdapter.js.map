@@ -1,1 +1,1 @@
-{"version":3,"file":"upgradeAdapter.js","sourceRoot":"","sources":["upgradeAdapter.ts"],"names":[],"mappings":";AAAA,wBAA+B,kBAAkB,CAAC,CAAA;AAClD,0BAA0B,aAAa,CAAC,CAAA;AAE3B,sBAAc,GAAG,IAAI,wBAAc,CAAC,qBAAS,CAAC,CAAC"}
+{"version":3,"file":"upgradeAdapter.js","sourceRoot":"","sources":["upgradeAdapter.ts"],"names":[],"mappings":";AAAA,wBAA+B,kBAAkB,CAAC,CAAA;AAClD,0BAA0B,aAAa,CAAC,CAAA;AAExC,gFAAgF;AACnE,sBAAc,GAAG,IAAI,wBAAc,CAAC,qBAAS,CAAC,CAAC"}
