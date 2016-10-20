@@ -17,6 +17,7 @@ var http_1 = require('@angular/http');
 var autoGrow_directive_1 = require('./directives/autoGrow.directive');
 var personList_component_1 = require('./components/personList.component');
 var courses_component_1 = require('./components/courses.component');
+var customHttp_1 = require("./services/customHttp");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,7 +35,13 @@ var AppModule = (function () {
                 personList_component_1.PersonList,
                 courses_component_1.CoursesComponent,
             ],
-            bootstrap: [mainApp_1.AppComponent],
+            //http://stackoverflow.com/questions/38885912/angular-2-rc-5-bootstrap-custom-http-class
+            providers: [{ provide: http_1.Http, useFactory: function (backend, defaultOptions) {
+                        return new customHttp_1.CustomHttp(backend, defaultOptions);
+                    },
+                    deps: [http_1.XHRBackend, http_1.RequestOptions]
+                }],
+            bootstrap: [mainApp_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
