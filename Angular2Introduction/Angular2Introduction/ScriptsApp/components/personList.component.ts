@@ -18,7 +18,8 @@ export class PersonList {
     public getPersons() {
 
         //Unseren Service aufrufen und die Daten abrufen
-        this.courseService.getPersons("test").delay(400)
-            .subscribe(data => this.persons = data);
+        this.courseService.getPersons("test").subscribe(data => {
+            this.persons = data;
+        });
     }
 }

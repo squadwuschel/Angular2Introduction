@@ -20,8 +20,9 @@ var PersonList = (function () {
     PersonList.prototype.getPersons = function () {
         var _this = this;
         //Unseren Service aufrufen und die Daten abrufen
-        this.courseService.getPersons("test").delay(400)
-            .subscribe(function (data) { return _this.persons = data; });
+        this.courseService.getPersons("test").subscribe(function (data) {
+            _this.persons = data;
+        });
     };
     PersonList = __decorate([
         //Notwendig damit wird weiter unten auf den map Operator zugreifen können

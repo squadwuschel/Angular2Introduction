@@ -200,7 +200,6 @@
     <TypeScriptCompile Include="ScriptsApp\Angular2\upgradeAdapter.ts" />
     <TypeScriptCompile Include="ScriptsApp\Views\mainApp.ts" />
     <TypeScriptCompile Include="ScriptsApp\Views\Person\personListCtrl.ts" />
-    <TypeScriptCompile Include="ScriptsApp\Views\testApp.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-bootstrap\angular-ui-bootstrap.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />

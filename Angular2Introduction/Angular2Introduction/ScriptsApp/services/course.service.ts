@@ -13,6 +13,6 @@ export class CourseService {
     }
 
     getPersons(name: string) : Observable<App.Test.IPerson[]>  {
-        return this._http.get(`Home/GetPersons?name=${name}`).map((res : Response) => <App.Test.IPerson[]>res.json().data as App.Test.IPerson[]);
+        return this._http.get(`Home/GetPersons?name=${name}`).map((res : Response) => <App.Test.IPerson[]>res.json() as App.Test.IPerson[]);
     }
 }
