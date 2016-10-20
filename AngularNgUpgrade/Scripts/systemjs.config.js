@@ -5,14 +5,14 @@
 (function (global) {
     // map tells the System loader where to look for things
     var map = {
-        'ScriptsApp': 'ScriptsApp/Angular2', // 'dist',
+        'MyApp': 'ScriptsNg2', // 'dist',
         '@angular': 'node_modules/@angular',
         'rxjs': 'node_modules/rxjs'
     };
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         //Loading our App
-        'ScriptsApp': { main: 'appModule.js', defaultExtension: 'js' },
+        'MyApp': { main: 'appModule.js', defaultExtension: 'js' },
         'rxjs': { defaultExtension: 'js' },
     };
 
