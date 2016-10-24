@@ -11,13 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
-var mainApp_1 = require('./mainApp');
 var http_1 = require('@angular/http');
+var ui_router_ng2_1 = require('ui-router-ng2');
 //eigene direktiven/componenten
 var autoGrow_directive_1 = require('./directives/autoGrow.directive');
 var personList_component_1 = require('./components/personList.component');
 var courses_component_1 = require('./components/courses.component');
 var customHttp_1 = require("./services/customHttp");
+var helloWorld_component_1 = require("./components/helloWorld.component");
+var mainApp_1 = require('./mainApp');
+var halloWelt = { name: 'halloWelt', url: '/halloWelt', component: helloWorld_component_1.HalloWelt };
+var personenliste = { name: 'personenListe', url: '/personenListe', component: personList_component_1.PersonList };
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,16 +31,19 @@ var AppModule = (function () {
             imports: [
                 forms_1.FormsModule,
                 platform_browser_1.BrowserModule,
-                http_1.HttpModule
+                http_1.HttpModule,
+                ui_router_ng2_1.UIRouterModule.forRoot({ states: [halloWelt, personenliste], useHash: true })
             ],
             declarations: [
                 mainApp_1.AppComponent,
                 autoGrow_directive_1.AutoGrowDirective,
                 personList_component_1.PersonList,
                 courses_component_1.CoursesComponent,
+                helloWorld_component_1.HalloWelt,
             ],
             //http://stackoverflow.com/questions/38885912/angular-2-rc-5-bootstrap-custom-http-class
-            providers: [{ provide: http_1.Http, useFactory: function (backend, defaultOptions) {
+            providers: [{
+                    provide: http_1.Http, useFactory: function (backend, defaultOptions) {
                         return new customHttp_1.CustomHttp(backend, defaultOptions);
                     },
                     deps: [http_1.XHRBackend, http_1.RequestOptions]

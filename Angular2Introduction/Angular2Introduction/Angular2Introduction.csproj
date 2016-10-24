@@ -218,6 +218,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ScriptsApp\appModule.ts" />
     <TypeScriptCompile Include="ScriptsApp\boot.ts" />
+    <TypeScriptCompile Include="ScriptsApp\components\helloWorld.component.ts" />
     <TypeScriptCompile Include="ScriptsApp\components\personList.component.ts" />
     <TypeScriptCompile Include="ScriptsApp\customDataClasses\Person.ts" />
     <TypeScriptCompile Include="ScriptsApp\directives\autoGrow.directive.ts" />
