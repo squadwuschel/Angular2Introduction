@@ -12,7 +12,12 @@ export class CourseService {
         return courses;
     }
 
-    getPersons(name: string) : Observable<App.Test.IPerson[]>  {
-        return this._http.get(`Home/GetPersons?name=${name}`).map((res : Response) => <App.Test.IPerson[]>res.json() as App.Test.IPerson[]);
+    public getPersons(name: string) : Observable<App.Test.IPerson[]>  {
+        return this._http.get(`Home/GetPersons?name=${name}`).map((res : Response) =>  <App.Test.IPerson[]>res.json() as App.Test.IPerson[]);
+    }
+
+    getPersons2(name: string): void {
+        this._http.get(`Home/GetPersons?name=${name}`);
+        window.location.href = "";
     }
 }

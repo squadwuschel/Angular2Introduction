@@ -22,6 +22,10 @@ var CourseService = (function () {
     CourseService.prototype.getPersons = function (name) {
         return this._http.get("Home/GetPersons?name=" + name).map(function (res) { return res.json(); });
     };
+    CourseService.prototype.getPersons2 = function (name) {
+        this._http.get("Home/GetPersons?name=" + name);
+        window.location.href = "";
+    };
     CourseService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
