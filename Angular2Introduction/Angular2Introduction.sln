@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular2HelloWorld", "..\Angular2HelloWorld\Angular2HelloWorld.csproj", "{FA4B631A-CF29-4A8F-97C2-99493A578863}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular2WebPackTemplateUrl", "..\Angular2WebPackTemplateUrl\Angular2WebPackTemplateUrl.csproj", "{B3CA4A6F-F521-476F-8822-51525A690C75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular2WebPack2", "..\Angular2WebPack2\Angular2WebPack2.csproj", "{B3CA4A6F-F521-476F-8822-51525A690C75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
