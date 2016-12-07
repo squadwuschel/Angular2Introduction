@@ -22,8 +22,8 @@ module.exports = function (options) {
     var isProd = options.env === 'production';
 
     //die BaseUrl wird benötigt um diese in der index.html entsprechend zu setzen.
-    //Im Produktionmodus muss hier der Name der Anwendung eingetragen werden, da diese bei
-    //uns immer als SubAnwendung angelegt werden.
+    //Im Produktionmodus muss hier der Name der Anwendung eingetragen werden, da diese oft
+    //als SubAnwendung angelegt werden.
     if (isProd) {
         METADATA.baseUrl = "/" + METADATA.applicationname + "/";
     }
@@ -38,7 +38,7 @@ module.exports = function (options) {
         resolve: {
             /*
             * An array of extensions that should be used to resolve modules.
-            * Wenn die Endung beim Import in den TypeScript dateien nicht angegeben wird,
+            * Wenn die Endung beim Import in den TypeScript Dateien nicht angegeben wird,
             * dann wird versucht die fehlende Endung mit den Endungen hier "wiederherzustellen"
             *
             * See: http://webpack.github.io/docs/configuration.html#resolve-extensions

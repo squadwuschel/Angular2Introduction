@@ -6,7 +6,7 @@
  */
 @Component({
     selector: 'app',
-    templateUrl: './app.component.html'
+    templateUrl: './app.component.html',
 })
 export class AppComponent {
     private locals: AppLocalsModel = new AppLocalsModel();
