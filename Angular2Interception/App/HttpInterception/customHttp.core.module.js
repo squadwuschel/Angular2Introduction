@@ -28,8 +28,8 @@ var CustomHttpCoreModule = (function () {
                 {
                     //Wir erweitern die HTTP Abfrage und überall wo wir HTTP verwenden, wird unsere Implementierung verwendet.
                     //Wir stellen an bestimmten Stellen des Requests RxJs Subjects zur Verfügung an die man sich bei Bedarf hängen kann per Subscribe
-                    provide: http_1.Http, useFactory: function (backend, defaultOptions, sxpSubjectService) {
-                        return new customHttp_1.CustomHttp(backend, defaultOptions, sxpSubjectService);
+                    provide: http_1.Http, useFactory: function (backend, defaultOptions, httpSubjectService) {
+                        return new customHttp_1.CustomHttp(backend, defaultOptions, httpSubjectService);
                     },
                     deps: [http_1.XHRBackend, http_1.RequestOptions, httpSubject_service_1.HttpSubjectService]
                 }

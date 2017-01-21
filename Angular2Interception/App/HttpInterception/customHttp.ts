@@ -3,13 +3,13 @@ import { Http, ConnectionBackend, Request, RequestOptions, RequestOptionsArgs, R
 import { Observable } from 'rxjs/Observable';
 
 
-import { HttpSubjectService as SxpHttpSubjectService } from './httpSubject.service';
+import { HttpSubjectService } from './httpSubject.service';
 
 //http://restlet.com/blog/2016/04/18/interacting-efficiently-with-a-restful-service-with-angular2-and-rxjs-part-3/
 
 @Injectable()
 export class CustomHttp extends Http {
-    constructor(backend: ConnectionBackend, defaultOptions: RequestOptions, private httpSubjectService: SxpHttpSubjectService) {
+    constructor(backend: ConnectionBackend, defaultOptions: RequestOptions, private httpSubjectService: HttpSubjectService) {
         super(backend, defaultOptions);
 
         //Caching von Ajax Requests verhindern, vor allem vom IE
