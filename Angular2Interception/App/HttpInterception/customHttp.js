@@ -23,15 +23,23 @@ var CustomHttp = (function (_super) {
     function CustomHttp(backend, defaultOptions, httpSubjectService) {
         _super.call(this, backend, defaultOptions);
         this.httpSubjectService = httpSubjectService;
+        //Caching von Ajax Requests verhindern, vor allem vom IE
+        defaultOptions.headers.append("Cache-control", "no-cache");
+        defaultOptions.headers.append("Cache-control", "no-store");
+        defaultOptions.headers.append("Pragma", "no-cache");
+        defaultOptions.headers.append("Expires", "0");
     }
     CustomHttp.prototype.request = function (url, options) {
         var _this = this;
+        //request Start;
         this.httpSubjectService.addSpinner();
         return _super.prototype.request.call(this, url, options).map(function (res) {
+            //Successful Response;
             _this.httpSubjectService.addNotification(res.json());
             return res;
         })
             .catch(function (err) {
+            //Fehlerhafte Anwort.
             _this.httpSubjectService.removeSpinner();
             _this.httpSubjectService.removeOverlay();
             if (err.status === 400 || err.status === 422) {
@@ -47,7 +55,7 @@ var CustomHttp = (function (_super) {
             }
         })
             .finally(function () {
-            // console.log('After the request...');
+            //After the request;
             _this.httpSubjectService.removeSpinner();
         });
     };

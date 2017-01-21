@@ -11,15 +11,24 @@ import { HttpSubjectService as SxpHttpSubjectService } from './httpSubject.servi
 export class CustomHttp extends Http {
     constructor(backend: ConnectionBackend, defaultOptions: RequestOptions, private httpSubjectService: SxpHttpSubjectService) {
         super(backend, defaultOptions);
+
+        //Caching von Ajax Requests verhindern, vor allem vom IE
+        defaultOptions.headers.append("Cache-control", "no-cache");
+        defaultOptions.headers.append("Cache-control", "no-store");
+        defaultOptions.headers.append("Pragma", "no-cache");
+        defaultOptions.headers.append("Expires", "0");
     }
 
     request(url: string | Request, options?: RequestOptionsArgs): Observable<Response> {
+        //request Start;
         this.httpSubjectService.addSpinner();
         return super.request(url, options).map(res => {
+            //Successful Response;
             this.httpSubjectService.addNotification(res.json());
             return res;
         })
             .catch((err) => {
+                //Fehlerhafte Anwort.
                 this.httpSubjectService.removeSpinner();
                 this.httpSubjectService.removeOverlay();
 
@@ -34,7 +43,7 @@ export class CustomHttp extends Http {
                 }
             })
             .finally(() => {
-                // console.log('After the request...');
+                //After the request;
                 this.httpSubjectService.removeSpinner();
             });
     }

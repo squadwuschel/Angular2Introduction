@@ -2,10 +2,6 @@
 import { HttpSubjectService } from "../HttpInterception/httpSubject.service";
 import { Homeservice } from "../HttpServices/home.service";
 
-/**
- * Beschreibung
- *
- */
 @Component({
     selector: 'app',
     templateUrl: './app.component.html',

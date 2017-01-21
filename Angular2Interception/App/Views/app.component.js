@@ -11,10 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var httpSubject_service_1 = require("../HttpInterception/httpSubject.service");
 var home_service_1 = require("../HttpServices/home.service");
-/**
- * Beschreibung
- *
- */
 var AppComponent = (function () {
     function AppComponent(httpSubjectService, homeService) {
         this.httpSubjectService = httpSubjectService;
