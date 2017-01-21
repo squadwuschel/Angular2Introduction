@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
-    <title>Angular2 Mit WebPack 2</title>
+    <title>Angular2 Interception</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- base url -->
-    <base href="/">
-<link href="http://localhost:3000/wwwroot/vendors.css" rel="stylesheet"></head>
+    <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
+</head>
 <body>
 
     <app>
@@ -29,5 +29,5 @@
         </div>
     </app>
 
-<script type="text/javascript" src="http://localhost:3000/wwwroot/polyfills.bundle.js"></script><script type="text/javascript" src="http://localhost:3000/wwwroot/vendors.bundle.js"></script><script type="text/javascript" src="http://localhost:3000/wwwroot/app.bundle.js"></script></body>
+</body>
 </html>
