@@ -23,7 +23,7 @@ import { CustomHttp as SxpCustomHttp } from './customHttp';
         }
     ]
 })
-export class SxpCustomHttpCoreModule {
+export class CustomHttpCoreModule {
 
     constructor() { }
 }

@@ -1,5 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { HttpSubjectService } from "../HttpInterception/httpSubject.service";
+import { Homeservice } from "../HttpServices/home.service";
 
 /**
  * Beschreibung
@@ -12,13 +13,20 @@ import { HttpSubjectService } from "../HttpInterception/httpSubject.service";
 export class AppComponent {
     private locals: AppLocalsModel = new AppLocalsModel();
 
-    constructor(private httpSubjectService : HttpSubjectService) {}
+    constructor(private httpSubjectService : HttpSubjectService, private homeService : Homeservice) {}
 
     ngOnInit(): void {
         this.notifications();
         this.httpRedirects();
         this.spinner();
         this.overlay();
+    }
+
+    public loadServiceData(): void {
+        this.homeService.getCurrentUsername()
+            .subscribe(result => {
+                this.locals.username = result;
+            });
     }
 
     /**
@@ -79,5 +87,5 @@ export class AppComponent {
 
 
 class AppLocalsModel {
-
+    public username : string = "noch nicht abgefragt";
 }

@@ -10,13 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var httpSubject_service_1 = require("../HttpInterception/httpSubject.service");
+var home_service_1 = require("../HttpServices/home.service");
 /**
  * Beschreibung
  *
  */
 var AppComponent = (function () {
-    function AppComponent(httpSubjectService) {
+    function AppComponent(httpSubjectService, homeService) {
         this.httpSubjectService = httpSubjectService;
+        this.homeService = homeService;
         this.locals = new AppLocalsModel();
     }
     AppComponent.prototype.ngOnInit = function () {
@@ -24,6 +26,13 @@ var AppComponent = (function () {
         this.httpRedirects();
         this.spinner();
         this.overlay();
+    };
+    AppComponent.prototype.loadServiceData = function () {
+        var _this = this;
+        this.homeService.getCurrentUsername()
+            .subscribe(function (result) {
+            _this.locals.username = result;
+        });
     };
     /**
      *  Wenn die Funktion für das Overlay angezeigt wird, dann soll dieses ausgeblendet werden
@@ -80,13 +89,14 @@ var AppComponent = (function () {
             selector: 'app',
             templateUrl: './app.component.html',
         }), 
-        __metadata('design:paramtypes', [httpSubject_service_1.HttpSubjectService])
+        __metadata('design:paramtypes', [httpSubject_service_1.HttpSubjectService, home_service_1.Homeservice])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
 var AppLocalsModel = (function () {
     function AppLocalsModel() {
+        this.username = "noch nicht abgefragt";
     }
     return AppLocalsModel;
 }());

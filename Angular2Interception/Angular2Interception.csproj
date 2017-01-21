@@ -172,7 +172,7 @@
     <TypeScriptCompile Include="App\HttpInterception\customHttp.ts" />
     <TypeScriptCompile Include="App\HttpInterception\httpSubject.service.ts" />
     <TypeScriptCompile Include="App\HttpInterception\customHttp.core.module.ts" />
-    <TypeScriptCompile Include="App\HttpServices\logviewer.service.ts" />
+    <TypeScriptCompile Include="App\HttpServices\home.service.ts" />
     <TypeScriptCompile Include="App\polyfills.ts" />
     <TypeScriptCompile Include="App\vendors.ts" />
     <TypeScriptCompile Include="App\Views\app.component.ts" />

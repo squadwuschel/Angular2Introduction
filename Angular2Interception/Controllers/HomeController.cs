@@ -15,7 +15,7 @@ namespace Angular2Interception.Controllers
         [AllowAnonymous]
         public ActionResult GetCurrentUsername()
         {
-            return Json(HttpContext.User.Identity.Name, JsonRequestBehavior.AllowGet);
+            return Json("SquadWuschel", JsonRequestBehavior.AllowGet);
         }
     }
 }

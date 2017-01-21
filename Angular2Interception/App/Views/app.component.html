@@ -1,8 +1,12 @@
 ﻿<div>
     <div class="well well-sm">
-
         <h2 class="text-center">
-            APP WURDE GELADEN!
+            APP WURDE GELADEN! von {{locals.username}}
         </h2>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-4">
+            <a (click)="loadServiceData()" class="btn btn-primary btn-block">Service Daten abrufen</a>
+        </div>
     </div>
 </div>
