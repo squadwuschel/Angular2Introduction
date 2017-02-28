@@ -7,15 +7,12 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    //Kümmert sich um die Typings das diese entsprechend gefunden werden, keine Reference mehr in boot.js notwendig.
+    "lib": [ "es5", "es2015", "dom", "es2015.promise" ]
   },
   "exclude": [
-    "node_modules",
-    "dist",
-    "typings/main",
-    "typings/index.d.ts"
+    "node_modules"
   ],
   "compileOnSave": true
 }
-
-//http://blog.mgechev.com/2016/03/28/ambient-type-definitions-duplicate-identifier-typescript-fix/
